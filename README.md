@@ -40,6 +40,28 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
-## Linking to local development with the D_D Design System package.
+## Working in with D_D Design system Local Setup
 
-...
+Build a Yarn Workspace on the root folder containing both repositories
+
+Setup a package.json file
+
+```
+{
+    "private": true,
+    "workspaces": [
+      "design-system",
+      "website"
+    ]
+}
+  ```
+
+Remove lock files on both folders, the app that will drink from the design-system folder.
+
+Root yarn install from the root folder
+
+And then start your dev environments on each project.
+
+Yarn dev for a next.js project
+
+yarn watch:all for the design system

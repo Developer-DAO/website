@@ -4,6 +4,8 @@ import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
 
+import "../styles/globals.css";
+
 const defaultLayout = (page: ReactElement) => {
   return <Layout>{page}</Layout>;
 };

@@ -1,4 +1,7 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+
+// TODO: Working locally
+import designSystemConfig from '../design-system/tailwind.config.js';
 
 const config: Config = {
   content: [
@@ -8,6 +11,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      ...designSystemConfig.theme,
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -18,3 +22,4 @@ const config: Config = {
   plugins: [],
 }
 export default config
+

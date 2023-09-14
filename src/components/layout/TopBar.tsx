@@ -1,4 +1,4 @@
-import {} from "@d_d/ui-components";
+import { Body3, Button, DDLogoIcon } from "@d_d/ui-components";
 import cx from "classnames";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -8,10 +8,10 @@ const TopBarGrid = ({ children }: { children: ReactNode }) => (
     <div className="w-full flex justify-center">
       <div
         className={cx(
-          "flex w-full md:w-auto mx-min2 md:grid grid-flow-row grid-cols-1 auto-rows-auto gap-y-16",
+          "flex w-full md:w-auto mx-5 md:grid grid-flow-row grid-cols-1 auto-rows-auto gap-y-16",
           "lg:grid-cols-lg lg:gap-24",
           "xl:grid-cols-xl",
-          "border-2 bg-glass-c-50 border-glass-c-80 backdrop-blur-sm rounded-full p-min2 mt-min3"
+          "p-5 mt-5"
         )}>
         {children}
       </div>
@@ -19,31 +19,37 @@ const TopBarGrid = ({ children }: { children: ReactNode }) => (
   </div>
 );
 
-export const TopBar = () => {
-  return (
-    <TopBarGrid>
-      <div className="flex w-full col-start-1 col-end-13 items-center justify-between">
-        <div>
-          <div>Logo</div>
-          <ul className="flex font-secondary text-white gap-8">
-            <Link href={""}>
-              <li>{"What's Developer DAO"}</li>
-            </Link>
-            <Link href={""}>
-              <li>{"Our Vision"}</li>
-            </Link>
-            <Link href={""}>
-              <li>{"Partner with us"}</li>
-            </Link>
-            <Link href={""}>
-              <li>{"Academy"}</li>
-            </Link>
-            <Link href={""}>
-              <li>{"Agency"}</li>
-            </Link>
-          </ul>
-        </div>
+export const TopBar = () => (
+  <TopBarGrid>
+    <div className="flex w-full col-start-1 col-end-13 items-center justify-between">
+      <div className="flex items-center gap-8">
+        <Link href={"/"}>
+          <div className="h-full">
+            <DDLogoIcon className="h-full" />
+          </div>
+        </Link>
+        <ul className="flex font-secondary text-white gap-8">
+          <Link href={""}>
+            <Body3>{"What's Developer DAO"}</Body3>
+          </Link>
+          <Link href={""}>
+            <Body3>{"Our Vision"}</Body3>
+          </Link>
+          <Link href={""}>
+            <Body3>{"Partner with us"}</Body3>
+          </Link>
+          <Link href={""}>
+            <Body3>{"Academy"}</Body3>
+          </Link>
+          <Link href={"https://agency.developerdao.com"} target="_blank">
+            <Body3>{"Agency"}</Body3>
+          </Link>
+        </ul>
       </div>
-    </TopBarGrid>
-  );
-};
+      <div className="flex">
+        <Button>Dao Handbook</Button>
+        <Button>Partner with us</Button>
+      </div>
+    </div>
+  </TopBarGrid>
+);
