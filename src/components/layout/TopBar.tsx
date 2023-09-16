@@ -24,31 +24,41 @@ export const TopBar = () => (
     <div className="flex w-full col-start-1 col-end-13 items-center justify-between">
       <div className="flex items-center gap-8">
         <Link href={"/"}>
-          <div className="h-full">
-            <DDLogoIcon className="h-full" />
+          <div className="h-[50px] w-[50px]">
+            <DDLogoIcon />
           </div>
         </Link>
         <ul className="flex font-secondary text-white gap-8">
           <Link href={""}>
-            <Body3>{"What's Developer DAO"}</Body3>
+            <Body3 className="hover:text-primary-grey transition-colors">
+              {"What's Developer DAO"}
+            </Body3>
           </Link>
           <Link href={""}>
-            <Body3>{"Our Vision"}</Body3>
+            <Body3 className="hover:text-primary-grey transition-colors">
+              {"Our Vision"}
+            </Body3>
           </Link>
           <Link href={""}>
-            <Body3>{"Partner with us"}</Body3>
+            <Body3 className="hover:text-primary-grey transition-colors">
+              {"Partner with us"}
+            </Body3>
           </Link>
           <Link href={""}>
-            <Body3>{"Academy"}</Body3>
+            <Body3 className="hover:text-primary-grey transition-colors">
+              {"Academy"}
+            </Body3>
           </Link>
           <Link href={"https://agency.developerdao.com"} target="_blank">
-            <Body3>{"Agency"}</Body3>
+            <Body3 className="hover:text-primary-grey transition-colors">
+              {"Agency"}
+            </Body3>
           </Link>
         </ul>
       </div>
-      <div className="flex">
+      <div className="flex gap-4">
         <Button>Dao Handbook</Button>
-        <Button>Partner with us</Button>
+        <Button variant="secondary">Partner with us</Button>
       </div>
     </div>
   </TopBarGrid>

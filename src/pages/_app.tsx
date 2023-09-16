@@ -4,6 +4,7 @@ import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
 
+import "@d_d/ui-components/styles.css";
 import "../styles/globals.css";
 
 const defaultLayout = (page: ReactElement) => {
