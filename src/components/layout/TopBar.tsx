@@ -4,12 +4,12 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 const TopBarGrid = ({ children }: { children: ReactNode }) => (
-  <div className="absolute top w-full z-20">
+  <div className="absolute top-0 left-0 w-screen z-20">
     <div className="w-full flex justify-center">
       <div
         className={cx(
           "flex w-full md:w-auto mx-5 md:grid grid-flow-row grid-cols-1 auto-rows-auto gap-y-16",
-          "lg:grid-cols-lg lg:gap-24",
+          "lg:grid-cols-lg lg:gap-lg",
           "xl:grid-cols-xl",
           "p-5 mt-5"
         )}>
@@ -28,7 +28,7 @@ export const TopBar = () => (
             <DDLogoIcon />
           </div>
         </Link>
-        <ul className="flex font-secondary text-white gap-8">
+        <ul className="hidden md:flex font-secondary text-white gap-8">
           <Link href={""}>
             <Body3 className="hover:text-primary-grey transition-colors">
               {"What's Developer DAO"}
@@ -56,7 +56,7 @@ export const TopBar = () => (
           </Link>
         </ul>
       </div>
-      <div className="flex gap-4">
+      <div className="hidden md:flex gap-4">
         <Button>Dao Handbook</Button>
         <Button variant="secondary">Partner with us</Button>
       </div>

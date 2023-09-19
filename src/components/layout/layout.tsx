@@ -1,3 +1,4 @@
+import { StarsBgImage } from "@d_d/ui-components";
 import { ReactNode } from "react";
 import Footer from "./Footer";
 import { TopBar } from "./TopBar";
@@ -8,12 +9,16 @@ export interface LayoutProps {
 
 const AppLayout = ({ children }: LayoutProps) => {
   return (
-    <section className="bg-black">
+    <article className="w-screen relative h-auto overflow-hidden">
+      <div
+        className="absolute top-0 h-[700vh] left-0 w-screen
+      z-0">
+        <StarsBgImage className="w-full h-full"></StarsBgImage>
+      </div>
       <TopBar />
-      APP LAYOUT
-      <div className="min-h-screen w-full">{children}</div>
+      <div className="bg-black top-0 w-full z-10">{children}</div>
       <Footer />
-    </section>
+    </article>
   );
 };
 

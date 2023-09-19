@@ -2,10 +2,80 @@
     "headline": "BUIDL WEB3 WITH __ FRENS",
     "subheadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
     "whoIntro": "We are a..",
-    "whoHeadline": "Developer Owned & Governed Community",
-    "whoHeadline2": "Learning & Building for Web3",
+    "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
+    "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
     "OurVision":{
         "Headline": "Our Vision",
-        "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3"
+        "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+        "Vision": [{
+
+        }],
+        "Vibe":{
+            "title": "/VIBE",
+            "subtitle": "Foster the diverse community needed to build a better, more equitable future Internet with VIBES.",
+            "link":"https://developerdao.com"
+        },
+        "Learn":{
+            "title": "/LEARN",
+            "subtitle": "Support members to LEARN the skills they need to contribute to that future.",
+            "link":"https://developerdao.com"
+        },
+        "build":{
+            "title": "/BUILD",
+            "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
+            "link":"https://developerdao.com"
+        },
+        "govern":{
+            "title": "/GOVERN",
+            "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+            "link":"https://developerdao.com"
+        }
+    },
+    "OurPartners":{
+        "Headline": "Our Partners",
+        "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+        "link": "Developer DAO has brought together some of the most talented people on the web to build web3",
+        "partnersGold": [
+            {
+                "image":"",
+                "title":"Zerion",
+                "type":"Wallet Partner",
+                "description":"Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
+            },
+            {
+                "image":"",
+                "title":"Thirdweb",
+                "type":"Learning Partner",
+                "description":"Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
+            },
+            {
+                "image":"",
+                "title":"Fleek",
+                "type":"Infrastructure Partner",
+                "description":"Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us as we reshape the blockchain landscape together."
+            }
+        ],
+        "partnersSilver": [
+            {
+                "image":"",
+                "title":"ENS DAO",
+                "type":"Dao Partner"
+            },
+            {
+                "image":"",
+                "title":"Lens Protocol",
+                "type":"Dao Partner"
+            },
+            {
+                "image":"",
+                "title":"Fuel Network",
+                "type":"hackathon Partner"
+            },
+            {
+                "image":"",
+                "title":"Uma",
+                "type":"hackathon Partner"
+            }
+        ]
     }
 }
