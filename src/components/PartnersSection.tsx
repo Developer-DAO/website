@@ -21,6 +21,10 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
 
   useEffect(() => {}, []);
 
+  function cx(arg0: string, arg1: string, arg2: string): string | undefined {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <React.Fragment>
       <section className="justify-center items-center flex flex-col gap-6 my-40">
