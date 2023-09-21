@@ -11,7 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@d_d/ui-components": "0.1.0",
+    "@gordo-d/d-d-ui-components": "0.1.0",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
