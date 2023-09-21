@@ -1,4 +1,4 @@
-import { Body3, DDLogoIcon } from "@d_d/ui-components";
+import { Body3, DDLogoIcon } from "@gordo-d/d-d-ui-components";
 import Link from "next/link";
 import React from "react";
 import footerData from "../../constants/footer.json";

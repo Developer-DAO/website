@@ -4,7 +4,13 @@ import { ReactElement } from "react";
 import D_D_People from "@/components/People";
 import Testimonials from "@/components/Testimonials";
 import Vision from "@/components/Vision";
-import { Body1, Body3, Button, Headline1, Headline2 } from "@d_d/ui-components";
+import {
+  Body1,
+  Body3,
+  Button,
+  Headline1,
+  Headline2,
+} from "@gordo-d/d-d-ui-components";
 
 import AppLayout from "../components/layout/layout";
 import HomeConstants from "../constants/home.json";

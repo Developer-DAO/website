@@ -1,4 +1,4 @@
-import { StarsBgImage } from "@d_d/ui-components";
+import { StarsBgImage } from "@gordo-d/d-d-ui-components";
 import { ReactNode } from "react";
 import Footer from "./Footer";
 import { TopBar } from "./TopBar";

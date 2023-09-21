@@ -20,7 +20,7 @@ import {
   ShineImage,
   StarShineImage,
   ThunderIcon,
-} from "@d_d/ui-components";
+} from "@gordo-d/d-d-ui-components";
 import cx from "classnames";
 import Image from "next/image";
 import Link from "next/link";

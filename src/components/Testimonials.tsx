@@ -6,13 +6,13 @@ import {
   Card,
   ShineImage,
   StarShineImage,
-} from "@d_d/ui-components";
+} from "@gordo-d/d-d-ui-components";
+import cx from "classnames";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import HomeConstants from "../constants/home.json";
-import cx from 'classnames';
 type ITestimonialsProps = {};
 
 const ITestimonialsDefaultProps = {};

@@ -1,4 +1,4 @@
-import { Body3, Button, DDLogoIcon } from "@d_d/ui-components";
+import { Body3, Button, DDLogoIcon } from "@gordo-d/d-d-ui-components";
 import cx from "classnames";
 import Link from "next/link";
 import { ReactNode } from "react";
