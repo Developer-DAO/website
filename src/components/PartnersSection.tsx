@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import HomeConstants from "../constants/home.json";
+import cx from 'classnames';
 type IPartnersSectionProps = {};
 
 const IPartnersSectionDefaultProps = {};
@@ -20,10 +21,6 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
   const {} = props;
 
   useEffect(() => {}, []);
-
-  function cx(arg0: string, arg1: string, arg2: string): string | undefined {
-    throw new Error("Function not implemented.");
-  }
 
   return (
     <React.Fragment>
@@ -125,6 +122,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
               "flex justify-center items-center my-10",
               "col-start-1 col-end-13"
             )}>
+
             {HomeConstants.OurPartners.partnersSilver.map((p, i) => {
               return (
                 <div
