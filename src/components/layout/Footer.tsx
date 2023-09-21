@@ -1,6 +1,7 @@
 import { Body3, DDLogoIcon } from "@d_d/ui-components";
 import Link from "next/link";
 import React from "react";
+import footerData from "../../constants/footer.json";
 
 type IFooterProps = object;
 
@@ -16,31 +17,13 @@ const Footer: React.FC<IFooterProps> = (props) => {
         </div>
         <div className="flex flex-col items-center justify-between h-full">
           <ul className="hidden md:flex font-secondary text-white gap-8">
-            <Link href={""}>
-              <Body3 className="hover:text-primary-grey transition-colors">
-                {"What's Developer DAO"}
-              </Body3>
-            </Link>
-            <Link href={""}>
-              <Body3 className="hover:text-primary-grey transition-colors">
-                {"Our Vision"}
-              </Body3>
-            </Link>
-            <Link href={""}>
-              <Body3 className="hover:text-primary-grey transition-colors">
-                {"Partner with us"}
-              </Body3>
-            </Link>
-            <Link href={""}>
-              <Body3 className="hover:text-primary-grey transition-colors">
-                {"Academy"}
-              </Body3>
-            </Link>
-            <Link href={"https://agency.developerdao.com"} target="_blank">
-              <Body3 className="hover:text-primary-grey transition-colors">
-                {"Agency"}
-              </Body3>
-            </Link>
+            {footerData.links.map((l, i) => (
+              <Link key={i} href={l.link}>
+                <Body3 className="hover:text-primary-grey transition-colors">
+                  {l.name}
+                </Body3>
+              </Link>
+            ))}
           </ul>
           <Body3 color={"neutral-600"} className="">
             Built with ❤️️ at Agency
