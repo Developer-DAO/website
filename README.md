@@ -1,5 +1,7 @@
 # D_D Website V2.0
 
+-
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -39,7 +41,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 ## Working in with D_D Design system Local Setup
 
 Build a Yarn Workspace on the root folder containing both repositories
@@ -54,7 +55,7 @@ Setup a package.json file
       "website"
     ]
 }
-  ```
+```
 
 Remove lock files on both folders, the app that will drink from the design-system folder.
 
