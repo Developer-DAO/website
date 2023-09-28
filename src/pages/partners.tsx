@@ -58,9 +58,8 @@ const PartnersPage: React.FC<IPartnersPageProps> = (props) => {
                   className="pr-2 font-semibold"
                   icon={<ThunderIcon className="h-6 w-6" />}
                   iconPosition="left">
-                  Partner with us
+                  Get in touch
                 </Button>
-                <Button variant="secondary">Dao Handbook</Button>
               </div>
             </section>
 

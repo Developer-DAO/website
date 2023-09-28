@@ -41,21 +41,20 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
           </Body3>
         </div>
         <Carousel
-          className="mb-28"
+          className=""
           showArrows={false}
           swipeable
-          centerMode={true}
           showStatus={false}
           showIndicators={false}
           showThumbs={false}
           renderArrowPrev={(
-            clickPrevHandler: () => void,
+            clickHandler: () => void,
             hasPrev: boolean,
             label: string
           ) => (
             <ArrowLeftIcon
               className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28"
-              onClick={() => clickPrevHandler()}
+              onClick={() => clickHandler()}
             />
           )}
           renderArrowNext={(

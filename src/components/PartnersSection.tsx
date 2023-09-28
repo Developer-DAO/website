@@ -8,17 +8,33 @@ import {
   ShineImage,
   StarShineImage,
 } from "@gordo-d/d-d-ui-components";
+import { Attachment } from "airtable";
+import cx from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import HomeConstants from "../constants/home.json";
-import cx from 'classnames';
-type IPartnersSectionProps = {};
+
+interface Partner {
+  name: string;
+  variant: string;
+  status: string;
+  image: Attachment[];
+  description?: string;
+}
+
+type IPartnersSectionProps = {
+  partners: Partner[];
+};
 
 const IPartnersSectionDefaultProps = {};
 
 const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
-  const {} = props;
+  const { partners } = props;
+  const silverPartners = partners.filter(
+    (partner) => partner.status === "silver"
+  );
+  const goldPartners = partners.filter((partner) => partner.status === "gold");
 
   useEffect(() => {}, []);
 
@@ -40,109 +56,54 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
           </Body3>
         </div>
         <Grid>
-          <Card
-            className={cx(
-              "min-h-[320px] border-primary-grey border-2 backdrop-blur-lg flex",
-              "flex-col gap-2",
-              "col-start-1 col-end-5"
-            )}>
-            <div className="relative justify-center overflow-hidden flex rounded-full bg-neutral-800 h-28 w-28">
-              <Image
-                fill
-                src={HomeConstants.OurPartners.partnersGold[0].image}
-                alt={HomeConstants.OurPartners.partnersGold[0].image}
-              />
-            </div>
-            <BodyHeadline className="">
-              {HomeConstants.OurPartners.partnersGold[0].title}
-            </BodyHeadline>
-            <Body3
-              color="neutral-700"
-              className="uppercase font-bold text-neutral-700">
-              {HomeConstants.OurPartners.partnersGold[0].type}
-            </Body3>
-            <Body3 color="neutral-700" className="">
-              {HomeConstants.OurPartners.partnersGold[0].description}
-            </Body3>
-          </Card>
-
-          <Card
-            className={cx(
-              "min-h-[320px] border-primary-grey border-2 backdrop-blur-lg flex",
-              "flex-col gap-2",
-              "col-start-5 col-end-9"
-            )}>
-            <div className="relative justify-center overflow-hidden flex rounded-full bg-neutral-800 h-28 w-28">
-              <Image
-                fill
-                src={HomeConstants.OurPartners.partnersGold[1].image}
-                alt={HomeConstants.OurPartners.partnersGold[1].image}
-              />
-            </div>
-            <BodyHeadline className="">
-              {HomeConstants.OurPartners.partnersGold[0].title}
-            </BodyHeadline>
-            <Body3
-              color="neutral-700"
-              className="uppercase font-bold text-neutral-700">
-              {HomeConstants.OurPartners.partnersGold[0].type}
-            </Body3>
-            <Body3 color="neutral-700" className="">
-              {HomeConstants.OurPartners.partnersGold[0].description}
-            </Body3>
-          </Card>
-
-          <Card
-            className={cx(
-              "min-h-[320px] border-primary-grey border-2 backdrop-blur-lg flex",
-              "flex-col gap-2",
-              "col-start-9 col-end-13"
-            )}>
-            <div className="relative justify-center overflow-hidden flex rounded-full bg-neutral-800 h-28 w-28">
-              <Image
-                fill
-                src={HomeConstants.OurPartners.partnersGold[2].image}
-                alt={HomeConstants.OurPartners.partnersGold[2].image}
-              />
-            </div>
-            <BodyHeadline className="">
-              {HomeConstants.OurPartners.partnersGold[0].title}
-            </BodyHeadline>
-            <Body3
-              color="neutral-700"
-              className="uppercase font-bold text-neutral-700">
-              {HomeConstants.OurPartners.partnersGold[0].type}
-            </Body3>
-            <Body3 color="neutral-700" className="">
-              {HomeConstants.OurPartners.partnersGold[0].description}
-            </Body3>
-          </Card>
+          <div className="col-start-1 col-end-13 flex md:flex-row flex-col  gap-3">
+            {goldPartners.map((gp) => (
+              <Card
+                key={gp.name}
+                className={cx(
+                  "transition-all grayscale hover:grayscale-0 min-h-[320px] w-full md:w-1/3 border-primary-grey border-2 backdrop-blur-lg flex",
+                  "flex-col gap-2"
+                )}>
+                <div className="relative justify-center overflow-hidden flex bg-neutral-800 h-28 w-28 ">
+                  <Image fill src={gp.image[0].url} alt={gp.name} />
+                </div>
+                <BodyHeadline className="">{gp.name}</BodyHeadline>
+                <Body3
+                  color="neutral-700"
+                  className="uppercase font-bold text-neutral-700">
+                  {gp.variant}
+                </Body3>
+                <Body3 color="neutral-700" className="">
+                  {gp.description}
+                </Body3>
+              </Card>
+            ))}
+          </div>
           <div
             className={cx(
               "flex justify-center items-center my-10",
               "col-start-1 col-end-13"
             )}>
-
-            {HomeConstants.OurPartners.partnersSilver.map((p, i) => {
+            {silverPartners.map((p, i) => {
               return (
                 <div
                   key={i}
-                  className="flex flex-col items-center justify-center gap-2 min-w-[200px]">
-                  <div className="relative flex justify-center items-center rounded-full bg-neutral-800 overflow-hidden h-32 w-32">
-                    <Image fill src={p.image} alt={p.image} />
+                  className="transition-all grayscale hover:grayscale-0 flex flex-col items-center justify-center gap-2 min-w-[200px]">
+                  <div className="relative flex justify-center items-center bg-neutral-800 overflow-hidden h-32 w-32 ">
+                    <Image fill src={p.image[0].url} alt={p.name} />
                   </div>
-                  <Body2 className="text-center">{p.title}</Body2>
+                  <Body2 className="text-center">{p.name}</Body2>
                   <Body3
                     color="neutral-700"
                     className="uppercase font-bold text-center text-neutral-700">
-                    {p.type}
+                    {p.variant}
                   </Body3>
                 </div>
               );
             })}
           </div>
         </Grid>
-        <Link href={HomeConstants.OurPartners.link} target="_bla">
+        <Link href={"/partners"}>
           <Button className="font-paragraph">Partner with us</Button>
         </Link>
       </section>

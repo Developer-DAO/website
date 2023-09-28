@@ -12,11 +12,24 @@ import {
   Headline2,
 } from "@gordo-d/d-d-ui-components";
 
+import PartnersSection from "@/components/PartnersSection";
+import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
+import { StarIcon } from "@gordo-d/d-d-ui-components";
 import AppLayout from "../components/layout/layout";
 import HomeConstants from "../constants/home.json";
 
-const HomePage = () => {
+// interface Record {
+//   [key: string]: any;
+// }
+
+// interface Props {
+//   records: Record[];
+// }
+
+const HomePage = ({ partners }: any) => {
   const router = useRouter();
+  console.log(partners);
+
   return (
     <>
       <article className="text-primary-white relative overflow-hidden">
@@ -32,8 +45,13 @@ const HomePage = () => {
               {HomeConstants.subheadline}
             </Body3>
             <div className="flex gap-4">
+              <Button
+                className="font-paragraph"
+                icon={<StarIcon className="h-5 w-5" />}
+                iconPosition="left">
+                Dao Handbook
+              </Button>
               <Button variant="secondary">Partner with us</Button>
-              <Button className="font-paragraph">Dao Handbook</Button>
             </div>
           </section>
 
@@ -55,12 +73,27 @@ const HomePage = () => {
 
           <Vision />
 
+          <PartnersSection partners={partners} />
           <Testimonials />
         </div>
       </article>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const partners = await fetchFromAirtable({
+    tableName: "Partners",
+  });
+  console.log(partners);
+
+  return {
+    props: {
+      partners,
+    },
+    // revalidate: 10,
+  };
+}
 
 HomePage.getLayout = function getLayout(page: ReactElement) {
   return <AppLayout>{page}</AppLayout>;
