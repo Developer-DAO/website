@@ -21,10 +21,10 @@ export const fetchFromAirtable = async ({
   return new Promise((resolve, reject) => {
     base(tableName)
       .select({})
-      .firstPage((err, records) => {
+      // TODO: types
+      .firstPage((err, records: any) => {
         if (err) return reject(err);
-        console.log("FETCH AIRTABLE => ", records);
-        resolve(records.map((record) => record.fields));
+        resolve(records.map((record:any) => record.fields));
       });
   });
 };
