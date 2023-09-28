@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
+@layer base {
+    h1,h2,h3,h4 {
+      @apply font-heading;
+    }
+    b, strong, i, em, u, strike, small, big, sub, sup, mark, button, p, span, h5 {
+      @apply font-paragraph;
+    }
+    table, th, td, caption {
+      @apply font-paragraph;
+    }
   }
-}
-
-body {
-  background-color: red;
-}
