@@ -58,7 +58,9 @@ const PartnersPage = (props: IPartnersPageProps) => {
           <section className="p-10 my-20 flex w-full gap-36 justify-center items-center">
             {headLinePartners.image.map(
               (p: { url: string | StaticImport }, i: any) => (
-                <div className="transition-all grayscale hover:grayscale-0 relative flex justify-center items-center overflow-hidden w-[300px] h-[100px]">
+                <div
+                  key={i}
+                  className="transition-all grayscale hover:grayscale-0 relative flex justify-center items-center overflow-hidden w-[300px] h-[100px]">
                   <Image
                     layout={"fill"}
                     objectFit={"contain"}
