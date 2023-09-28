@@ -15,6 +15,7 @@ import {
 import PartnersSection from "@/components/PartnersSection";
 import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
 import { StarIcon } from "@gordo-d/d-d-ui-components";
+import Link from "next/link";
 import AppLayout from "../components/layout/layout";
 import HomeConstants from "../constants/home.json";
 
@@ -45,13 +46,19 @@ const HomePage = ({ partners }: any) => {
               {HomeConstants.subheadline}
             </Body3>
             <div className="flex gap-4">
-              <Button
-                className="font-paragraph"
-                icon={<StarIcon className="h-5 w-5" />}
-                iconPosition="left">
-                Dao Handbook
-              </Button>
-              <Button variant="secondary">Partner with us</Button>
+              <Link
+                href={"https://kempsterrrr.gitbook.io/developer-dao-docs/"}
+                target="_blank">
+                <Button
+                  className="font-paragraph"
+                  icon={<StarIcon className="h-5 w-5" />}
+                  iconPosition="left">
+                  Dao Handbook
+                </Button>
+              </Link>
+              <Link href={"/partners"}>
+                <Button variant="secondary">Partner with us</Button>
+              </Link>
             </div>
           </section>
 
@@ -74,7 +81,8 @@ const HomePage = ({ partners }: any) => {
           <Vision />
 
           <PartnersSection partners={partners} />
-          <Testimonials />
+
+          <Testimonials testimonials={HomeConstants.Testimonials} />
         </div>
       </article>
     </>

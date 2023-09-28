@@ -12,18 +12,20 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import HomeConstants from "../constants/home.json";
-type ITestimonialsProps = {};
+type ITestimonialsProps = {
+  //TODO: type
+  testimonials: any;
+};
 
 const ITestimonialsDefaultProps = {};
 
 const Testimonials: React.FC<ITestimonialsProps> = (props) => {
-  const {} = props;
+  const { testimonials } = props;
 
   useEffect(() => {}, []);
 
   return (
-    <React.Fragment>
+    <>
       {/* OUR TESTIMONIALS */}
       <section className="justify-center items-center flex flex-col gap-6 my-40">
         <div className="relative text-center">
@@ -34,10 +36,10 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
             <ShineImage className="h-[600px] w-[600px]"></ShineImage>
           </div>
           <BodyHeadline className="font-paragraph relative mb-6">
-            {HomeConstants.Testimonials.Headline}
+            {testimonials.Headline}
           </BodyHeadline>
           <Body3 color="neutral-700" className="font-paragraph relative">
-            {HomeConstants.Testimonials.SubHeadline}
+            {testimonials.SubHeadline}
           </Body3>
         </div>
         <Carousel
@@ -67,7 +69,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
               onClick={() => clickHandler()}
             />
           )}>
-          {HomeConstants.Testimonials.cards.map((p, i) => {
+          {testimonials.cards.map((p, i) => {
             return (
               <div key={i} className="w-full flex justify-center">
                 <Card
@@ -100,7 +102,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
           })}
         </Carousel>
       </section>
-    </React.Fragment>
+    </>
   );
 };
 

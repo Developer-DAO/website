@@ -31,16 +31,18 @@ const IPartnersSectionDefaultProps = {};
 
 const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
   const { partners } = props;
-  const silverPartners = partners.filter(
-    (partner) => partner.status === "silver"
-  );
-  const goldPartners = partners.filter((partner) => partner.status === "gold");
+  const silverPartners = partners
+    ? partners.filter((partner) => partner.status === "silver")
+    : [];
+  const goldPartners = partners
+    ? partners.filter((partner) => partner.status === "gold")
+    : [];
 
   useEffect(() => {}, []);
 
   return (
-    <React.Fragment>
-      <section className="justify-center items-center flex flex-col gap-6 my-40">
+    <>
+      <div className="justify-center items-center flex flex-col gap-6 my-40">
         <div className="relative text-center">
           <div className="absolute -top-24 right-28">
             <StarShineImage className="h-[250px] w-[250px]"></StarShineImage>
@@ -61,11 +63,17 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
               <Card
                 key={gp.name}
                 className={cx(
-                  "transition-all grayscale hover:grayscale-0 min-h-[320px] w-full border-primary-grey border-2 backdrop-blur-lg flex",
+                  "transition-all grayscale hover:grayscale-0 min-h-[320px] w-full  border-2 backdrop-blur-lg flex",
                   "flex-col gap-2"
                 )}>
-                <div className="relative justify-center overflow-hidden flex bg-neutral-800 h-28 w-28 ">
-                  <Image fill src={gp.image[0].url} alt={gp.name} />
+                <div className="relative justify-center overflow-hidden flex  h-28 w-28 ">
+                  <Image
+                    className=""
+                    layout={"fill"}
+                    objectFit={"contain"}
+                    src={gp.image[0].url}
+                    alt={gp.name}
+                  />
                 </div>
                 <BodyHeadline className="">{gp.name}</BodyHeadline>
                 <Body3
@@ -81,16 +89,21 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
           </div>
           <div
             className={cx(
-              "flex justify-center items-center my-10",
+              "flex justify-center my-10",
               "col-start-1 col-end-13"
             )}>
             {silverPartners.map((p, i) => {
               return (
                 <div
                   key={i}
-                  className="transition-all grayscale hover:grayscale-0 flex flex-col items-center justify-center gap-2 min-w-[200px]">
-                  <div className="relative flex justify-center items-center bg-neutral-800 overflow-hidden h-32 w-32 ">
-                    <Image fill src={p.image[0].url} alt={p.name} />
+                  className="transition-all grayscale hover:grayscale-0 flex flex-col items-center gap-2 min-w-[200px]">
+                  <div className="relative flex justify-center items-center overflow-hidden h-32 w-32 ">
+                    <Image
+                      layout={"fill"}
+                      objectFit={"contain"}
+                      src={p.image[0].url}
+                      alt={p.name}
+                    />
                   </div>
                   <Body2 className="text-center">{p.name}</Body2>
                   <Body3
@@ -106,8 +119,8 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
         <Link href={"/partners"}>
           <Button className="font-paragraph">Partner with us</Button>
         </Link>
-      </section>
-    </React.Fragment>
+      </div>
+    </>
   );
 };
 

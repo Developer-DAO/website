@@ -4,29 +4,36 @@
     "whoIntro": "We are a..",
     "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
     "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
-    "OurVision":{
-        "Headline": "Our Vision",
+    "cardsSection":{
+        "Headline": "Partnering With Us",
         "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
-        "Vision": [{
-
-        }],
-        "Vibe":{
-            "title": "/VIBE",
+        "preferred":{
+            "title": "PREFERRED PARTNERS",
             "subtitle": "Foster the diverse community needed to build a better, more equitable future Internet with VIBES.",
             "link":"https://developerdao.com"
         },
-        "Learn":{
-            "title": "/LEARN",
+        "hackathon":{
+            "title": "HACKATHONS",
             "subtitle": "Support members to LEARN the skills they need to contribute to that future.",
             "link":"https://developerdao.com"
         },
-        "build":{
-            "title": "/BUILD",
+        "talent":{
+            "title": "TALENT",
             "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
             "link":"https://developerdao.com"
         },
-        "govern":{
-            "title": "/GOVERN",
+        "ventures":{
+            "title": "VENTURE BUILDERS",
+            "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+            "link":"https://developerdao.com"
+        },
+        "events":{
+            "title": "EVENTS",
+            "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+            "link":"https://developerdao.com"
+        },
+        "hackers":{
+            "title": "D_D HACKERS",
             "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
             "link":"https://developerdao.com"
         }
