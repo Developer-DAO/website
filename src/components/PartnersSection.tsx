@@ -5,7 +5,8 @@ import {
   BodyHeadline,
   Button,
   Card,
-  Grid
+  Grid,
+  HeartIcon,
 } from "@gordo-d/d-d-ui-components";
 import { Attachment } from "airtable";
 import cx from "classnames";
@@ -42,18 +43,21 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
 
   return (
     <>
-      <div className="justify-center items-center flex flex-col gap-6 my-40">
-        <SectionTitle headline={HomeConstants.OurPartners.Headline} subheadline={HomeConstants.OurPartners.SubHeadline}/>
+      <div className="my-60 flex flex-col items-center justify-center gap-6">
+        <SectionTitle
+          headline={HomeConstants.OurPartners.Headline}
+          subheadline={HomeConstants.OurPartners.SubHeadline}
+        />
         <Grid>
-          <div className="col-start-1 col-end-13 flex md:flex-row flex-col gap-3">
+          <div className="col-start-1 col-end-13 flex flex-col gap-3 md:flex-row">
             {goldPartners.map((gp) => (
               <Card
                 key={gp.name}
                 className={cx(
-                  "transition-all grayscale hover:grayscale-0 min-h-[320px] w-full  border-2 backdrop-blur-lg flex",
+                  "flex min-h-[320px] w-full border-2 grayscale  backdrop-blur-lg transition-all hover:grayscale-0",
                   "flex-col gap-2"
                 )}>
-                <div className="relative justify-center overflow-hidden flex  h-28 w-28 ">
+                <div className="relative flex h-28 w-28  justify-center overflow-hidden ">
                   <Image
                     className=""
                     layout={"fill"}
@@ -65,7 +69,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
                 <BodyHeadline className="">{gp.name}</BodyHeadline>
                 <Body1
                   color="neutral-700"
-                  className="uppercase font-bold text-neutral-700">
+                  className="font-bold uppercase text-neutral-700">
                   {gp.variant}
                 </Body1>
                 <Body3 color="neutral-700" className="">
@@ -76,15 +80,15 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
           </div>
           <div
             className={cx(
-              "flex justify-center my-10",
+              "my-10 flex justify-center",
               "col-start-1 col-end-13"
             )}>
             {silverPartners.map((p, i) => {
               return (
                 <div
                   key={i}
-                  className="transition-all grayscale hover:grayscale-0 flex flex-col items-center gap-2 min-w-[200px]">
-                  <div className="relative flex justify-center items-center overflow-hidden h-32 w-32 ">
+                  className="flex min-w-[200px] flex-col items-center gap-2 grayscale transition-all hover:grayscale-0">
+                  <div className="relative flex h-32 w-32 items-center justify-center overflow-hidden ">
                     <Image
                       layout={"fill"}
                       objectFit={"contain"}
@@ -95,7 +99,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
                   <Body2 className="text-center">{p.name}</Body2>
                   <Body3
                     color="neutral-700"
-                    className="uppercase font-bold text-center text-neutral-700">
+                    className="text-center font-bold uppercase text-neutral-700">
                     {p.variant}
                   </Body3>
                 </div>
@@ -104,7 +108,12 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
           </div>
         </Grid>
         <Link href={"/partners"}>
-          <Button className="font-paragraph">Partner with us</Button>
+          <Button
+            variant="secondary"
+            icon={<HeartIcon className="mr-1 h-5 w-5" />}
+            className="font-paragraph font-semibold tracking-wider ">
+            Partner with us
+          </Button>
         </Link>
       </div>
     </>

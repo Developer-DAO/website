@@ -1,0 +1,24 @@
+{
+    "Headline": "Testimonials",
+    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+    "cards": [
+      {
+        "image": "https://picsum.photos/30/30",
+        "name": "Baby Doe",
+        "title": "Polygon Dev Rel",
+        "testimonial": "Nisi in id aute officia amet eu adipisicing reprehenderit voluptate ex nulla. Ea proident commodo do nisi. Id sint et nulla duis cillum ad aliquip ad irure aute fugiat. "
+      },
+      {
+        "image": "https://picsum.photos/30/30",
+        "name": "Jane Doe",
+        "title": "Doe Network",
+        "testimonial": "Velit dolore ex qui mollit ipsum eiusmod et officia culpa cillum in non ex aliquip. Enim est in velit non aliqua incididunt laboris ipsum nostrud et ad nostrud et. "
+      },
+      {
+        "image": "https://picsum.photos/30/30",
+        "name": "John Doe",
+        "title": "CEO at Doe Labs",
+        "testimonial": "Amet excepteur laboris do quis. Exercitation non incididunt incididunt dolor sit id in. Cillum exercitation id ipsum anim occaecat commodo. Nulla do ex aliqua labore non."
+      }
+    ]
+  }

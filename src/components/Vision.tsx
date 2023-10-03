@@ -1,4 +1,4 @@
-import SectionTitle from '@/components/sectionTitle';
+import SectionTitle from "@/components/sectionTitle";
 import {
   Body1,
   Body2,
@@ -11,7 +11,7 @@ import {
   Grid,
   Headline4,
   LearnIconsImage,
-  LinkIcon
+  LinkIcon,
 } from "@gordo-d/d-d-ui-components";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -29,53 +29,59 @@ const Vision: React.FC<IVisionProps> = (props) => {
   return (
     <React.Fragment>
       {/* OUR VISION */}
-      <section className="justify-center items-center flex flex-col my-40">
-        <SectionTitle headline={HomeConstants.OurVision.Headline} subheadline={HomeConstants.OurVision.SubHeadline}/>
-        
+      <section className="my-40 flex flex-col items-center justify-center">
+        <SectionTitle
+          headline={HomeConstants.OurVision.Headline}
+          subheadline={HomeConstants.OurVision.SubHeadline}
+        />
+
         <Grid>
-          <Card className="min-h-[320px] col-start-1 col-end-4 border-primary-grey border-2 backdrop-blur-lg">
+          <Card className="border-primary-grey col-start-1 col-end-4 min-h-[320px] border-2 backdrop-blur-lg">
             <Headline4 className="mb-3">/VISION</Headline4>
             <div className="flex flex-col gap-2 ">
-              <div className="border-neutral-700 border-2 p-2 rounded-full pl-12 gap-3 flex">
+              <div className="flex gap-3 rounded-full border-2 border-neutral-700 p-2 pl-12">
                 <Body1>😎</Body1>
                 <Body1>VIBE</Body1>
               </div>
-              <div className="border-neutral-700 border-2 p-2 rounded-full pl-12 gap-3 flex">
-                <Body1>😎</Body1>
+              <div className="flex gap-3 rounded-full border-2 border-neutral-700 p-2 pl-12">
+                <Body1>🧠</Body1>
                 <Body1>LEARN</Body1>
               </div>
-              <div className="border-neutral-700 border-2 p-2 rounded-full pl-12 gap-3 flex">
+              <div className="flex gap-3 rounded-full border-2 border-neutral-700 p-2 pl-12">
                 <Body1>😎</Body1>
                 <Body1>BUILD</Body1>
               </div>
-              <div className="border-neutral-700 border-2 p-2 rounded-full pl-12 gap-3 flex">
+              <div className="flex gap-3 rounded-full border-2 border-neutral-700 p-2 pl-12">
                 <Body1>😎</Body1>
                 <Body1>GOVERN</Body1>
               </div>
             </div>
           </Card>
 
-          <Card className="min-h-[320px] col-start-4 col-end-13 border-primary-grey border-2 backdrop-blur-lg flex justify-between">
-            <div className="w-1/4 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey col-start-4 col-end-13 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/4 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  😎
+                </div>
+                <Headline4 className="my-2">
                   {HomeConstants.OurVision.Vibe.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {HomeConstants.OurVision.Vibe.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={HomeConstants.OurVision.Vibe.link}>
-                <LinkIcon className="h-7 w-7 hover:rotate-45 transition-all" />
+                <LinkIcon className="h-7 w-7 transition-all hover:rotate-45" />
                 <Body2 color="neutral-600">Get involved</Body2>
               </Link>
             </div>
-            <div className="w-3/4 h-full relative">
-              <FridaysPanelImage className="absolute -top-8 -left-10 h-[500px] w-[480px] z-10" />
-              <FridaysPanelImage className="absolute shadow -top-20 left-24 h-[500px] w-[480px] z-30" />
-              <FridaysPanelImage className="absolute -top-10 left-60 h-[500px] w-[480px] z-20" />
+            <div className="relative h-full w-3/4">
+              <FridaysPanelImage className="absolute -left-10 -top-8 z-10 h-[500px] w-[480px]" />
+              <FridaysPanelImage className="absolute -top-20 left-24 z-30 h-[500px] w-[480px] shadow" />
+              <FridaysPanelImage className="absolute -top-10 left-60 z-20 h-[500px] w-[480px]" />
             </div>
           </Card>
 
@@ -84,67 +90,76 @@ const Vision: React.FC<IVisionProps> = (props) => {
            */}
           <Card
             noPadding
-            className="col-start-1 col-end-7 border-primary-grey border-2 backdrop-blur-lg flex justify-between min-h-[320px]">
-            <div className="w-1/3 gap-2 flex flex-col justify-between h-full p-6">
+            className="border-primary-grey col-start-1 col-end-7 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/3 flex-col justify-between gap-2 p-6">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  🧠
+                </div>
+                <Headline4 className="my-2">
                   {HomeConstants.OurVision.Learn.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {HomeConstants.OurVision.Learn.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={HomeConstants.OurVision.Learn.link}>
                 <LinkIcon className="h-7 w-7" />
                 <Body2 color="neutral-600">Get involved</Body2>
               </Link>
             </div>
-            <LearnIconsImage className="top-0 right-0 h-full w-1/3 z-10 mr-10" />
+            <LearnIconsImage className="right-0 top-0 z-10 mr-10 h-full w-1/3" />
           </Card>
 
-          <Card className="col-start-7 col-end-13 border-primary-grey border-2 backdrop-blur-lg flex justify-between min-h-[320px] relative">
-            <div className="w-1/3 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey relative col-start-7 col-end-13 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/3 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  🏗️
+                </div>
+                <Headline4 className="my-2">
                   {HomeConstants.OurVision.build.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {HomeConstants.OurVision.build.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={HomeConstants.OurVision.build.link}>
                 <LinkIcon className="h-7 w-7" />
                 <Body2 color="neutral-600">Get involved</Body2>
               </Link>
             </div>
-            <BuildPanelImage className="absolute top-0 -right-8 w-3/4 h-full z-10" />
+            <BuildPanelImage className="absolute -right-8 top-0 z-10 h-full w-3/4" />
           </Card>
 
-          <Card className="min-h-[320px] col-start-1 col-end-13 border-primary-grey border-2 backdrop-blur-lg flex justify-between">
-            <div className="w-1/4 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey col-start-1 col-end-13 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/4 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  👩‍⚖️
+                </div>
+                <Headline4 className="my-2">
                   {HomeConstants.OurVision.govern.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {HomeConstants.OurVision.govern.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={HomeConstants.OurVision.govern.link}>
                 <LinkIcon className="h-7 w-7" />
                 <Body2 color="neutral-600">Get involved</Body2>
               </Link>
             </div>
-            <div className="w-3/4 h-full relative">
-              <GovernPLeftImage className="absolute -top-8 -left-10 h-[500px] w-[480px] z-10" />
-              <GovernPCenterImage className="absolute shadow -top-20 left-24 h-[500px] w-[480px] z-30" />
-              <GovernPRightImage className="absolute -top-10 left-60 h-[500px] w-[480px] z-20" />
+            <div className="relative h-full w-3/4">
+              <GovernPLeftImage className="absolute -left-10 -top-8 z-10 h-[500px] w-[480px]" />
+              <GovernPCenterImage className="absolute -top-20 left-24 z-30 h-[500px] w-[480px] shadow" />
+              <GovernPRightImage className="absolute -top-10 left-60 z-20 h-[500px] w-[480px]" />
             </div>
           </Card>
         </Grid>

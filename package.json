@@ -11,7 +11,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ensdomains/ens-avatar": "^0.3.3",
     "@gordo-d/d-d-ui-components": "0.1.0",
+    "@rainbow-me/rainbowkit": "^1.0.11",
     "@types/airtable": "^0.10.1",
     "@types/node": "^20.7.0",
     "@types/react": "18.2.21",
@@ -20,12 +22,15 @@
     "autoprefixer": "10.4.15",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "framer-motion": "^10.16.4",
     "next": "13.4.19",
     "postcss": "8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "viem": "^1.14.0",
+    "wagmi": "^1.4.3"
   }
 }

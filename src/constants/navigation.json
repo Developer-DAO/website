@@ -1,0 +1,30 @@
+{
+  "ctas": { 
+    "handbook": "https://kempsterrrr.gitbook.io/developer-dao-docs/",
+    "getInTouch": "https://cal.com"
+ },
+  "navigation": [
+    {
+      "name": "What's Developer DAO",
+      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/"
+    },
+    {
+      "name": "Our Vision",
+      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/"
+    },
+    {
+      "name": "Partner with us",
+      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/"
+    },
+    {
+      "name": "Academy",
+      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/",
+      "external": true
+    },
+    {
+      "name": "Agency",
+      "link": "https://agency.developerdao.com",
+      "external": true
+    }
+  ]
+}

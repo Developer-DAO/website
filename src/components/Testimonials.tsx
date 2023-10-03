@@ -3,7 +3,7 @@ import {
   ArrowRightIcon,
   Body3,
   BodyHeadline,
-  Card
+  Card,
 } from "@gordo-d/d-d-ui-components";
 import cx from "classnames";
 import Image from "next/image";
@@ -26,8 +26,11 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
   return (
     <>
       {/* OUR TESTIMONIALS */}
-      <section className="justify-center items-center flex flex-col gap-6 my-40">
-        <SectionTitle headline={testimonials.Headline} subheadline={testimonials.SubHeadline}/>
+      <section className="my-40 flex flex-col items-center justify-center gap-6">
+        <SectionTitle
+          headline={testimonials.Headline}
+          subheadline={testimonials.SubHeadline}
+        />
         <Carousel
           className="mt-28"
           showArrows={false}
@@ -41,7 +44,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
             label: string
           ) => (
             <ArrowLeftIcon
-              className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28"
+              className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer"
               onClick={() => clickHandler()}
             />
           )}
@@ -51,31 +54,31 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
             label: string
           ) => (
             <ArrowRightIcon
-              className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2"
+              className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer"
               onClick={() => clickHandler()}
             />
           )}>
           {testimonials.cards.map((p, i) => {
             return (
-              <div key={i} className="w-full flex justify-center">
+              <div key={i} className="flex w-full justify-center">
                 <Card
                   noPadding
                   className={cx(
-                    "min-h-[320px] w-[600px] mb-32 border-primary-grey border-2 backdrop-blur-lg flex p-0 rounded-lg",
+                    "border-primary-grey mb-32 flex min-h-[320px] w-[600px] rounded-lg border-2 p-0 backdrop-blur-lg",
                     "gap-2"
                   )}>
-                  <div className="p-6 w-1/3 flex flex-col justify-end text-left">
-                    <div className="relative flex justify-center items-center rounded-full bg-neutral-800 overflow-hidden h-16 w-16 mb-3">
+                  <div className="flex w-1/3 flex-col justify-end p-6 text-left">
+                    <div className="relative mb-3 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-neutral-800">
                       <Image fill src={p.image} alt={p.name} />
                     </div>
                     <BodyHeadline className="">{p.name}</BodyHeadline>
                     <Body3
                       color="neutral-700"
-                      className="uppercase font-bold text-neutral-700">
+                      className="font-bold uppercase text-neutral-700">
                       {p.title}
                     </Body3>
                   </div>
-                  <div className="border-l-2 border-primary-grey p-6 rounded-lg">
+                  <div className="border-primary-grey rounded-lg border-l-2 p-6">
                     <Body3
                       color="neutral-700 max-w-[300px] text-left"
                       className="">

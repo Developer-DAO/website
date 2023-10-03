@@ -1,7 +1,6 @@
 import { colorClasses, theme, variantColorClasses } from '@gordo-d/d-d-ui-components';
 import type { Config } from 'tailwindcss';
 
-console.log('THEME =>     """" ',theme)
 
 const config: Config = {
   purge: ['./src/**/*.{js,ts,jsx,tsx,css}', './node_modules/@gordo-d/d-d-ui-components/**/*.{css,js,ts,jsx,tsx}'],

@@ -1,10 +1,10 @@
+import SectionTitle from "@/components/sectionTitle";
 import {
-  Body1,
   Body2,
-  BodyHeadline,
   BuildPanelImage,
   Card,
-  FridaysPanelImage,
+  CodeIcon,
+  DolarIcon,
   GovernPCenterImage,
   GovernPLeftImage,
   GovernPRightImage,
@@ -12,9 +12,12 @@ import {
   Headline4,
   LearnIconsImage,
   LinkIcon,
-  ShineImage,
-  StarShineImage,
+  PeopleIcon,
+  ThunderGreyIcon,
+  TicketIcon,
+  UniHatIcon,
 } from "@gordo-d/d-d-ui-components";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import PartnersConstants from "../constants/partners.json";
@@ -30,65 +33,69 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
   return (
     <>
       {/* OUR VISION */}
-      <section className="justify-center items-center flex flex-col my-40">
-        <div className="relative">
-          <div className="absolute -top-24 right-28">
-            <StarShineImage className="h-[250px] w-[250px]"></StarShineImage>
-          </div>
-          <div className="absolute -top-[250px] -left-2/3">
-            <ShineImage className="h-[600px] w-[600px]"></ShineImage>
-          </div>
-          <BodyHeadline className="font-paragraph relative">
-            {PartnersConstants.cardsSection.Headline}
-          </BodyHeadline>
-        </div>
-        <Body1>{PartnersConstants.cardsSection.SubHeadline}</Body1>
+      <section className="my-40 flex flex-col items-center justify-center">
+        <SectionTitle
+          headline={PartnersConstants.cardsSection.Headline}
+          subheadline={PartnersConstants.cardsSection.SubHeadline}
+        />
+
         <Grid>
-          <Card className="min-h-[320px] col-start-1 col-end-7 border-primary-grey border-2 backdrop-blur-lg">
-            <div className="w-1/4 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey col-start-1 col-end-7 min-h-[320px] border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/3 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  <ThunderGreyIcon />
+                </div>
+                <Headline4 className="my-2">
                   {PartnersConstants.cardsSection.preferred.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {PartnersConstants.cardsSection.preferred.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.preferred.link}>
-                <LinkIcon className="h-7 w-7 hover:rotate-45 transition-all" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <LinkIcon className="h-7 w-7 transition-all hover:rotate-45" />
+                <Body2 color="neutral-600">
+                  {PartnersConstants.cardsSection.preferred.linkName}
+                </Body2>
               </Link>
             </div>
-            <div className="w-3/4 h-full relative">
-              <FridaysPanelImage className="absolute -top-8 -left-10 h-[500px] w-[480px] z-10" />
-              <FridaysPanelImage className="absolute shadow -top-20 left-24 h-[500px] w-[480px] z-30" />
-              <FridaysPanelImage className="absolute -top-10 left-60 h-[500px] w-[480px] z-20" />
+            <div className="relative h-full w-1/2">
+              <div className="h-full w-full">
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src={"/prefferredPartner.svg"}
+                  alt={""}
+                />
+              </div>
             </div>
           </Card>
 
-          <Card className="min-h-[320px] col-start-7 col-end-13 border-primary-grey border-2 backdrop-blur-lg flex justify-between">
-            <div className="w-1/4 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey col-start-7 col-end-13 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/4 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  <CodeIcon />
+                </div>
+                <Headline4 className="my-2">
                   {PartnersConstants.cardsSection.hackathon.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {PartnersConstants.cardsSection.hackathon.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.hackathon.link}>
-                <LinkIcon className="h-7 w-7 hover:rotate-45 transition-all" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <LinkIcon className="h-7 w-7 transition-all hover:rotate-45" />
+                <Body2 color="neutral-600">{PartnersConstants.cardsSection.hackathon.linkName}</Body2>
               </Link>
             </div>
-            <div className="w-3/4 h-full relative">
-              <FridaysPanelImage className="absolute -top-8 -left-10 h-[500px] w-[480px] z-10" />
-              <FridaysPanelImage className="absolute shadow -top-20 left-24 h-[500px] w-[480px] z-30" />
-              <FridaysPanelImage className="absolute -top-10 left-60 h-[500px] w-[480px] z-20" />
+            <div className="relative h-full w-3/4">
+              <BuildPanelImage className="absolute -right-8 top-0 z-10 h-full w-3/4" />
             </div>
           </Card>
 
@@ -97,91 +104,103 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
        */}
           <Card
             noPadding
-            className="col-start-1 col-end-13 border-primary-grey border-2 backdrop-blur-lg flex justify-between min-h-[320px]">
-            <div className="w-1/3 gap-2 flex flex-col justify-between h-full p-6">
+            className="border-primary-grey col-start-1 col-end-13 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/3 flex-col justify-between gap-2 p-6">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  <PeopleIcon />
+                </div>
+                <Headline4 className="my-2">
                   {PartnersConstants.cardsSection.talent.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {PartnersConstants.cardsSection.talent.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.talent.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600">{PartnersConstants.cardsSection.talent.linkName}</Body2>
               </Link>
             </div>
-            <LearnIconsImage className="top-0 right-0 h-full w-1/3 z-10 mr-10" />
+            <LearnIconsImage className="right-0 top-0 z-10 mr-10 h-full w-1/3" />
           </Card>
 
-          <Card className="col-start-1 col-end-7 border-primary-grey border-2 backdrop-blur-lg flex justify-between min-h-[320px] relative">
-            <div className="w-1/3 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey relative col-start-1 col-end-7 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/3 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  <DolarIcon />
+                </div>
+                <Headline4 className="my-2">
                   {PartnersConstants.cardsSection.ventures.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {PartnersConstants.cardsSection.ventures.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.ventures.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600">{PartnersConstants.cardsSection.ventures.linkName}</Body2>
               </Link>
             </div>
-            <BuildPanelImage className="absolute top-0 -right-8 w-3/4 h-full z-10" />
+            <LearnIconsImage className="right-0 top-0 z-10 mr-10 h-full w-1/3" />
           </Card>
 
-          <Card className="min-h-[320px] col-start-7 col-end-13 border-primary-grey border-2 backdrop-blur-lg flex justify-between">
-            <div className="w-1/4 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey col-start-7 col-end-13 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/4 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  <TicketIcon />
+                </div>
+                <Headline4 className="my-2">
                   {PartnersConstants.cardsSection.events.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {PartnersConstants.cardsSection.events.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.events.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600">{PartnersConstants.cardsSection.events.linkName}</Body2>
               </Link>
             </div>
-            <div className="w-3/4 h-full relative">
-              <GovernPLeftImage className="absolute -top-8 -left-10 h-[500px] w-[480px] z-10" />
-              <GovernPCenterImage className="absolute shadow -top-20 left-24 h-[500px] w-[480px] z-30" />
-              <GovernPRightImage className="absolute -top-10 left-60 h-[500px] w-[480px] z-20" />
+            <div className="relative h-full w-3/4">
+              <GovernPLeftImage className="absolute -left-10 -top-8 z-10 h-[500px] w-[480px]" />
+              <GovernPCenterImage className="absolute -top-20 left-24 z-30 h-[500px] w-[480px] shadow" />
+              <GovernPRightImage className="absolute -top-10 left-60 z-20 h-[500px] w-[480px]" />
             </div>
           </Card>
 
-          <Card className="min-h-[320px] col-start-1 col-end-13 border-primary-grey border-2 backdrop-blur-lg flex justify-between">
-            <div className="w-1/4 gap-2 flex flex-col justify-between h-full">
+          <Card className="border-primary-grey col-start-1 col-end-13 flex min-h-[320px] justify-between border-2 backdrop-blur-lg">
+            <div className="flex h-full w-1/4 flex-col justify-between gap-2">
               <div>
-                <Headline4 className="mb-3">
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
+                  <UniHatIcon />
+                </div>
+                <Headline4 className="my-2">
                   {PartnersConstants.cardsSection.hackers.title}
                 </Headline4>
-                <Body1 color="neutral-700">
+                <Body2 color="neutral-700">
                   {PartnersConstants.cardsSection.hackers.subtitle}
-                </Body1>
+                </Body2>
               </div>
               <Link
-                className="flex gap-2 items-center"
+                className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.hackers.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600">{PartnersConstants.cardsSection.hackers.linkName}</Body2>
               </Link>
             </div>
-            <div className="w-3/4 h-full relative">
-              <GovernPLeftImage className="absolute -top-8 -left-10 h-[500px] w-[480px] z-10" />
-              <GovernPCenterImage className="absolute shadow -top-20 left-24 h-[500px] w-[480px] z-30" />
-              <GovernPRightImage className="absolute -top-10 left-60 h-[500px] w-[480px] z-20" />
+            <div className="relative h-full w-3/4">
+              <GovernPLeftImage className="absolute -left-10 -top-8 z-10 h-[500px] w-[480px]" />
+              <GovernPCenterImage className="absolute -top-20 left-24 z-30 h-[500px] w-[480px] shadow" />
+              <GovernPRightImage className="absolute -top-10 left-60 z-20 h-[500px] w-[480px]" />
             </div>
           </Card>
         </Grid>

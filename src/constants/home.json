@@ -1,105 +1,85 @@
 {
-    "headline": "BUIDL WEB3 WITH __ FRENS",
-    "subheadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
-    "whoIntro": "We are a..",
-    "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
-    "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
-    "OurVision":{
-        "Headline": "Our Vision",
-        "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
-        "Vision": [{
-
-        }],
-        "Vibe":{
-            "title": "/VIBE",
-            "subtitle": "Foster the diverse community needed to build a better, more equitable future Internet with VIBES.",
-            "link":"https://developerdao.com"
-        },
-        "Learn":{
-            "title": "/LEARN",
-            "subtitle": "Support members to LEARN the skills they need to contribute to that future.",
-            "link":"https://developerdao.com"
-        },
-        "build":{
-            "title": "/BUILD",
-            "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
-            "link":"https://developerdao.com"
-        },
-        "govern":{
-            "title": "/GOVERN",
-            "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
-            "link":"https://developerdao.com"
-        }
+  "headline": "BUIDL WEB3 WITH __ FRENS",
+  "subheadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+  "whoIntro": "We are a..",
+  "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
+  "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
+  "OurVision": {
+    "Headline": "Our Vision",
+    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+    "Vision": [
+      {
+        "name": "/VIBE",
+        "icon": "😎"
+      }
+    ],
+    "Vibe": {
+      "title": "/VIBE",
+      "subtitle": "Foster the diverse community needed to build a better, more equitable future Internet with VIBES.",
+      "link": "https://developerdao.com"
     },
-    "OurPartners":{
-        "Headline": "Our Partners",
-        "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
-        "link": "Developer DAO has brought together some of the most talented people on the web to build web3",
-        "partnersGold": [
-            {
-                "image":"https://picsum.photos/270/270",
-                "title":"Zerion",
-                "type":"Wallet Partner",
-                "description":"Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
-            },
-            {
-                "image":"https://picsum.photos/273/273",
-                "title":"Thirdweb",
-                "type":"Learning Partner",
-                "description":"Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
-            },
-            {
-                "image":"https://picsum.photos/271/271",
-                "title":"Fleek",
-                "type":"Infrastructure Partner",
-                "description":"Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us as we reshape the blockchain landscape together."
-            }
-        ],
-        "partnersSilver": [
-            {
-                "image":"https://picsum.photos/300/300",
-                "title":"ENS DAO",
-                "type":"Dao Partner"
-            },
-            {
-                "image":"https://picsum.photos/300/300",
-                "title":"Lens Protocol",
-                "type":"Dao Partner"
-            },
-            {
-                "image":"https://picsum.photos/300/300",
-                "title":"Fuel Network",
-                "type":"hackathon Partner"
-            },
-            {
-                "image":"https://picsum.photos/300/300",
-                "title":"Uma",
-                "type":"hackathon Partner"
-            }
-        ]
+    "Learn": {
+      "title": "/LEARN",
+      "subtitle": "Support members to LEARN the skills they need to contribute to that future.",
+      "link": "https://developerdao.com"
     },
-    "Testimonials": {
-        "Headline": "Testimonials",
-        "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
-        "cards":[
-            {
-                "image": "https://picsum.photos/30/30",
-                "name": "Baby Doe",
-                "title":"Polygon Dev Rel",
-                "testimonial": "Nisi in id aute officia amet eu adipisicing reprehenderit voluptate ex nulla. Ea proident commodo do nisi. Id sint et nulla duis cillum ad aliquip ad irure aute fugiat. "
-            },
-            {
-                "image": "https://picsum.photos/30/30",
-                "name": "Jane Doe",
-                "title":"Doe Network",
-                "testimonial": "Velit dolore ex qui mollit ipsum eiusmod et officia culpa cillum in non ex aliquip. Enim est in velit non aliqua incididunt laboris ipsum nostrud et ad nostrud et. "
-            },
-            {
-                "image": "https://picsum.photos/30/30",
-                "name": "John Doe",
-                "title":"CEO at Doe Labs",
-                "testimonial": "Amet excepteur laboris do quis. Exercitation non incididunt incididunt dolor sit id in. Cillum exercitation id ipsum anim occaecat commodo. Nulla do ex aliqua labore non."
-            }
-        ]
+    "build": {
+      "title": "/BUILD",
+      "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
+      "link": "https://developerdao.com"
+    },
+    "govern": {
+      "title": "/GOVERN",
+      "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+      "link": "https://developerdao.com"
     }
+  },
+  "OurPartners": {
+    "Headline": "Our Partners",
+    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+    "link": "Developer DAO has brought together some of the most talented people on the web to build web3",
+    "partnersGold": [
+      {
+        "image": "https://picsum.photos/270/270",
+        "title": "Zerion",
+        "type": "Wallet Partner",
+        "description": "Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
+      },
+      {
+        "image": "https://picsum.photos/273/273",
+        "title": "Thirdweb",
+        "type": "Learning Partner",
+        "description": "Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
+      },
+      {
+        "image": "https://picsum.photos/271/271",
+        "title": "Fleek",
+        "type": "Infrastructure Partner",
+        "description": "Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us as we reshape the blockchain landscape together."
+      }
+    ],
+    "partnersSilver": [
+      {
+        "image": "https://picsum.photos/300/300",
+        "title": "ENS DAO",
+        "type": "Dao Partner"
+      },
+      {
+        "image": "https://picsum.photos/300/300",
+        "title": "Lens Protocol",
+        "type": "Dao Partner"
+      },
+      {
+        "image": "https://picsum.photos/300/300",
+        "title": "Fuel Network",
+        "type": "hackathon Partner"
+      },
+      {
+        "image": "https://picsum.photos/300/300",
+        "title": "Uma",
+        "type": "hackathon Partner"
+      }
+    ]
+  }
+
 }
