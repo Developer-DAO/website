@@ -9,8 +9,8 @@ const IFooterDefaultProps = {};
 
 const Footer: React.FC<IFooterProps> = (props) => {
   return (
-    <section className="w-full h-40 flex justify-center bg-black">
-      <div className="mx-10 flex justify-between w-full backdrop-blur-sm rounded-t-2xl p-6 bg-gradient-to-l from-neutral-500/50 to-neutral-700/50">
+    <section className="w-full h-40 flex justify-center absolute bottom-0 left-0">
+      <div className="mx-10 flex justify-between w-full backdrop-blur-xs rounded-t-2xl p-6 bg-gradient-to-l from-neutral-500/10 to-neutral-700/10">
         <div>
           <DDLogoIcon className="h-16 w-16" />
           <Body3>Back to top</Body3>

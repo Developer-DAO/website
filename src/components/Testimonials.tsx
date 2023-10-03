@@ -3,15 +3,14 @@ import {
   ArrowRightIcon,
   Body3,
   BodyHeadline,
-  Card,
-  ShineImage,
-  StarShineImage,
+  Card
 } from "@gordo-d/d-d-ui-components";
 import cx from "classnames";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import SectionTitle from "./sectionTitle";
 type ITestimonialsProps = {
   //TODO: type
   testimonials: any;
@@ -28,22 +27,9 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
     <>
       {/* OUR TESTIMONIALS */}
       <section className="justify-center items-center flex flex-col gap-6 my-40">
-        <div className="relative text-center">
-          <div className="absolute -top-24 right-28">
-            <StarShineImage className="h-[250px] w-[250px]"></StarShineImage>
-          </div>
-          <div className="absolute -top-[250px] -left-2/3">
-            <ShineImage className="h-[600px] w-[600px]"></ShineImage>
-          </div>
-          <BodyHeadline className="font-paragraph relative mb-6">
-            {testimonials.Headline}
-          </BodyHeadline>
-          <Body3 color="neutral-700" className="font-paragraph relative">
-            {testimonials.SubHeadline}
-          </Body3>
-        </div>
+        <SectionTitle headline={testimonials.Headline} subheadline={testimonials.SubHeadline}/>
         <Carousel
-          className=""
+          className="mt-28"
           showArrows={false}
           swipeable
           showStatus={false}

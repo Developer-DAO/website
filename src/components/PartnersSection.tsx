@@ -1,12 +1,11 @@
 import {
+  Body1,
   Body2,
   Body3,
   BodyHeadline,
   Button,
   Card,
-  Grid,
-  ShineImage,
-  StarShineImage,
+  Grid
 } from "@gordo-d/d-d-ui-components";
 import { Attachment } from "airtable";
 import cx from "classnames";
@@ -14,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import HomeConstants from "../constants/home.json";
+import SectionTitle from "./sectionTitle";
 
 interface Partner {
   name: string;
@@ -43,20 +43,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
   return (
     <>
       <div className="justify-center items-center flex flex-col gap-6 my-40">
-        <div className="relative text-center">
-          <div className="absolute -top-24 right-28">
-            <StarShineImage className="h-[250px] w-[250px]"></StarShineImage>
-          </div>
-          <div className="absolute -top-[250px] -left-2/3">
-            <ShineImage className="h-[600px] w-[600px]"></ShineImage>
-          </div>
-          <BodyHeadline className="font-paragraph relative mb-6">
-            {HomeConstants.OurPartners.Headline}
-          </BodyHeadline>
-          <Body3 color="neutral-700" className="font-paragraph relative">
-            {HomeConstants.OurPartners.SubHeadline}
-          </Body3>
-        </div>
+        <SectionTitle headline={HomeConstants.OurPartners.Headline} subheadline={HomeConstants.OurPartners.SubHeadline}/>
         <Grid>
           <div className="col-start-1 col-end-13 flex md:flex-row flex-col gap-3">
             {goldPartners.map((gp) => (
@@ -76,11 +63,11 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
                   />
                 </div>
                 <BodyHeadline className="">{gp.name}</BodyHeadline>
-                <Body3
+                <Body1
                   color="neutral-700"
                   className="uppercase font-bold text-neutral-700">
                   {gp.variant}
-                </Body3>
+                </Body1>
                 <Body3 color="neutral-700" className="">
                   {gp.description}
                 </Body3>

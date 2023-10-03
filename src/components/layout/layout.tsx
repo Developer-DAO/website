@@ -16,7 +16,7 @@ const AppLayout = ({ children }: LayoutProps) => {
         <StarsBgImage className="w-full h-full"></StarsBgImage>
       </div>
       <TopBar />
-      <div className="bg-black top-0 w-full z-10">{children}</div>
+      <div className="bg-gradient-to-b from-primary-black to-neutral-900 top-0 w-full z-10 pb-60">{children}</div>
       <Footer />
     </article>
   );

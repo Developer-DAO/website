@@ -1,7 +1,7 @@
+import SectionTitle from '@/components/sectionTitle';
 import {
   Body1,
   Body2,
-  BodyHeadline,
   BuildPanelImage,
   Card,
   FridaysPanelImage,
@@ -11,9 +11,7 @@ import {
   Grid,
   Headline4,
   LearnIconsImage,
-  LinkIcon,
-  ShineImage,
-  StarShineImage,
+  LinkIcon
 } from "@gordo-d/d-d-ui-components";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -32,18 +30,8 @@ const Vision: React.FC<IVisionProps> = (props) => {
     <React.Fragment>
       {/* OUR VISION */}
       <section className="justify-center items-center flex flex-col my-40">
-        <div className="relative">
-          <div className="absolute -top-24 right-28">
-            <StarShineImage className="h-[250px] w-[250px]"></StarShineImage>
-          </div>
-          <div className="absolute -top-[250px] -left-2/3">
-            <ShineImage className="h-[600px] w-[600px]"></ShineImage>
-          </div>
-          <BodyHeadline className="font-paragraph relative">
-            {HomeConstants.OurVision.Headline}
-          </BodyHeadline>
-        </div>
-        <Body1>{HomeConstants.OurVision.SubHeadline}</Body1>
+        <SectionTitle headline={HomeConstants.OurVision.Headline} subheadline={HomeConstants.OurVision.SubHeadline}/>
+        
         <Grid>
           <Card className="min-h-[320px] col-start-1 col-end-4 border-primary-grey border-2 backdrop-blur-lg">
             <Headline4 className="mb-3">/VISION</Headline4>
