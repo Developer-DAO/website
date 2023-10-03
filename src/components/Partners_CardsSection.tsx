@@ -63,14 +63,12 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
               </Link>
             </div>
             <div className="relative h-full w-1/2">
-              <div className="h-full w-full">
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src={"/prefferredPartner.svg"}
-                  alt={""}
-                />
-              </div>
+              <Image
+                layout="fill"
+                objectFit="contain"
+                src={"/prefferredPartner.svg"}
+                alt={""}
+              />
             </div>
           </Card>
 
@@ -91,7 +89,9 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.hackathon.link}>
                 <LinkIcon className="h-7 w-7 transition-all hover:rotate-45" />
-                <Body2 color="neutral-600">{PartnersConstants.cardsSection.hackathon.linkName}</Body2>
+                <Body2 color="neutral-600">
+                  {PartnersConstants.cardsSection.hackathon.linkName}
+                </Body2>
               </Link>
             </div>
             <div className="relative h-full w-3/4">
@@ -121,7 +121,9 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.talent.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">{PartnersConstants.cardsSection.talent.linkName}</Body2>
+                <Body2 color="neutral-600">
+                  {PartnersConstants.cardsSection.talent.linkName}
+                </Body2>
               </Link>
             </div>
             <LearnIconsImage className="right-0 top-0 z-10 mr-10 h-full w-1/3" />
@@ -144,7 +146,9 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.ventures.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">{PartnersConstants.cardsSection.ventures.linkName}</Body2>
+                <Body2 color="neutral-600">
+                  {PartnersConstants.cardsSection.ventures.linkName}
+                </Body2>
               </Link>
             </div>
             <LearnIconsImage className="right-0 top-0 z-10 mr-10 h-full w-1/3" />
@@ -167,13 +171,18 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.events.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">{PartnersConstants.cardsSection.events.linkName}</Body2>
+                <Body2 color="neutral-600">
+                  {PartnersConstants.cardsSection.events.linkName}
+                </Body2>
               </Link>
             </div>
-            <div className="relative h-full w-3/4">
-              <GovernPLeftImage className="absolute -left-10 -top-8 z-10 h-[500px] w-[480px]" />
-              <GovernPCenterImage className="absolute -top-20 left-24 z-30 h-[500px] w-[480px] shadow" />
-              <GovernPRightImage className="absolute -top-10 left-60 z-20 h-[500px] w-[480px]" />
+            <div className="flex h-full w-1/2 justify-end">
+              <Image
+                layout="fill"
+                objectFit="contain"
+                src={"/eventsCardImage.svg"}
+                alt={""}
+              />
             </div>
           </Card>
 
@@ -194,7 +203,9 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="flex items-center gap-2"
                 href={PartnersConstants.cardsSection.hackers.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">{PartnersConstants.cardsSection.hackers.linkName}</Body2>
+                <Body2 color="neutral-600">
+                  {PartnersConstants.cardsSection.hackers.linkName}
+                </Body2>
               </Link>
             </div>
             <div className="relative h-full w-3/4">

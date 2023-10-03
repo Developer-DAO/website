@@ -46,7 +46,7 @@ const Footer: React.FC<IFooterProps> = (props) => {
         </div>
 
         <div className="flex flex-col items-end gap-3">
-          <Body1 className="text-xl font-light">Developer DAO</Body1>
+          <Body1 className="text-xl font-extralight">Developer DAO</Body1>
           <div className="flex gap-2">
             <Link href={"https://twitter.com/developerdao"} target="_blank">
               <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-700 p-3">

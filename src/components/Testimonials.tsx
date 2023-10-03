@@ -58,7 +58,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
               onClick={() => clickHandler()}
             />
           )}>
-          {testimonials.cards.map((p, i) => {
+          {testimonials.cards.map((p: any, i: number) => {
             return (
               <div key={i} className="flex w-full justify-center">
                 <Card
