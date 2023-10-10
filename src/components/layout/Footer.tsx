@@ -9,7 +9,7 @@ import {
 } from "@gordo-d/d-d-ui-components";
 import Link from "next/link";
 import React from "react";
-import navData from "../../constants/navigation.json";
+import navData from "../../constants/footer.json";
 type IFooterProps = object;
 
 const IFooterDefaultProps = {};
@@ -17,13 +17,13 @@ const IFooterDefaultProps = {};
 const Footer: React.FC<IFooterProps> = (props) => {
   return (
     <section className="absolute bottom-0 left-0 flex h-40 w-full justify-center">
-      <div className="backdrop-blur-xs mx-10 flex w-full justify-between rounded-t-2xl bg-gradient-to-l from-neutral-500/10 to-neutral-700/10 p-6">
+      <div className="backdrop-blur-xs mx-4 flex w-full flex-col items-center justify-center gap-6 rounded-t-2xl bg-gradient-to-l from-neutral-500/10 to-neutral-700/10 p-3 md:mx-10 md:flex-row md:justify-between md:p-6">
         <div>
           <DDLogoIcon className="h-16 w-16" />
         </div>
         <div className="flex h-full flex-col items-center justify-between">
-          <ul className="font-secondary hidden gap-8 md:flex">
-            {navData.navigation.map((navEl, i) => (
+          <ul className="font-paragraph hidden gap-8 md:flex">
+            {navData.links.map((navEl, i) => (
               <Link
                 className="flex gap-2"
                 key={i}
@@ -46,7 +46,9 @@ const Footer: React.FC<IFooterProps> = (props) => {
         </div>
 
         <div className="flex flex-col items-end gap-3">
-          <Body1 className="text-xl font-extralight">Developer DAO</Body1>
+          <Body1 className="hidden text-xl font-extralight md:block">
+            Developer DAO
+          </Body1>
           <div className="flex gap-2">
             <Link href={"https://twitter.com/developerdao"} target="_blank">
               <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-700 p-3">

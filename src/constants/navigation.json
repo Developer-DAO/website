@@ -1,24 +1,25 @@
 {
-  "ctas": { 
-    "handbook": "https://kempsterrrr.gitbook.io/developer-dao-docs/",
-    "getInTouch": "https://cal.com"
- },
+  "ctas": {
+    "handbook": "https://handbook.developerdao.com/",
+    "getInTouch": "https://airtable.com/appDMMIARfSeiovpk/shrZExypPetXEx6Ox"
+  },
   "navigation": [
     {
       "name": "What's Developer DAO",
-      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/"
+      "link": "#"
     },
     {
       "name": "Our Vision",
-      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/"
+      "link": "#"
     },
     {
-      "name": "Partner with us",
-      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/"
+      "name": "Jobs",
+      "link": "https://www.edenprotocol.app/developer-dao/jobs",
+      "external": true
     },
     {
       "name": "Academy",
-      "link": "https://kempsterrrr.gitbook.io/developer-dao-docs/",
+      "link": "https://academy.developerdao.com",
       "external": true
     },
     {

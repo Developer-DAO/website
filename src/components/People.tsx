@@ -2,13 +2,18 @@ import React, { useEffect } from "react";
 import { AccountAvatar } from "./AccountAvatar";
 
 type D_D_IPeopleProps = {
-  ensImages?: string[];
+  community?: {
+    Name:string, 
+    ENS: string,
+    avatar?: string,
+    name?: string,
+  }[];
 };
 
 const D_D_IPeopleDefaultProps = {};
 
 const D_D_People: React.FC<D_D_IPeopleProps> = (props) => {
-  const { ensImages } = props;
+  const { community } = props;
 
   useEffect(() => {}, []);
 
@@ -16,13 +21,13 @@ const D_D_People: React.FC<D_D_IPeopleProps> = (props) => {
     <>
       {/* PEOPLE */}
       <section className="mb-20 flex flex-wrap items-center justify-center gap-4 p-10">
-        {ensImages?.map((ens: any, i) => (
+        {community?.map((p: any, i) => (
           <div key={i} className="h-20 w-20 rounded-full">
-            <AccountAvatar
-              ensImage={ens.avatar}
-              address={ens.name}
+            {p.avatar && <AccountAvatar
+              ensImage={p.avatar}
+              address={p.name}
               size={80}
-            />
+            />}
           </div>
         ))}
       </section>

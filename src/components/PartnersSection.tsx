@@ -54,7 +54,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
               <Card
                 key={gp.name}
                 className={cx(
-                  "flex min-h-[320px] w-full border-2 grayscale  backdrop-blur-lg transition-all hover:grayscale-0",
+                  "flex min-h-[320px] w-full border-2 grayscale transition-all hover:grayscale-0",
                   "flex-col gap-2"
                 )}>
                 <div className="relative flex h-28 w-28  justify-center overflow-hidden ">
@@ -80,14 +80,14 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
           </div>
           <div
             className={cx(
-              "my-10 flex justify-center",
+              "my-10 flex flex-wrap justify-center gap-10 md:flex-row",
               "col-start-1 col-end-13"
             )}>
             {silverPartners.map((p, i) => {
               return (
                 <div
                   key={i}
-                  className="flex min-w-[200px] flex-col items-center gap-2 grayscale transition-all hover:grayscale-0">
+                  className="flex min-w-[150px] flex-col items-center gap-2 grayscale transition-all hover:grayscale-0">
                   <div className="relative flex h-32 w-32 items-center justify-center overflow-hidden ">
                     <Image
                       layout={"fill"}

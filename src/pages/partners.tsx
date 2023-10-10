@@ -1,5 +1,4 @@
 import PartnersSection from "@/components/PartnersSection";
-import PartnersCardsSection from "@/components/Partners_CardsSection";
 import Testimonials from "@/components/Testimonials";
 import AppLayout from "@/components/layout/layout";
 import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
@@ -12,10 +11,9 @@ import {
   ThunderIcon,
 } from "@gordo-d/d-d-ui-components";
 import { motion } from "framer-motion";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import Link from "next/link";
-import { ReactElement, useEffect } from "react";
+import { ReactElement } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigationData from "../constants/navigation.json";
 import PartnersConstants from "../constants/partners.json";
@@ -23,16 +21,14 @@ import PartnersConstants from "../constants/partners.json";
 type IPartnersPageProps = {
   // TODO: type
   partners: any[];
+  partnerTestimonials: any[];
 };
 
 const IPartnersPageDefaultProps = {};
 
 const PartnersPage = (props: IPartnersPageProps) => {
-  const { partners } = props;
-  const headLinePartners = partners
-    ? partners.find((partner) => partner.name === "headline")
-    : [];
-  useEffect(() => {}, []);
+  const { partners, partnerTestimonials } = props;
+  const headLinePartners = partners;
 
   return (
     <>
@@ -41,7 +37,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
 
         <div className="w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
-          <section className="relative z-30 flex min-h-screen flex-col items-center justify-center gap-6">
+          <section className="relative z-30 flex min-h-screen w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -68,7 +64,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 />
               </motion.div>
             </div>
-            <div className="z-50 flex flex-col items-center justify-center gap-2">
+            <div className="z-50 m-10 flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -86,7 +82,9 @@ const PartnersPage = (props: IPartnersPageProps) => {
                   {PartnersConstants.headline}
                 </Headline1>
               </div>
-              <Body2 className="font-paragraph mb-6">
+              <Body2
+                color="neutral-600"
+                className="font-paragraph mb-6 px-10 md:px-0">
                 {PartnersConstants.subheadline}
               </Body2>
               <div className="flex gap-4">
@@ -105,29 +103,30 @@ const PartnersPage = (props: IPartnersPageProps) => {
             </div>
           </section>
 
-          {/* partners */}
-          <section className="my-20 flex w-full items-center justify-center gap-36 p-10">
-            {headLinePartners.image.map(
-              (p: { url: string | StaticImport }, i: any) => (
-                <div
+          <section className="relative z-40 my-20 flex w-screen overflow-x-auto overflow-y-hidden ">
+            <div className="inline-flex p-10">
+              {partners.map((p: any, i: any) => (
+                <Link
                   key={i}
-                  className="relative flex h-[100px] w-[300px] items-center justify-center overflow-hidden grayscale transition-all hover:grayscale-0">
-                  <Image
-                    layout={"fill"}
-                    objectFit={"contain"}
-                    src={p.url}
-                    alt={""}
-                  />
-                </div>
-              )
-            )}
+                  className="relative mx-4 flex h-[70px] w-[150px] items-center justify-center grayscale transition-all hover:grayscale-0  md:mx-6 md:h-[85px] md:w-[300px]"
+                  href={p.URL ? p.URL : ""}
+                  target="_blank">
+                  {p.image[1].url && (
+                    <Image
+                      layout={"fill"}
+                      objectFit={"contain"}
+                      src={p.image[1].url}
+                      alt={""}
+                    />
+                  )}
+                </Link>
+              ))}
+            </div>
           </section>
-
-          <PartnersCardsSection />
 
           <PartnersSection partners={partners} />
 
-          <Testimonials testimonials={PartnersConstants.Testimonials} />
+          <Testimonials testimonialsData={partnerTestimonials} />
 
           {/* WE ARE... */}
           <section className="mb-20 flex justify-center">
@@ -159,10 +158,14 @@ export async function getStaticProps() {
   const partners = await fetchFromAirtable({
     tableName: "Partners",
   });
+  const partnerTestimonials = await fetchFromAirtable({
+    tableName: "PartnerTestimonials",
+  });
 
   return {
     props: {
       partners,
+      partnerTestimonials,
     },
     // revalidate: 10,
   };

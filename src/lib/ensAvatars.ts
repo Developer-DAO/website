@@ -23,13 +23,18 @@ export async function resolveEnsNamesToAvatars(
 
   let avatars: any = [];
   for (const ensName of ensNames) {
-    const avatarURI = await avt.getAvatar("odrog.eth", {
-      /* jsdomWindow: jsdom (on nodejs) */
-    });
-    console.log(avatarURI);
-
-    avatars.push({ avatar: avatarURI, name: ensName });
+    try {
+      const avatarURI = await avt.getAvatar(ensName, {
+        /* jsdomWindow: jsdom (on nodejs) */
+      });
+      console.log(avatarURI);
+      avatars.push({ avatar: avatarURI, name: ensName });
+    } catch (error) {
+      console.error(`Failed to resolve avatar for ${ensName}:`, error);
+      // handle error, e.g. push default avatar or skip this ensName
+    }
   }
+  
 
   return avatars;
 }

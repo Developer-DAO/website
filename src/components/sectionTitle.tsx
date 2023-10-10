@@ -25,9 +25,13 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       <div className="absolute -top-[250px] left-16">
         <ShineImage className="h-[600px] w-[600px]" />
       </div>
-      <BodyHeadline className="font-secondary relative mb-6">
+
+      <BodyHeadline
+        style={{ fontSize: 40 }}
+        className="font-paragraph relative mb-6 text-4xl">
         {headline}
       </BodyHeadline>
+
       <Body1 color="neutral-600" className="font-paragraph relative ">
         {subheadline}
       </Body1>

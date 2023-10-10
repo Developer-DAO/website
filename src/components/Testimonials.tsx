@@ -10,29 +10,36 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import testimonials from "../constants/testimonials.json";
 import SectionTitle from "./sectionTitle";
+
 type ITestimonialsProps = {
   //TODO: type
-  testimonials: any;
+  testimonialsData: {
+    Who: string;
+    Image: [{ url?: string }];
+    Testimonial: string;
+    WorkTitle: string;
+  }[];
 };
 
 const ITestimonialsDefaultProps = {};
 
 const Testimonials: React.FC<ITestimonialsProps> = (props) => {
-  const { testimonials } = props;
+  const { testimonialsData } = props;
 
   useEffect(() => {}, []);
 
   return (
     <>
       {/* OUR TESTIMONIALS */}
-      <section className="my-40 flex flex-col items-center justify-center gap-6">
+      <section className="my-10 flex flex-col items-center justify-center gap-6 md:my-40">
         <SectionTitle
           headline={testimonials.Headline}
           subheadline={testimonials.SubHeadline}
         />
         <Carousel
-          className="mt-28"
+          className="mt-10 p-5 md:mt-28"
           showArrows={false}
           swipeable
           showStatus={false}
@@ -45,7 +52,10 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
           ) => (
             <ArrowLeftIcon
               className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer"
-              onClick={() => clickHandler()}
+              onClick={() => {
+                console.log("Arrow clicked!");
+                clickHandler();
+              }}
             />
           )}
           renderArrowNext={(
@@ -58,31 +68,31 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
               onClick={() => clickHandler()}
             />
           )}>
-          {testimonials.cards.map((p: any, i: number) => {
+          {testimonialsData.map((t: any, i: number) => {
             return (
               <div key={i} className="flex w-full justify-center">
                 <Card
                   noPadding
                   className={cx(
-                    "border-primary-grey mb-32 flex min-h-[320px] w-[600px] rounded-lg border-2 p-0 backdrop-blur-lg",
+                    "bg-white/05 mb-32 flex min-h-[320px] w-full flex-col rounded-lg border-2 p-0 backdrop-blur md:w-[600px] md:flex-row",
                     "gap-2"
                   )}>
-                  <div className="flex w-1/3 flex-col justify-end p-6 text-left">
+                  <div className="flex w-full flex-col justify-end p-6 text-left md:w-1/3">
                     <div className="relative mb-3 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-neutral-800">
-                      <Image fill src={p.image} alt={p.name} />
+                      <Image fill src={t.Image[0].url} alt={t.Title} />
                     </div>
-                    <BodyHeadline className="">{p.name}</BodyHeadline>
+                    <BodyHeadline className="">{t.Who}</BodyHeadline>
                     <Body3
                       color="neutral-700"
                       className="font-bold uppercase text-neutral-700">
-                      {p.title}
+                      {t.WorkTitle}
                     </Body3>
                   </div>
-                  <div className="border-primary-grey rounded-lg border-l-2 p-6">
+                  <div className="border-primary-grey/20 rounded-lg p-6 md:border-l-2">
                     <Body3
                       color="neutral-700 max-w-[300px] text-left"
                       className="">
-                      {p.testimonial}
+                      {t.Testimonial}
                     </Body3>
                   </div>
                 </Card>

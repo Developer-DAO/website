@@ -1,23 +1,19 @@
-{"links":[
+{
+  "links": [
     {
-        "name":"What's Developer DAO",
-        "link":""
-},
+      "name": "Jobs",
+      "link": "https://www.edenprotocol.app/developer-dao/jobs",
+      "external": true
+    },
     {
-        "name":"Our Vision",
-        "link":""
-},
+      "name": "Academy",
+      "link": "https://academy.developerdao.com",
+      "external": true
+    },
     {
-        "name":"Partner with us",
-        "link":""
-},
-    {
-        "name":"Academy",
-        "link":""
-},
-    {
-        "name":"Agency",
-        "link":"https://agency.developerdao.com"
+      "name": "Agency",
+      "link": "https://agency.developerdao.com",
+      "external": true
+    }
+  ]
 }
-    ]}
-    
