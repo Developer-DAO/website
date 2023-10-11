@@ -126,8 +126,14 @@ const HomePage = (props: any) => {
             </div>
           </section>
 
-          <div className="mb-20">
-            <D_D_People community={communityData} />
+          <div className="mb-20 flex w-full justify-center">
+            <div className=" max-w-7xl">
+              <D_D_People
+                showCount={25}
+                className="justify-center gap-6 p-6"
+                community={communityData}
+              />
+            </div>
           </div>
 
           {/* WE ARE... */}
