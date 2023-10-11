@@ -24,7 +24,7 @@ export const fetchFromAirtable = async ({
       // TODO: types
       .firstPage((err, records: any) => {
         if (err) return reject(err);
-        resolve(records.map((record:any) => record.fields));
+        resolve(records.map((record: any) => record.fields));
       });
   });
 };

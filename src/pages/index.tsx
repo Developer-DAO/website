@@ -21,7 +21,6 @@ import Link from "next/link";
 import AppLayout from "../components/layout/layout";
 import HomeConstants from "../constants/home.json";
 import navigation from "../constants/navigation.json";
-import TestimonialsData from "../constants/testimonials.json";
 
 // interface Record {
 //   [key: string]: any;
@@ -34,7 +33,10 @@ import TestimonialsData from "../constants/testimonials.json";
 const HomePage = (props: any) => {
   const { communityTestimonials, partners, communityData, community } = props;
   console.log("🚀 ~ file: index.tsx:37 ~ HomePage ~ partners:", partners);
-  console.log("🚀 ~ file: index.tsx:37 ~ HomePage ~ communityData:", communityData);
+  console.log(
+    "🚀 ~ file: index.tsx:37 ~ HomePage ~ communityData:",
+    communityData
+  );
   console.log(
     "🚀 ~ file: index.tsx:37 ~ HomePage ~ communityTestimonials:",
     communityTestimonials
@@ -124,7 +126,9 @@ const HomePage = (props: any) => {
             </div>
           </section>
 
-          <D_D_People community={communityData} />
+          <div className="mb-20">
+            <D_D_People community={communityData} />
+          </div>
 
           {/* WE ARE... */}
           <section className="flex justify-center ">

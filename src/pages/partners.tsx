@@ -1,4 +1,4 @@
-import PartnersSection from "@/components/PartnersSection";
+import PartnersCardsSection from "@/components/Partners_CardsSection";
 import Testimonials from "@/components/Testimonials";
 import AppLayout from "@/components/layout/layout";
 import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
@@ -17,17 +17,19 @@ import { ReactElement } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigationData from "../constants/navigation.json";
 import PartnersConstants from "../constants/partners.json";
+import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
 
 type IPartnersPageProps = {
   // TODO: type
   partners: any[];
   partnerTestimonials: any[];
+  communityData: any[];
 };
 
 const IPartnersPageDefaultProps = {};
 
 const PartnersPage = (props: IPartnersPageProps) => {
-  const { partners, partnerTestimonials } = props;
+  const { partners, partnerTestimonials, communityData } = props;
   const headLinePartners = partners;
 
   return (
@@ -124,7 +126,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
             </div>
           </section>
 
-          <PartnersSection partners={partners} />
+          <PartnersCardsSection communityData={communityData} />
 
           <Testimonials testimonialsData={partnerTestimonials} />
 
@@ -161,11 +163,28 @@ export async function getStaticProps() {
   const partnerTestimonials = await fetchFromAirtable({
     tableName: "PartnerTestimonials",
   });
+  const community = await fetchFromAirtable({
+    tableName: "Community",
+  });
+  const validCommunity = community.filter((p) => Boolean(p.ENS));
+
+  const providerUrl = process.env.POKTRPC_MAINNET ?? "";
+  // Extract ENS names from the community data
+  const ensNames = validCommunity.map((p) => p.ENS);
+
+  // Resolve ENS names to get additional data
+  const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
+
+  const communityData = community.map((member, index) => ({
+    ...member,
+    ...resolvedEnsData[index],
+  }));
 
   return {
     props: {
       partners,
       partnerTestimonials,
+      communityData,
     },
     // revalidate: 10,
   };

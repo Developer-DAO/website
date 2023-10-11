@@ -16,10 +16,10 @@ const IFooterDefaultProps = {};
 
 const Footer: React.FC<IFooterProps> = (props) => {
   return (
-    <section className="absolute bottom-0 left-0 flex h-40 w-full justify-center">
-      <div className="backdrop-blur-xs mx-4 flex w-full flex-col items-center justify-center gap-6 rounded-t-2xl bg-gradient-to-l from-neutral-500/10 to-neutral-700/10 p-3 md:mx-10 md:flex-row md:justify-between md:p-6">
+    <section className="absolute bottom-0 left-0 flex h-auto w-full justify-center md:h-40">
+      <div className="mx-4 flex w-full flex-col items-center justify-center gap-6 rounded-t-2xl bg-gradient-to-l from-neutral-500/10 to-neutral-700/10 p-3 py-5 backdrop-blur md:mx-10 md:flex-row md:justify-between md:p-6">
         <div>
-          <DDLogoIcon className="h-16 w-16" />
+          <DDLogoIcon className="h-10 w-10 md:h-16 md:w-16" />
         </div>
         <div className="flex h-full flex-col items-center justify-between">
           <ul className="font-paragraph hidden gap-8 md:flex">
@@ -40,14 +40,14 @@ const Footer: React.FC<IFooterProps> = (props) => {
               </Link>
             ))}
           </ul>
-          <Body3 color={"neutral-600"} className="">
+          <Body3 color={"neutral-600"} className="hidden md:block">
             Built with ❤️️ at Agency
           </Body3>
         </div>
 
-        <div className="flex flex-col items-end gap-3">
-          <Body1 className="hidden text-xl font-extralight md:block">
-            Developer DAO
+        <div className="flex flex-col items-center gap-3 md:items-end">
+          <Body1 className="text-center font-extralight md:block">
+            Follow us
           </Body1>
           <div className="flex gap-2">
             <Link href={"https://twitter.com/developerdao"} target="_blank">
@@ -67,6 +67,9 @@ const Footer: React.FC<IFooterProps> = (props) => {
             </Link>
           </div>
         </div>
+        <Body3 color={"neutral-600"} className=" md:hidden">
+          Built with 🤍 at Agency
+        </Body3>
       </div>
     </section>
   );

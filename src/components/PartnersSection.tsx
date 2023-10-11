@@ -22,6 +22,7 @@ interface Partner {
   status: string;
   image: Attachment[];
   description?: string;
+  URL?: string;
 }
 
 type IPartnersSectionProps = {
@@ -51,31 +52,32 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
         <Grid>
           <div className="col-start-1 col-end-13 flex flex-col gap-3 md:flex-row">
             {goldPartners.map((gp) => (
-              <Card
-                key={gp.name}
-                className={cx(
-                  "flex min-h-[320px] w-full border-2 grayscale transition-all hover:grayscale-0",
-                  "flex-col gap-2"
-                )}>
-                <div className="relative flex h-28 w-28  justify-center overflow-hidden ">
-                  <Image
-                    className=""
-                    layout={"fill"}
-                    objectFit={"contain"}
-                    src={gp.image[0].url}
-                    alt={gp.name}
-                  />
-                </div>
-                <BodyHeadline className="">{gp.name}</BodyHeadline>
-                <Body1
-                  color="neutral-700"
-                  className="font-bold uppercase text-neutral-700">
-                  {gp.variant}
-                </Body1>
-                <Body3 color="neutral-700" className="">
-                  {gp.description}
-                </Body3>
-              </Card>
+              <Link key={gp.name} href={gp.URL ? gp.URL : ""}>
+                <Card
+                  className={cx(
+                    "flex min-h-[320px] w-full border-2 grayscale transition-all hover:grayscale-0",
+                    "flex-col gap-2"
+                  )}>
+                  <div className="relative flex h-28 w-28  justify-center overflow-hidden ">
+                    <Image
+                      className=""
+                      layout={"fill"}
+                      objectFit={"contain"}
+                      src={gp.image[0].url}
+                      alt={gp.name}
+                    />
+                  </div>
+                  <BodyHeadline className="">{gp.name}</BodyHeadline>
+                  <Body1
+                    color="neutral-700"
+                    className="font-bold uppercase text-neutral-700">
+                    {gp.variant}
+                  </Body1>
+                  <Body3 color="neutral-700" className="">
+                    {gp.description}
+                  </Body3>
+                </Card>
+              </Link>
             ))}
           </div>
           <div
@@ -85,24 +87,24 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
             )}>
             {silverPartners.map((p, i) => {
               return (
-                <div
-                  key={i}
-                  className="flex min-w-[150px] flex-col items-center gap-2 grayscale transition-all hover:grayscale-0">
-                  <div className="relative flex h-32 w-32 items-center justify-center overflow-hidden ">
-                    <Image
-                      layout={"fill"}
-                      objectFit={"contain"}
-                      src={p.image[0].url}
-                      alt={p.name}
-                    />
+                <Link key={p.name} href={p.URL ? p.URL : ""}>
+                  <div className="flex min-w-[150px] flex-col items-center gap-2 grayscale transition-all ease-in-out hover:grayscale-0">
+                    <div className="relative flex h-32 w-32 items-center justify-center overflow-hidden ">
+                      <Image
+                        layout={"fill"}
+                        objectFit={"contain"}
+                        src={p.image[0].url}
+                        alt={p.name}
+                      />
+                    </div>
+                    <Body2 className="text-center">{p.name}</Body2>
+                    <Body3
+                      color="neutral-700"
+                      className="text-center font-bold uppercase text-neutral-700">
+                      {p.variant}
+                    </Body3>
                   </div>
-                  <Body2 className="text-center">{p.name}</Body2>
-                  <Body3
-                    color="neutral-700"
-                    className="text-center font-bold uppercase text-neutral-700">
-                    {p.variant}
-                  </Body3>
-                </div>
+                </Link>
               );
             })}
           </div>
