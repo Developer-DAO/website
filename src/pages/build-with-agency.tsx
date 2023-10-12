@@ -1,4 +1,4 @@
-import SEO from "@gordo-d/d-d-ui-components";
+import SEO from "@/components/SEO";
 import React, { useEffect } from "react";
 
 type IAgencyRedirectProps = {};
