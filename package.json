@@ -15,7 +15,7 @@
     "@gordo-d/d-d-ui-components": "0.1.2",
     "@rainbow-me/rainbowkit": "^1.0.11",
     "@types/airtable": "^0.10.1",
-    "@types/node": "^20.7.0",
+    "@types/node": "20.6.0",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "airtable": "^0.12.2",
@@ -33,5 +33,7 @@
     "viem": "^1.14.0",
     "wagmi": "^1.4.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "ts-loader": "^9.5.0"
+  }
 }

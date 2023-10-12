@@ -1,22 +1,23 @@
 import { StarsBgImage } from "@gordo-d/d-d-ui-components";
-import { ReactNode } from "react";
-import Footer from "../../website/src/components/layout/Footer";
-import { TopBar } from "../../website/src/components/layout/TopBar";
+import Footer from "./Footer";
+import { TopBar } from "./TopBar";
 
 export interface LayoutProps {
-  children: ReactNode;
+  children: any;
 }
 
 const AppLayout = ({ children }: LayoutProps) => {
   return (
-    <article className="w-screen relative h-auto overflow-hidden">
+    <article className="relative h-auto w-screen overflow-hidden">
       <div
-        className="absolute top-0 h-[700vh] left-0 w-screen
-      z-0">
-        <StarsBgImage className="w-full h-full"></StarsBgImage>
+        className="absolute left-0 top-0 z-0 h-[700vh]
+      w-screen">
+        <StarsBgImage className="h-full w-full"></StarsBgImage>
       </div>
       <TopBar />
-      <div className="bg-gradient-to-b from-primary-black to-neutral-900 top-0 w-full z-10 pb-60">{children}</div>
+      <div className="from-primary-black top-0 z-10 w-full bg-gradient-to-b to-neutral-900 pb-60">
+        {children}
+      </div>
       <Footer />
     </article>
   );

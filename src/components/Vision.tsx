@@ -84,7 +84,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 </Body2>
               </div>
               <Link
-                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:p-0 md:relative"
+                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={HomeConstants.OurVision.Vibe.link}>
                 <LinkIcon className="h-7 w-7 transition-all hover:rotate-45" />
                 <Body2 color="neutral-600">Get involved</Body2>
@@ -116,7 +116,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 </Body2>
               </div>
               <Link
-                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:p-0 md:relative"
+                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-6"
                 href={HomeConstants.OurVision.Learn.link}>
                 <LinkIcon className="h-7 w-7" />
                 <Body2 color="neutral-600">Get involved</Body2>
@@ -140,7 +140,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 </Body2>
               </div>
               <Link
-                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:p-0 md:relative"
+                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={HomeConstants.OurVision.build.link}>
                 <LinkIcon className="h-7 w-7" />
                 <Body2 color="neutral-600">Get involved</Body2>
@@ -164,7 +164,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 </Body2>
               </div>
               <Link
-                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:p-0 md:relative"
+                className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={HomeConstants.OurVision.govern.link}>
                 <LinkIcon className="h-7 w-7" />
                 <Body2 color="neutral-600">Get involved</Body2>

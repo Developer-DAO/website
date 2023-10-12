@@ -8,13 +8,9 @@ import {
   YoutubeIcon,
 } from "@gordo-d/d-d-ui-components";
 import Link from "next/link";
-import React from "react";
 import navData from "../../constants/footer.json";
-type IFooterProps = object;
 
-const IFooterDefaultProps = {};
-
-const Footer: React.FC<IFooterProps> = (props) => {
+const Footer = (props: any) => {
   return (
     <section className="absolute bottom-0 left-0 flex h-auto w-full justify-center md:h-40">
       <div className="mx-4 flex w-full flex-col items-center justify-center gap-6 rounded-t-2xl bg-gradient-to-l from-neutral-500/10 to-neutral-700/10 p-3 py-5 backdrop-blur md:mx-10 md:flex-row md:justify-between md:p-6">
@@ -74,7 +70,5 @@ const Footer: React.FC<IFooterProps> = (props) => {
     </section>
   );
 };
-
-Footer.defaultProps = IFooterDefaultProps;
 
 export default Footer;

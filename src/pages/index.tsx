@@ -18,9 +18,9 @@ import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
 import { Body2, StarIcon } from "@gordo-d/d-d-ui-components";
 import Image from "next/image";
 import Link from "next/link";
-import AppLayout from "../../../agency/components/layout";
 import HomeConstants from "../constants/home.json";
 import navigation from "../constants/navigation.json";
+import AppLayout from "@/components/layout/layout";
 
 // interface Record {
 //   [key: string]: any;

@@ -93,7 +93,7 @@ export const TopBar = () => {
                   className="flex gap-2"
                   key={i}
                   href={navEl.link}
-                  target={navEl.external ? "_blank" : "_self"}>
+                  target={navEl.external ? "_blank" : "_self"} rel="noreferrer">
                   <Body3
                     color="neutral-500"
                     className="hover:text-primary-white transition-colors">
