@@ -1,6 +1,16 @@
 {
   "links": [
     {
+      "name": "Newsletter",
+      "link": "https://developerdao.substack.com",
+      "external": true
+    },
+    {
+      "name": "Forum",
+      "link": "https://forum.developerdao.com",
+      "external": true
+    },
+    {
       "name": "Jobs",
       "link": "https://www.edenprotocol.app/developer-dao/jobs",
       "external": true

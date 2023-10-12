@@ -2,6 +2,7 @@ import PartnersCardsSection from "@/components/Partners_CardsSection";
 import Testimonials from "@/components/Testimonials";
 import AppLayout from "@/components/layout/layout";
 import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
+import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
 import {
   Body2,
   Button,
@@ -17,7 +18,7 @@ import { ReactElement } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigationData from "../constants/navigation.json";
 import PartnersConstants from "../constants/partners.json";
-import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
+import PartnerTestimonials from "@/components/PartnerTestimonials";
 
 type IPartnersPageProps = {
   // TODO: type
@@ -80,7 +81,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
                     alt={""}
                   />
                 </motion.div>
-                <Headline1 className="font-heading tracking-wider">
+                <Headline1 className="font-heading px-7 tracking-wider">
                   {PartnersConstants.headline}
                 </Headline1>
               </div>
@@ -128,7 +129,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
 
           <PartnersCardsSection communityData={communityData} />
 
-          <Testimonials testimonialsData={partnerTestimonials} />
+          <PartnerTestimonials testimonialsData={partnerTestimonials} />
 
           {/* WE ARE... */}
           <section className="mb-20 flex justify-center">

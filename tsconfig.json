@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.json"
-  ],
+, "../agency/components/layout.tsx"  ],
   "exclude": [
     "node_modules"
   ]

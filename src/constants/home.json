@@ -4,8 +4,12 @@
   "whoIntro": "We are a..",
   "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
   "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
-  "OurVision": {
+  "OurMision": {
     "Headline": "Our Vision",
+    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3"
+  },
+  "OurVision": {
+    "Headline": "Our Mission",
     "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
     "Vision": [
       {
@@ -36,50 +40,6 @@
   },
   "OurPartners": {
     "Headline": "Our Partners",
-    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
-    "link": "Developer DAO has brought together some of the most talented people on the web to build web3",
-    "partnersGold": [
-      {
-        "image": "https://picsum.photos/270/270",
-        "title": "Zerion",
-        "type": "Wallet Partner",
-        "description": "Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
-      },
-      {
-        "image": "https://picsum.photos/273/273",
-        "title": "Thirdweb",
-        "type": "Learning Partner",
-        "description": "Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us reshape the blockchain landscape together."
-      },
-      {
-        "image": "https://picsum.photos/271/271",
-        "title": "Fleek",
-        "type": "Infrastructure Partner",
-        "description": "Our partnership brings you faster transactions, lower fees, and enhanced DeFi access. Join us as we reshape the blockchain landscape together."
-      }
-    ],
-    "partnersSilver": [
-      {
-        "image": "https://picsum.photos/300/300",
-        "title": "ENS DAO",
-        "type": "Dao Partner"
-      },
-      {
-        "image": "https://picsum.photos/300/300",
-        "title": "Lens Protocol",
-        "type": "Dao Partner"
-      },
-      {
-        "image": "https://picsum.photos/300/300",
-        "title": "Fuel Network",
-        "type": "hackathon Partner"
-      },
-      {
-        "image": "https://picsum.photos/300/300",
-        "title": "Uma",
-        "type": "hackathon Partner"
-      }
-    ]
+    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3"
   }
-
 }

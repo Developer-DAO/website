@@ -31,7 +31,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
   return (
     <React.Fragment>
       {/* OUR VISION */}
-      <section className="my-40 flex flex-col items-center justify-center">
+      <section id="ourvision" className="my-40 flex flex-col items-center justify-center">
         <SectionTitle
           headline={HomeConstants.OurVision.Headline}
           subheadline={HomeConstants.OurVision.SubHeadline}

@@ -1,7 +1,7 @@
 import { StarsBgImage } from "@gordo-d/d-d-ui-components";
 import { ReactNode } from "react";
-import Footer from "./Footer";
-import { TopBar } from "./TopBar";
+import Footer from "../../website/src/components/layout/Footer";
+import { TopBar } from "../../website/src/components/layout/TopBar";
 
 export interface LayoutProps {
   children: ReactNode;

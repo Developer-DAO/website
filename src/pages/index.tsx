@@ -18,7 +18,7 @@ import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
 import { Body2, StarIcon } from "@gordo-d/d-d-ui-components";
 import Image from "next/image";
 import Link from "next/link";
-import AppLayout from "../components/layout/layout";
+import AppLayout from "../../../agency/components/layout";
 import HomeConstants from "../constants/home.json";
 import navigation from "../constants/navigation.json";
 
@@ -135,9 +135,16 @@ const HomePage = (props: any) => {
               />
             </div>
           </div>
+          {/* 
+          <div className="my-20">
+            <SectionTitle
+              headline={HomeConstants.OurMision.Headline}
+              subheadline={HomeConstants.OurMision.SubHeadline}
+            />
+          </div> */}
 
           {/* WE ARE... */}
-          <section className="flex justify-center ">
+          <section id="we" className="flex justify-center ">
             <div className="flex max-w-2xl flex-col items-center justify-center text-center">
               <Body1>{HomeConstants.whoIntro}</Body1>
               <Headline2 className="font-heading">

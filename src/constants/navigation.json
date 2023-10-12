@@ -5,12 +5,14 @@
   },
   "navigation": [
     {
-      "name": "What's Developer DAO",
-      "link": "#"
+      "name": "Newsletter",
+      "link": "https://developerdao.substack.com",
+      "external": true
     },
     {
-      "name": "Our Vision",
-      "link": "#"
+      "name": "Forum",
+      "link": "https://forum.developerdao.com",
+      "external": true
     },
     {
       "name": "Jobs",

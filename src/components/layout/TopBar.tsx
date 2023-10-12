@@ -51,7 +51,29 @@ const TopBarGrid = ({ children }: any) => {
 
 export const TopBar = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const handleHashNavigation = () => {
+    // Ensure this function is running on client side
+    if (typeof window !== 'undefined') {
+      const { hash } = window.location;
+      
+      if (hash) {
+        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
+  useEffect(() => {
+    // Ensure useEffect is running on client side
+    if (typeof window !== 'undefined') {
+      handleHashNavigation();
+
+      window.addEventListener('hashchange', handleHashNavigation, false);
+
+      return () => {
+        window.removeEventListener('hashchange', handleHashNavigation, false);
+      };
+    }
+  }, []);
   const toggleOverlay = () => {
     setIsOverlayVisible(!isOverlayVisible);
   };
@@ -67,7 +89,7 @@ export const TopBar = () => {
             </Link>
             <ul className="font-paragraph hidden gap-8 md:flex">
               {navData.navigation.map((navEl, i) => (
-                <Link
+                <a
                   className="flex gap-2"
                   key={i}
                   href={navEl.link}
@@ -80,7 +102,7 @@ export const TopBar = () => {
                   {navEl.external && (
                     <ArrowTopRightIcon className="mb-1 opacity-70 hover:opacity-100" />
                   )}
-                </Link>
+                </a>
               ))}
             </ul>
           </div>
