@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.json"
-, "../agency/components/layout.tsx"  ],
+, "../agency/components/layout.tsx", "src/pages/_app.tsx"  ],
   "exclude": [
     "node_modules"
   ]

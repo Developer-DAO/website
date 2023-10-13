@@ -28,15 +28,6 @@ import navigation from '../constants/navigation.json';
 
 const HomePage = (props: any) => {
   const {communityTestimonials, partners, communityData, community} = props;
-  console.log('🚀 ~ file: index.tsx:37 ~ HomePage ~ partners:', partners);
-  console.log(
-    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityData:',
-    communityData
-  );
-  console.log(
-    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityTestimonials:',
-    communityTestimonials
-  );
 
   const router = useRouter();
 
