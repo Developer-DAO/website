@@ -19,6 +19,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigationData from "../constants/navigation.json";
 import PartnersConstants from "../constants/partners.json";
 import PartnerTestimonials from "@/components/PartnerTestimonials";
+import SEO from '@/components/SEO';
 
 type IPartnersPageProps = {
   // TODO: type
@@ -35,6 +36,13 @@ const PartnersPage = (props: IPartnersPageProps) => {
 
   return (
     <>
+              <SEO
+        title="Developer DAO | Partners"
+        description="Enlarge your audience with Developer DAO"
+        image="/RRSS_D_D_Image.png"
+        url="https://developerdao.com"
+        twitterHandle="@developerdao"
+      />
       <article className="text-primary-white relative overflow-hidden">
         {/* STARS */}
 

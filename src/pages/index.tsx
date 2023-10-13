@@ -13,14 +13,15 @@ import {
 } from "@gordo-d/d-d-ui-components";
 
 import PartnersSection from "@/components/PartnersSection";
+import SEO from '@/components/SEO';
+import AppLayout from '@/components/layout/layout';
 import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
 import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
 import { Body2, StarIcon } from "@gordo-d/d-d-ui-components";
 import Image from "next/image";
 import Link from "next/link";
 import HomeConstants from "../constants/home.json";
-import navigation from "../constants/navigation.json";
-import AppLayout from "@/components/layout/layout";
+import navigation from '../constants/navigation.json';
 
 // interface Record {
 //   [key: string]: any;
@@ -46,6 +47,13 @@ const HomePage = (props: any) => {
 
   return (
     <>
+          <SEO
+        title="Developer DAO"
+        description="BUIDL WEB3 WITH __ FRENS. Developer DAO has brought together some of the most talented people on the web to build web3."
+        image="/RRSS_D_D_Image.png"
+        url="https://developerdao.com"
+        twitterHandle="@developerdao"
+      />
       <article
         id="home"
         className="text-primary-white relative overflow-hidden">

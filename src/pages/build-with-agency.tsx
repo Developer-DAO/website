@@ -5,12 +5,12 @@ type IAgencyRedirectProps = {};
 
 const IAgencyRedirectDefaultProps = {};
 
-const AgencyRedirect: React.FC<IAgencyRedirectProps> = (props) => {
+const AgencyRedirect = (props: any) => {
   const {} = props;
 
   useEffect(() => {
     window.location.href =
-      "https://airtable.com/appNP5rk00cAmDLUm/shrmaoyXneVOkRvw3";
+      'https://airtable.com/appNP5rk00cAmDLUm/shrmaoyXneVOkRvw3';
   }, []);
 
   return (
@@ -24,6 +24,10 @@ const AgencyRedirect: React.FC<IAgencyRedirectProps> = (props) => {
       />
     </React.Fragment>
   );
+};
+
+AgencyRedirect.getLayout = function getLayout(page: any) {
+  return <>{page}</>;
 };
 
 AgencyRedirect.defaultProps = IAgencyRedirectDefaultProps;
