@@ -8,8 +8,8 @@ const AgencyRedirect = (props: any) => {
   const {} = props;
 
   useEffect(() => {
-    window.location.href =
-      'https://airtable.com/appNP5rk00cAmDLUm/shrmaoyXneVOkRvw3';
+    // window.location.href =
+    //   'https://airtable.com/appNP5rk00cAmDLUm/shrmaoyXneVOkRvw3';
   }, []);
 
   return (
