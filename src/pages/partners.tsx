@@ -2,8 +2,8 @@ import PartnerTestimonials from '@/components/PartnerTestimonials';
 import PartnersCardsSection from '@/components/Partners_CardsSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
+import {resolveEnsNamesToAvatars} from '@/hooks/ensAvatars';
 import {fetchFromAirtable} from '@/lib/airtable/airtableFetch';
-import {resolveEnsNamesToAvatars} from '@/lib/ensAvatars';
 import {
   Body2,
   Button,
