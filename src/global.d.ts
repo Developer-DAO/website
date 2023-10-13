@@ -1,0 +1,1 @@
+declare module '@gordo-d/d-d-ui-components';

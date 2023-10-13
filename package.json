@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@ensdomains/ens-avatar": "^0.3.3",
-    "@gordo-d/d-d-ui-components": "0.1.7",
+    "@gordo-d/d-d-ui-components": "^0.1.9",
     "@rainbow-me/rainbowkit": "^1.0.11",
     "@types/airtable": "^0.10.1",
     "@types/node": "20.6.0",

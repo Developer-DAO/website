@@ -10,8 +10,8 @@ import {Body1, Button, Headline1, Headline2} from '@gordo-d/d-d-ui-components';
 import PartnersSection from '@/components/PartnersSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
-import {resolveEnsNamesToAvatars} from '@/hooks/ensAvatars';
 import {fetchFromAirtable} from '@/lib/airtable/airtableFetch';
+import {resolveEnsNamesToAvatars} from '@/hooks/ensAvatars';
 import {Body2, StarIcon} from '@gordo-d/d-d-ui-components';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -28,6 +28,15 @@ import navigation from '../constants/navigation.json';
 
 const HomePage = (props: any) => {
   const {communityTestimonials, partners, communityData, community} = props;
+  console.log('🚀 ~ file: index.tsx:37 ~ HomePage ~ partners:', partners);
+  console.log(
+    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityData:',
+    communityData
+  );
+  console.log(
+    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityTestimonials:',
+    communityTestimonials
+  );
 
   const router = useRouter();
 
