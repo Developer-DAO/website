@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 
 type IAgencyRedirectProps = {};
 
-const IAgencyRedirectDefaultProps = {};
 
 const AgencyRedirect = (props: any) => {
   const {} = props;
@@ -29,7 +28,5 @@ const AgencyRedirect = (props: any) => {
 AgencyRedirect.getLayout = function getLayout(page: any) {
   return <>{page}</>;
 };
-
-AgencyRedirect.defaultProps = IAgencyRedirectDefaultProps;
 
 export default AgencyRedirect;
