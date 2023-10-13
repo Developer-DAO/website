@@ -1,26 +1,21 @@
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
-import { ReactElement } from "react";
+import {motion} from 'framer-motion';
+import {useRouter} from 'next/router';
+import {ReactElement} from 'react';
 
-import D_D_People from "@/components/People";
-import Testimonials from "@/components/Testimonials";
-import Vision from "@/components/Vision";
-import {
-  Body1,
-  Button,
-  Headline1,
-  Headline2,
-} from "@gordo-d/d-d-ui-components";
+import D_D_People from '@/components/People';
+import Testimonials from '@/components/Testimonials';
+import Vision from '@/components/Vision';
+import {Body1, Button, Headline1, Headline2} from '@gordo-d/d-d-ui-components';
 
-import PartnersSection from "@/components/PartnersSection";
+import PartnersSection from '@/components/PartnersSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
-import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
-import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
-import { Body2, StarIcon } from "@gordo-d/d-d-ui-components";
-import Image from "next/image";
-import Link from "next/link";
-import HomeConstants from "../constants/home.json";
+import {fetchFromAirtable} from '@/lib/airtable/airtableFetch';
+import {resolveEnsNamesToAvatars} from '@/lib/ensAvatars';
+import {Body2, StarIcon} from '@gordo-d/d-d-ui-components';
+import Image from 'next/image';
+import Link from 'next/link';
+import HomeConstants from '../constants/home.json';
 import navigation from '../constants/navigation.json';
 
 // interface Record {
@@ -32,14 +27,14 @@ import navigation from '../constants/navigation.json';
 // }
 
 const HomePage = (props: any) => {
-  const { communityTestimonials, partners, communityData, community } = props;
-  console.log("🚀 ~ file: index.tsx:37 ~ HomePage ~ partners:", partners);
+  const {communityTestimonials, partners, communityData, community} = props;
+  console.log('🚀 ~ file: index.tsx:37 ~ HomePage ~ partners:', partners);
   console.log(
-    "🚀 ~ file: index.tsx:37 ~ HomePage ~ communityData:",
+    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityData:',
     communityData
   );
   console.log(
-    "🚀 ~ file: index.tsx:37 ~ HomePage ~ communityTestimonials:",
+    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityTestimonials:',
     communityTestimonials
   );
 
@@ -47,7 +42,7 @@ const HomePage = (props: any) => {
 
   return (
     <>
-          <SEO
+      <SEO
         title="Developer DAO"
         description="BUIDL WEB3 WITH __ FRENS. Developer DAO has brought together some of the most talented people on the web to build web3."
         image="/RRSS_D_D_Image.png"
@@ -64,42 +59,42 @@ const HomePage = (props: any) => {
           <section className="relative z-30 flex min-h-screen w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.3, ease: "easeInOut" }}>
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{delay: 0.8, duration: 0.3, ease: 'easeInOut'}}>
                 <Image
                   layout="fill"
                   objectFit="contain"
-                  src={"/bgBlackStars.svg"}
-                  alt={""}
+                  src={'/bgBlackStars.svg'}
+                  alt={''}
                 />
               </motion.div>
             </div>
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}>
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{delay: 0.5, duration: 0.5, ease: 'easeInOut'}}>
                 <Image
                   layout="fill"
                   objectFit="contain"
-                  src={"/rays.svg"}
-                  alt={""}
+                  src={'/rays.svg'}
+                  alt={''}
                 />
               </motion.div>
             </div>
             <div className="z-50 m-10 flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2, duration: 0.3, ease: "easeInOut" }}>
+                  initial={{opacity: 0}}
+                  animate={{opacity: 1}}
+                  transition={{delay: 2, duration: 0.3, ease: 'easeInOut'}}>
                   <Image
                     width={70}
                     height={70}
                     className="absolute -right-16 -top-12"
-                    src={"/shine.svg"}
-                    alt={""}
+                    src={'/shine.svg'}
+                    alt={''}
                   />
                 </motion.div>
                 <Headline1 className="font-heading">
@@ -123,7 +118,7 @@ const HomePage = (props: any) => {
                     DAO Handbook
                   </Button>
                 </Link>
-                <Link href={"/partners"}>
+                <Link href={'/partners'}>
                   <Button
                     className="font-paragraph w-full font-semibold tracking-wider"
                     variant="secondary">
@@ -178,18 +173,18 @@ const HomePage = (props: any) => {
 
 export async function getStaticProps() {
   const partners = await fetchFromAirtable({
-    tableName: "Partners",
+    tableName: 'Partners',
   });
 
   const communityTestimonials = await fetchFromAirtable({
-    tableName: "CommunityTestimonials",
+    tableName: 'CommunityTestimonials',
   });
   const community = await fetchFromAirtable({
-    tableName: "Community",
+    tableName: 'Community',
   });
   const validCommunity = community.filter((p) => Boolean(p.ENS));
 
-  const providerUrl = process.env.POKTRPC_MAINNET ?? "";
+  const providerUrl = process.env.POKTRPC_MAINNET ?? '';
   // Extract ENS names from the community data
   const ensNames = validCommunity.map((p) => p.ENS);
 
