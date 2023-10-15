@@ -23,13 +23,13 @@ import Link from "next/link";
 import HomeConstants from "../constants/home.json";
 import navigation from '../constants/navigation.json';
 
-// interface Record {
-//   [key: string]: any;
-// }
+interface Record {
+  [key: string]: any;
+}
 
-// interface Props {
-//   records: Record[];
-// }
+interface Props {
+  records: Record[];
+}
 
 const HomePage = (props: any) => {
   const { communityTestimonials, partners, communityData, community } = props;
