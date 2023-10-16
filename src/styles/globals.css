@@ -22,3 +22,42 @@
       @apply font-paragraph;
     }
   } 
+
+
+  .carousel .thumb {
+    transition: border .15s ease-in;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 2px solid #2b2b2b !important;
+    padding: 2px;
+    width: auto !important;
+    border-radius: 20px;
+}
+
+.carousel .thumbs {
+  transition: all .15s ease-in;
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  list-style: none;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* margin: 30px; */
+}
+
+.carousel .thumb.selected, .carousel .thumb:hover {
+  border: 2px solid #3a3a3a !important;
+}
+
+.carousel .thumbs-wrapper {
+  /* margin: 20px; */
+  overflow: hidden;
+  display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}

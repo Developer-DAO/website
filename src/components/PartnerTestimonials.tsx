@@ -1,32 +1,30 @@
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  Body3,
-  BodyHeadline,
-  Card,
-} from "@gordo-d/d-d-ui-components";
-import cx from "classnames";
-import Image from "next/image";
-import React, { useEffect } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import testimonials from "../constants/testimonials.json";
-import SectionTitle from "./sectionTitle";
+import {Body3, BodyHeadline, Card} from '@gordo-d/d-d-ui-components';
+import {Attachment} from 'airtable';
+import cx from 'classnames';
+import Image from 'next/image';
+import React, {useEffect} from 'react';
+import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import testimonials from '../constants/testimonials.json';
+import SectionTitle from './sectionTitle';
 
 type ITestimonialsProps = {
   //TODO: type
   testimonialsData: {
-    Who: string;
-    Image: [{ url?: string }];
-    Testimonial: string;
-    WorkTitle: string;
-  }[];
+    Who: string,
+    Image: [{url?: string}],
+    Testimonial: string,
+    WorkTitle: string,
+    partner?: string,
+    PartnerName?: string,
+    PartnerImages?: Attachment[],
+  }[],
 };
 
 const ITestimonialsDefaultProps = {};
 
 const PartnerTestimonials: React.FC<ITestimonialsProps> = (props) => {
-  const { testimonialsData } = props;
+  const {testimonialsData} = props;
 
   useEffect(() => {}, []);
 
@@ -45,39 +43,58 @@ const PartnerTestimonials: React.FC<ITestimonialsProps> = (props) => {
           showStatus={false}
           showIndicators={false}
           showThumbs={true}
-          renderThumbs={(children: React.ReactChild[]) => (testimonialsData.map((e => <>
-          </>)))}
-          renderArrowPrev={(
-            clickHandler: () => void,
-            hasPrev: boolean,
-            label: string
-          ) => (
-            <ArrowLeftIcon
-              className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer"
-              onClick={() => {
-                console.log("Arrow clicked!");
-                clickHandler();
-              }}
-            />
-          )}
-          renderArrowNext={(
-            clickHandler: () => void,
-            hasPrev: boolean,
-            label: string
-          ) => (
-            <ArrowRightIcon
-              className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer"
-              onClick={() => clickHandler()}
-            />
-          )}>
+          renderThumbs={(children: React.ReactChild[]) =>
+            testimonialsData.map((t) => (
+              <div
+                key={t.Who}
+                className="flex justify-center items-center relative rounded-md px-[12px] py-[20px] md:w-[150px] w-[120px]">
+                {t.PartnerImages && t.PartnerName && t.PartnerImages[1].url ? (
+                  <div className="h-[50px] grayscale hover:grayscale-0 transition-all">
+                    <Image
+                      width={100}
+                      height={30}
+                      src={t.PartnerImages[1].url}
+                      alt={t.PartnerName}
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+            ))
+          }
+          // renderArrowPrev={(
+          //   clickHandler: () => void,
+          //   hasPrev: boolean,
+          //   label: string
+          // ) => (
+          //   <ArrowLeftIcon
+          //     className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer"
+          //     onClick={() => {
+          //       console.log('Arrow clicked!');
+          //       clickHandler();
+          //     }}
+          //   />
+          // )}
+          // renderArrowNext={(
+          //   clickHandler: () => void,
+          //   hasPrev: boolean,
+          //   label: string
+          // ) => (
+          //   <ArrowRightIcon
+          //     className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer"
+          //     onClick={() => clickHandler()}
+          //   />
+          // )}
+        >
           {testimonialsData.map((t: any, i: number) => {
             return (
               <div key={i} className="flex w-full justify-center">
                 <Card
                   noPadding
                   className={cx(
-                    "bg-white/05 mb-32 flex min-h-[320px] w-full flex-col rounded-lg border-2 p-0 backdrop-blur md:w-[600px] md:flex-row",
-                    "gap-2"
+                    'bg-white/05 mb-32 flex min-h-[320px] w-full flex-col rounded-lg border-2 p-0 backdrop-blur md:w-[600px] md:flex-row',
+                    'gap-2'
                   )}>
                   <div className="flex w-full flex-col justify-end p-6 text-left md:w-1/3">
                     <div className="relative mb-3 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-neutral-800">

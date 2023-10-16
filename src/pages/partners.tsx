@@ -1,8 +1,9 @@
-import PartnersCardsSection from "@/components/Partners_CardsSection";
-import Testimonials from "@/components/Testimonials";
-import AppLayout from "@/components/layout/layout";
-import { fetchFromAirtable } from "@/lib/airtable/airtableFetch";
-import { resolveEnsNamesToAvatars } from "@/lib/ensAvatars";
+import PartnerTestimonials from '@/components/PartnerTestimonials';
+import PartnersCardsSection from '@/components/Partners_CardsSection';
+import SEO from '@/components/SEO';
+import AppLayout from '@/components/layout/layout';
+import {fetchFromAirtable} from '@/lib/airtable/airtableFetch';
+import {resolveEnsNamesToAvatars} from '@/lib/ensAvatars';
 import {
   Body2,
   Button,
@@ -10,33 +11,38 @@ import {
   Headline2,
   StarIcon,
   ThunderIcon,
-} from "@gordo-d/d-d-ui-components";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { ReactElement } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import NavigationData from "../constants/navigation.json";
-import PartnersConstants from "../constants/partners.json";
-import PartnerTestimonials from "@/components/PartnerTestimonials";
-import SEO from '@/components/SEO';
+} from '@gordo-d/d-d-ui-components';
+import {motion} from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import {ReactElement} from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import NavigationData from '../constants/navigation.json';
+import PartnersConstants from '../constants/partners.json';
 
 type IPartnersPageProps = {
   // TODO: type
-  partners: any[];
-  partnerTestimonials: any[];
-  communityData: any[];
+  partners: any[],
+  partnerTestimonials: any[],
+  communityData: any[],
 };
 
 const IPartnersPageDefaultProps = {};
 
 const PartnersPage = (props: IPartnersPageProps) => {
-  const { partners, partnerTestimonials, communityData } = props;
-  const headLinePartners = partners;
+  const {partners, partnerTestimonials, communityData} = props;
+  console.log(
+    '🚀 ~ file: partners.tsx:34 ~ PartnersPage ~ partnerTestimonials:',
+    partnerTestimonials
+  );
+  console.log(
+    '🚀 ~ file: partners.tsx:35 ~ PartnersPage ~ partners:',
+    partners
+  );
 
   return (
     <>
-              <SEO
+      <SEO
         title="Developer DAO | Partners"
         description="Enlarge your audience with Developer DAO"
         image="/RRSS_D_D_Image.png"
@@ -51,42 +57,42 @@ const PartnersPage = (props: IPartnersPageProps) => {
           <section className="relative z-30 flex min-h-screen w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.05, duration: 0.1, ease: "easeInOut" }}>
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{delay: 0.05, duration: 0.1, ease: 'easeInOut'}}>
                 <Image
                   layout="fill"
                   objectFit="contain"
-                  src={"/bgBlackStars.svg"}
-                  alt={""}
+                  src={'/bgBlackStars.svg'}
+                  alt={''}
                 />
               </motion.div>
             </div>
             <div className="top-30 absolute right-0 z-20 h-[1300px] w-[1700px]">
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.3, ease: "easeInOut" }}>
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{delay: 0.5, duration: 0.3, ease: 'easeInOut'}}>
                 <Image
                   layout="fill"
                   objectFit="contain"
-                  src={"/shinePartners.svg"}
-                  alt={""}
+                  src={'/shinePartners.svg'}
+                  alt={''}
                 />
               </motion.div>
             </div>
             <div className="z-50 m-10 flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2, duration: 1.5, ease: "easeInOut" }}>
+                  initial={{opacity: 0}}
+                  animate={{opacity: 1}}
+                  transition={{delay: 2, duration: 1.5, ease: 'easeInOut'}}>
                   <Image
                     width={70}
                     height={70}
                     className="absolute -right-16 -top-12"
-                    src={"/shine.svg"}
-                    alt={""}
+                    src={'/shine.svg'}
+                    alt={''}
                   />
                 </motion.div>
                 <Headline1 className="font-heading px-7 tracking-wider">
@@ -120,14 +126,14 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 <Link
                   key={i}
                   className="relative mx-4 flex h-[70px] w-[150px] items-center justify-center grayscale transition-all hover:grayscale-0  md:mx-6 md:h-[85px] md:w-[300px]"
-                  href={p.URL ? p.URL : ""}
+                  href={p.URL ? p.URL : ''}
                   target="_blank">
                   {p.image[1].url && (
                     <Image
-                      layout={"fill"}
-                      objectFit={"contain"}
+                      layout={'fill'}
+                      objectFit={'contain'}
                       src={p.image[1].url}
-                      alt={""}
+                      alt={''}
                     />
                   )}
                 </Link>
@@ -167,17 +173,17 @@ const PartnersPage = (props: IPartnersPageProps) => {
 
 export async function getStaticProps() {
   const partners = await fetchFromAirtable({
-    tableName: "Partners",
+    tableName: 'Partners',
   });
   const partnerTestimonials = await fetchFromAirtable({
-    tableName: "PartnerTestimonials",
+    tableName: 'PartnerTestimonials',
   });
   const community = await fetchFromAirtable({
-    tableName: "Community",
+    tableName: 'Community',
   });
   const validCommunity = community.filter((p) => Boolean(p.ENS));
 
-  const providerUrl = process.env.POKTRPC_MAINNET ?? "";
+  const providerUrl = process.env.POKTRPC_MAINNET ?? '';
   // Extract ENS names from the community data
   const ensNames = validCommunity.map((p) => p.ENS);
 
