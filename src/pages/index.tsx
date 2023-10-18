@@ -62,7 +62,7 @@ const HomePage = (props: any) => {
 
         <div className="relative w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
-          <section className="relative z-30 flex min-h-screen w-full flex-col items-center justify-center gap-6">
+          <section className="relative z-30 flex min-h-screen md:min-h-[80vh] w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -121,7 +121,7 @@ const HomePage = (props: any) => {
                     transition-all hover:drop-shadow-[10px_0_40px_rgba(254,254,254,0.472)]"
                     icon={<StarIcon className="h-5 w-5" />}
                     iconPosition="left">
-                    DAO Handbook
+                    Get involved
                   </Button>
                 </Link>
                 <Link href={"/partners"}>
