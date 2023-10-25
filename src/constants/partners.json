@@ -1,29 +1,29 @@
 {
   "headline": "REACH THOUSANDS OF BUILDERS",
-  "subheadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+  "subheadline": "Expand outside of your echo-chamber and reach web3’s largest (and coolest) protocol agnostic community of builders.",
   "whoIntro": "We are a..",
   "cta":"",
   "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
   "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
   "cardsSection": {
     "Headline": "Partnering With Us",
-    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+    "SubHeadline": "We work with you to design partnership campaigns that ensure you get meaningful engagement from builders, not just clicks.",
     "preferred": {
       "title": "PREFERRED PARTNERS",
-      "subtitle": "Foster the diverse community needed to build a better, more equitable future Internet with VIBES.",
+      "subtitle": "Value aligned partners who provide trusted and chain-agnostic tooling, education and opportunity to the builders in our community.",
       "link": "https://developerdao.com",
       "linkName": "Become a Preferred Partner"
     },
     "hackathon": {
       "title": "HACKATHONS",
-      "subtitle": "Support members to LEARN the skills they need to contribute to that future.",
+      "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
       "link": "https://developerdao.com",
       "linkName": "Get the devs building"
     },
     "talent": {
       "title": "TALENT",
-      "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
-      "link": "https://developerdao.com",
+      "subtitle": "Get access to Developer DAO’s vast oasis of talent via our AI-Powered magic job board. Eden’s AI will filter through the noise to match the best talent for your role firs time.",
+      "link": "https://www.edenprotocol.app/developer-dao/jobs",
       "linkName": "Find talent in their natural home"
     },
     "ventures": {
