@@ -16,7 +16,7 @@
     },
     "hackathon": {
       "title": "HACKATHONS",
-      "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
+      "subtitle": "Managed hack experiences centered around your protocol to ensure the maximum ROI on your investment to educated and incentivise builders.",
       "link": "https://developerdao.com",
       "linkName": "Get the devs building"
     },
@@ -27,20 +27,20 @@
       "linkName": "Find talent in their natural home"
     },
     "ventures": {
-      "title": "MEMBER BOUNTIES",
-      "subtitle": "Engage our community with bounties for technical articles, starter kits and libraries..",
+      "title": "Dev Marketing Program",
+      "subtitle": "Co-create effective dev marketing campaigns that result in contributors not clicks.",
       "link": "https://developerdao.com",
-      "linkName": "Get builders writing and shipping"
+      "linkName": "Meaningful dev engagement"
     },
     "events": {
-      "title": "EVENTS",
-      "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+      "title": "IRL EVENTS",
+      "subtitle": "Nothing quite beats IRL for solidying deep community connections. Lets create some good vibes together,",
       "link": "https://developerdao.com",
       "linkName": "Get devs dancing"
     },
     "hackers": {
-      "title": "D_D HACKERS",
-      "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+      "title": "DevRel-as-a-Service",
+      "subtitle": "Work with our in-house DevRels to get your docs, SDKs, starter-kits and tutorials ready for builders to start building.",
       "link": "https://developerdao.com",
       "linkName": "Get Involved"
     }
@@ -51,7 +51,7 @@
     "link": "Developer DAO has brought together some of the most talented people on the web to build web3"
   },
   "Testimonials": {
-    "Headline": "Testimonials",
+    "Headline": "Words from our partners",
     "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3"
   },
   "future": {
