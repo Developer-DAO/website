@@ -1,46 +1,46 @@
 {
   "headline": "REACH THOUSANDS OF BUILDERS",
-  "subheadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+  "subheadline": "Expand outside of your echo-chamber and reach web3’s largest (and coolest) protocol agnostic community of builders.",
   "whoIntro": "We are a..",
   "cta":"",
   "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
   "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
   "cardsSection": {
     "Headline": "Partnering With Us",
-    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+    "SubHeadline": "We work with you to design partnership campaigns that ensure you get meaningful engagement from builders, not just clicks.",
     "preferred": {
       "title": "PREFERRED PARTNERS",
-      "subtitle": "Foster the diverse community needed to build a better, more equitable future Internet with VIBES.",
+      "subtitle": "Value aligned partners who provide trusted and chain-agnostic tooling, education and opportunity to the builders in our community.",
       "link": "https://developerdao.com",
       "linkName": "Become a Preferred Partner"
     },
     "hackathon": {
       "title": "HACKATHONS",
-      "subtitle": "Support members to LEARN the skills they need to contribute to that future.",
+      "subtitle": "Managed hack experiences centered around your protocol to ensure the maximum ROI on your investment to educated and incentivise builders.",
       "link": "https://developerdao.com",
       "linkName": "Get the devs building"
     },
     "talent": {
       "title": "TALENT",
-      "subtitle": "Incentivise and support members to ship their ideas and BUILD that future.",
-      "link": "https://developerdao.com",
+      "subtitle": "Get access to Developer DAO’s vast oasis of talent via our AI-Powered magic job board. Eden’s AI will filter through the noise to match the best talent for your role firs time.",
+      "link": "https://www.edenprotocol.app/developer-dao/jobs",
       "linkName": "Find talent in their natural home"
     },
     "ventures": {
-      "title": "MEMBER BOUNTIES",
-      "subtitle": "Engage our community with bounties for technical articles, starter kits and libraries..",
+      "title": "Dev Marketing Program",
+      "subtitle": "Co-create effective dev marketing campaigns that result in contributors not clicks.",
       "link": "https://developerdao.com",
-      "linkName": "Get builders writing and shipping"
+      "linkName": "Meaningful dev engagement"
     },
     "events": {
-      "title": "EVENTS",
-      "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+      "title": "IRL EVENTS",
+      "subtitle": "Nothing quite beats IRL for solidying deep community connections. Lets create some good vibes together,",
       "link": "https://developerdao.com",
       "linkName": "Get devs dancing"
     },
     "hackers": {
-      "title": "D_D HACKERS",
-      "subtitle": "Empower members to GOVERN the future of the DAO and ensure it stays on mission.",
+      "title": "DevRel-as-a-Service",
+      "subtitle": "Work with our in-house DevRels to get your docs, SDKs, starter-kits and tutorials ready for builders to start building.",
       "link": "https://developerdao.com",
       "linkName": "Get Involved"
     }
@@ -51,7 +51,7 @@
     "link": "Developer DAO has brought together some of the most talented people on the web to build web3"
   },
   "Testimonials": {
-    "Headline": "Testimonials",
+    "Headline": "Words from our partners",
     "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3"
   },
   "future": {

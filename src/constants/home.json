@@ -1,16 +1,16 @@
 {
-  "headline": "BUIDL WEB3 WITH __ FRENS",
-  "subheadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+  "headline": "BUILD WEB3 WITH __ FRIENDS",
+  "subheadline": "Developer DAO's mission is to accelerate the education and impact of a new wave of web3 builders",
   "whoIntro": "We are a..",
   "whoHeadline": "DEVELOPER OWNED & GOVERNED COMMUNITY",
   "whoHeadline2": "LEARNING & BUILDING FOR WEB3",
   "OurMision": {
     "Headline": "Our Vision",
-    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3"
+    "SubHeadline": "Create an environment that fosters, supports and incentivises a diverse community of builders to help create a better, more equitable future."
   },
   "OurVision": {
-    "Headline": "Our Mission",
-    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3",
+    "Headline": "Our Vision",
+    "SubHeadline": "Create an environment that fosters, supports and incentivises a diverse community of builders to help create a better, more equitable future.",
     "Vision": [
       {
         "name": "/VIBE",
@@ -40,6 +40,6 @@
   },
   "OurPartners": {
     "Headline": "Our Partners",
-    "SubHeadline": "Developer DAO has brought together some of the most talented people on the web to build web3"
+    "SubHeadline": "We're proud to partner with some of the best communites, protocols and products."
   }
 }
