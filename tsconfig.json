@@ -29,8 +29,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.md",
+    "**/*.mdx",
     "**/*.json"
-, "../agency/components/layout.tsx"  ],
+],
   "exclude": [
     "node_modules"
   ]

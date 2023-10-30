@@ -9,19 +9,54 @@
 }
 
 @layer base {
-    h1,h2,h3,h4 {
-      @apply font-heading;
-    }
-    h1,h2,h3,h4 {
-      @apply font-bold;
+    /* Existing styles */
+    h1, h2, h3, h4 {
+        @apply font-heading;
+        @apply font-bold;
     }
     b, strong, i, em, u, strike, small, big, sub, sup, mark, button, p, span, h5 {
-      @apply font-paragraph;
+        @apply font-paragraph;
     }
     table, th, td, caption {
-      @apply font-paragraph;
+        @apply font-paragraph;
     }
-  } 
+
+    /* Translated styles from components */
+    h1 {
+        @apply text-5xl md:text-7xl pb-4;
+        /* Since `color` is dynamic in the components, you may still have to handle it differently */
+    }
+
+    h2 {
+        @apply text-5xl md:text-6xl pb-3 md:pb-4;
+        /* Similar note about `color` */
+    }
+
+    h3 {
+        @apply text-3xl md:text-4xl font-semibold md:font-bold pb-2 md:pb-3;
+        /* Again, note about `color` */
+    }
+
+    h4 {
+        @apply text-lg md:text-3xl pb-2 md:pb-3 font-medium;
+        /* The dynamic `color` is still something to consider */
+    }
+
+    h5 {
+        @apply text-lg md:text-xl font-bold pb-2 md:pb-3;
+        /* Consider `color` */
+    }
+
+    .headline-basic {
+        @apply text-lg md:text-xl font-bold;
+        /* Consider `color` */
+    }
+
+    p {
+        @apply text-base md:text-lg tracking-wide pb-1 md:pb-2;
+        /* Consider `color` */
+    }
+}
 
 
   .carousel .thumb {
