@@ -19,7 +19,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 }) => {
   return (
     <div className={`relative text-center ${className ? className : ""}`}>
-      <div className="absolute -top-28 left-36">
+      <div className="max-w-3xl">
+
+      <div className="absolute -top-28 md:left-40 left-26">
         <StarShineImage className="h-[280px] w-[280px]" />
       </div>
       <div className="absolute -top-[250px] left-16">
@@ -35,6 +37,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       <Body1 color="neutral-600" className="font-paragraph relative ">
         {subheadline}
       </Body1>
+          </div>
     </div>
   );
 };

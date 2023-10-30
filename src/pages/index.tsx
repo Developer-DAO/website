@@ -85,7 +85,7 @@ const HomePage = (props: any) => {
                 />
               </motion.div>
             </div>
-            <div className="z-50 m-10 flex w-full flex-col items-center justify-center gap-2 text-center">
+            <div className="z-50 m-10 max-w-5xl flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
                 <motion.div
                   initial={{opacity: 0}}
@@ -94,7 +94,7 @@ const HomePage = (props: any) => {
                   <Image
                     width={70}
                     height={70}
-                    className="absolute -right-16 -top-12"
+                    className="absolute md:-right-16 md:-top-12 -top-28 right-1/3"
                     src={'/shine.svg'}
                     alt={''}
                   />

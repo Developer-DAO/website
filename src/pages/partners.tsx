@@ -53,7 +53,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
 
         <div className="w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
-          <section className="relative z-30 flex min-h-screen md:min-h-[80vh] w-full flex-col items-center justify-center gap-6">
+          <section className="relative z-30 flex min-h-screen md:min-h-[100vh] w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
                 initial={{opacity: 0}}
@@ -80,16 +80,16 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 />
               </motion.div>
             </div>
-            <div className="z-50 m-10 flex w-full flex-col items-center justify-center gap-2 text-center">
+            <div className="z-50 m-10 max-w-6xl flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
-                <motion.div
+              <motion.div
                   initial={{opacity: 0}}
                   animate={{opacity: 1}}
-                  transition={{delay: 2, duration: 1.5, ease: 'easeInOut'}}>
+                  transition={{delay: 2, duration: 0.3, ease: 'easeInOut'}}>
                   <Image
                     width={70}
                     height={70}
-                    className="absolute -right-16 -top-12"
+                    className="absolute md:-right-16 md:-top-12 -top-28 right-1/3"
                     src={'/shine.svg'}
                     alt={''}
                   />
@@ -100,7 +100,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
               </div>
               <Body2
                 color="neutral-600"
-                className="font-paragraph mb-6 px-10 md:px-0">
+                className="font-paragraph mb-6 px-10 md:px-0 max-w-xl">
                 {PartnersConstants.subheadline}
               </Body2>
               <div className="flex gap-4">
