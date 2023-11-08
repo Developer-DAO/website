@@ -49,7 +49,7 @@ const PartnerTestimonials: React.FC<ITestimonialsProps> = (props) => {
                 key={t.Who}
                 className="flex justify-center items-center relative rounded-md px-[12px] py-[20px] md:w-[150px] w-[120px]">
                 {t.PartnerImages && t.PartnerName && t.PartnerImages[1].url ? (
-                  <div className="h-[60px] w-[60px] grayscale hover:grayscale-0 transition-all">
+                  <div className="h-[60px] w-[100px] grayscale hover:grayscale-0 transition-all">
                     <Image
                       layout="responsive" // Image will scale with the width of the parent
                       width={120} // Width of the image in pixels
@@ -65,29 +65,6 @@ const PartnerTestimonials: React.FC<ITestimonialsProps> = (props) => {
               </div>
             ))
           }
-          // renderArrowPrev={(
-          //   clickHandler: () => void,
-          //   hasPrev: boolean,
-          //   label: string
-          // ) => (
-          //   <ArrowLeftIcon
-          //     className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer"
-          //     onClick={() => {
-          //       console.log('Arrow clicked!');
-          //       clickHandler();
-          //     }}
-          //   />
-          // )}
-          // renderArrowNext={(
-          //   clickHandler: () => void,
-          //   hasPrev: boolean,
-          //   label: string
-          // ) => (
-          //   <ArrowRightIcon
-          //     className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer"
-          //     onClick={() => clickHandler()}
-          //   />
-          // )}
         >
           {testimonialsData.map((t: any, i: number) => {
             return (

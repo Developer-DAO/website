@@ -2,8 +2,8 @@ import PartnerTestimonials from '@/components/PartnerTestimonials';
 import PartnersCardsSection from '@/components/Partners_CardsSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
-import {fetchFromAirtable} from '@/lib/airtable/airtableFetch';
-import {resolveEnsNamesToAvatars} from '@/lib/ensAvatars';
+import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
+import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
 import {
   Body2,
   Button,
@@ -11,10 +11,10 @@ import {
   Headline2,
   ThunderIcon,
 } from '@gordo-d/d-d-ui-components';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import {ReactElement} from 'react';
+import { ReactElement } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import NavigationData from '../constants/navigation.json';
 import PartnersConstants from '../constants/partners.json';
@@ -119,12 +119,12 @@ const PartnersPage = (props: IPartnersPageProps) => {
             </div>
           </section>
 
-          <section className="relative z-40 my-20 flex w-screen overflow-x-auto overflow-y-hidden ">
-            <div className="inline-flex p-10">
+          <section className="relative no-scrollbar z-40 my-20 flex w-screen overflow-x-auto overflow-y-hidden ">
+            <div className="inline-flex">
               {partners.map((p: any, i: any) => (
                 <Link
                   key={i}
-                  className="relative mx-4 flex h-[70px] w-[150px] items-center justify-center grayscale transition-all hover:grayscale-0  md:mx-6 md:h-[85px] md:w-[300px]"
+                  className="relative mx-4 flex h-[70px] w-[150px] items-center justify-center grayscale transition-all hover:grayscale-0  md:mx-16 md:h-[70px] md:w-[220px]"
                   href={p.URL ? p.URL : ''}
                   target="_blank">
                   {p.image[1].url && (
@@ -177,6 +177,7 @@ export async function getStaticProps() {
   const partnerTestimonials = await fetchFromAirtable({
     tableName: 'PartnerTestimonials',
   });
+  console.log("🚀 ~ file: partners.tsx:180 ~ getStaticProps ~ partnerTestimonials:", partnerTestimonials)
   const community = await fetchFromAirtable({
     tableName: 'Community',
   });
