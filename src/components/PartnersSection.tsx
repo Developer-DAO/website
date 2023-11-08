@@ -52,10 +52,10 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
         <Grid>
           <div className="col-start-1 col-end-13 flex flex-col gap-3 md:flex-row">
             {goldPartners.map((gp) => (
-              <Link key={gp.name} href={gp.URL ? gp.URL : ""}>
+              <Link className="flex-1 grayscale transition-all hover:grayscale-0" key={gp.name} href={gp.URL ? gp.URL : ""}>
                 <Card
                   className={cx(
-                    "flex min-h-[320px] w-full border-2 grayscale transition-all hover:grayscale-0",
+                    "flex min-h-[320px] border-2 ",
                     "flex-col gap-2"
                   )}>
                   <div className="relative flex h-28 w-28  justify-center overflow-hidden ">

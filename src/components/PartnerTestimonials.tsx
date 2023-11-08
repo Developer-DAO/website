@@ -1,9 +1,9 @@
-import {Body3, BodyHeadline, Card} from '@gordo-d/d-d-ui-components';
-import {Attachment} from 'airtable';
+import { Body3, BodyHeadline, Card } from '@gordo-d/d-d-ui-components';
+import { Attachment } from 'airtable';
 import cx from 'classnames';
 import Image from 'next/image';
-import React, {useEffect} from 'react';
-import {Carousel} from 'react-responsive-carousel';
+import React, { useEffect } from 'react';
+import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import testimonials from '../constants/testimonials.json';
 import SectionTitle from './sectionTitle';
@@ -49,10 +49,12 @@ const PartnerTestimonials: React.FC<ITestimonialsProps> = (props) => {
                 key={t.Who}
                 className="flex justify-center items-center relative rounded-md px-[12px] py-[20px] md:w-[150px] w-[120px]">
                 {t.PartnerImages && t.PartnerName && t.PartnerImages[1].url ? (
-                  <div className="h-[50px] grayscale hover:grayscale-0 transition-all">
+                  <div className="h-[60px] w-[60px] grayscale hover:grayscale-0 transition-all">
                     <Image
-                      width={100}
-                      height={30}
+                      layout="responsive" // Image will scale with the width of the parent
+                      width={120} // Width of the image in pixels
+                      height={30} // Height of the image in pixels
+                      objectFit="contain"
                       src={t.PartnerImages[1].url}
                       alt={t.PartnerName}
                     />

@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.4",
     "@ensdomains/ens-avatar": "^0.3.3",
     "@gordo-d/d-d-ui-components": "0.1.13",
     "@mdx-js/loader": "^2.3.0",

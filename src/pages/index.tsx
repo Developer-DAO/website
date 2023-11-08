@@ -1,18 +1,18 @@
-import {motion} from 'framer-motion';
-import {useRouter} from 'next/router';
-import {ReactElement} from 'react';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { ReactElement } from 'react';
 
 import D_D_People from '@/components/People';
 import Testimonials from '@/components/Testimonials';
 import Vision from '@/components/Vision';
-import {Body1, Button, Headline1, Headline2} from '@gordo-d/d-d-ui-components';
+import { Body1, Button, Headline1, Headline2 } from '@gordo-d/d-d-ui-components';
 
 import PartnersSection from '@/components/PartnersSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
-import {fetchFromAirtable} from '@/lib/airtable/airtableFetch';
-import {resolveEnsNamesToAvatars} from '@/lib/ensAvatars';
-import {Body2, StarIcon} from '@gordo-d/d-d-ui-components';
+import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
+import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
+import { Body2, StarIcon } from '@gordo-d/d-d-ui-components';
 import Image from 'next/image';
 import Link from 'next/link';
 import HomeConstants from '../constants/home.json';
@@ -44,7 +44,7 @@ const HomePage = (props: any) => {
     <>
       <SEO
         title="Developer DAO"
-        description="BUIDL WEB3 WITH __ FRENS. Developer DAO has brought together some of the most talented people on the web to build web3."
+        description="BUIDL WEB3 WITH __ FRIENDS. Developer DAO has brought together some of the most talented people on the web to build web3."
         image="/RRSS_D_D_Image.png"
         icon="/favicon.ico"
         url="https://developerdao.com"
@@ -58,7 +58,7 @@ const HomePage = (props: any) => {
 
         <div className="relative w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
-          <section className="relative z-30 flex min-h-screen md:min-h-[80vh] w-full flex-col items-center justify-center gap-6">
+          <section className="relative z-30 flex min-h-screen md:min-h-[85vh] w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
                 initial={{opacity: 0}}

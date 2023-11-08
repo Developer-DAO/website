@@ -9,10 +9,10 @@ import {
   StarIcon,
   ThunderIcon,
 } from '@gordo-d/d-d-ui-components';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
-import {useRouter} from 'next/router';
-import {useEffect, useState} from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import navData from '../../constants/navigation.json';
 
 const TopBarGrid = ({children}: any) => {
@@ -36,10 +36,10 @@ const TopBarGrid = ({children}: any) => {
 
   return (
     <motion.div
-      className={`fixed left-0 top-0 z-50 w-screen transition-all duration-300 
+      className={`fixed left-0 top-0 z-50 w-screen  border-neutral-900 transition-all duration-300 
                   ${
                     isScrolled
-                      ? 'shadow-b-s, border-b border-neutral-900 bg-neutral-800/70 backdrop-blur-md'
+                      ? 'shadow-b-s, border-b border-neutral-900   bg-neutral-800/70 backdrop-blur-md'
                       : 'bg-transparent'
                   }`}>
       <div className="flex w-full justify-center">
