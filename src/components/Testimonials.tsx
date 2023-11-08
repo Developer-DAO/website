@@ -7,7 +7,7 @@ import {
 } from '@gordo-d/d-d-ui-components';
 import cx from 'classnames';
 import Image from 'next/image';
-import React, { CSSProperties, useEffect } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 // import { Carousel } from "react-responsive-carousel";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel, { arrowsPlugin } from '@brainhubeu/react-carousel';
@@ -30,8 +30,13 @@ const ITestimonialsDefaultProps = {};
 
 const Testimonials: React.FC<ITestimonialsProps> = (props) => {
   const {testimonialsData} = props;
+  const [isRendered, setIsRendered] = useState<boolean>(false);
+  
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // Avoid SSR crashing in Carousel Plugin
+    setIsRendered(true);
+  }, []);
   const arrowStyles: CSSProperties = {
     position: 'absolute',
     zIndex: 2,
@@ -49,7 +54,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
           headline={testimonials.Headline}
           subheadline={testimonials.SubHeadline}
         />
-        <Carousel
+        {isRendered && <Carousel
           plugins={[
             {
               resolve: arrowsPlugin,
@@ -101,7 +106,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
               </div>
             );
           })}
-        </Carousel>
+        </Carousel>}
         {/* <Carousel
           className="mt-10 p-5 md:mt-28"
           showArrows={false}
