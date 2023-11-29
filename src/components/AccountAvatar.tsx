@@ -8,19 +8,21 @@ export const AccountAvatar: AvatarComponent = ({ address, ensImage, size }) => {
   const handleAvatarError = (
     event: React.SyntheticEvent<HTMLImageElement, Event>
   ) => {
-    event.currentTarget.onerror = null;
+    event.currentTarget.onerror = null; // Remove the error handler after the first error
     setAvatarLoadError(true);
   };
 
   return ensImage && !avatarLoadError ? (
-    <Image
-      onError={handleAvatarError}
-      src={ensImage}
-      width={size}
-      height={size}
-      alt="ENS Avatar"
-      className={`rounded-full`}
-    />
+    <div className="flex items-center justify-center" style={{width: size + "px", height: size + "px", position: 'relative'}}>
+      <Image
+        onError={handleAvatarError}
+        src={ensImage}
+        alt="ENS Avatar"
+        layout="fill"
+        objectFit="cover" // or 'contain' based on your preference
+        className="rounded-full"
+      />
+    </div>
   ) : (
     <></>
   );

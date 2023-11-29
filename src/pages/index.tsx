@@ -193,7 +193,7 @@ export async function getStaticProps() {
   // Resolve ENS names to get additional data
   const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
 
-  const communityData = community.map((member, index) => ({
+  const communityData = validCommunity.map((member, index) => ({
     ...member,
     ...resolvedEnsData[index],
   }));

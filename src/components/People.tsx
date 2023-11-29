@@ -7,6 +7,7 @@ type D_D_IPeopleProps = {
     ENS: string;
     avatar?: string;
     name?: string;
+    Image?: any
   }[];
   avatarSize?: number;
   showCount?: number;
@@ -26,18 +27,19 @@ const D_D_People: React.FC<D_D_IPeopleProps> = (props) => {
       {/* PEOPLE */}
       <section className={`flex flex-wrap ${className}`}>
         {displayedCommunity?.map((p, i) => (
+          <>{p.avatar || p.Image && p.Image[0]?.url && (
           <div
             key={i}
             className="rounded-full"
             style={{ height: avatarSize, width: avatarSize }}>
-            {p.avatar && (
+
               <AccountAvatar
-                ensImage={p.avatar}
+                ensImage={p.avatar ? p.avatar : p.Image[0].url}
                 address={p.name ? p.name : ""}
                 size={avatarSize}
               />
-            )}
           </div>
+            )}</>
         ))}
       </section>
     </>
