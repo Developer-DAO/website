@@ -1,6 +1,5 @@
-import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 
 import D_D_People from '@/components/People';
 import Testimonials from '@/components/Testimonials';
@@ -13,11 +12,12 @@ import AppLayout from '@/components/layout/layout';
 import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
 import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
 import { Body2, StarIcon } from '@gordo-d/d-d-ui-components';
+import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 import HomeConstants from '../constants/home.json';
 import navigation from '../constants/navigation.json';
-
 interface Record {
   [key: string]: any;
 }
@@ -38,7 +38,27 @@ const HomePage = (props: any) => {
     communityTestimonials
   );
 
+  const evenItems = communityData?.filter((_: any, index: number) => index % 2 === 0);
+  const oddItems = communityData?.filter((_: any, index: number) => index % 2 !== 0);
+
   const router = useRouter();
+  
+    // Animation setup
+    const controls = useAnimation();
+    const [ref, inView] = useInView({
+      triggerOnce: true,
+      threshold: 0.25, // Adjust as needed
+    });
+  
+    useEffect(() => {
+      if (inView) {
+        controls.start('visible');
+      }
+    }, [controls, inView]);
+    const variants = {
+      visible: { opacity: 1, translateY: 0, transition: { duration: 0.8 } },
+      hidden: { opacity: 0, translateY: 20 },
+    };
 
   return (
     <>
@@ -55,9 +75,10 @@ const HomePage = (props: any) => {
         id="home"
         className="text-primary-white relative overflow-hidden">
         {/* STARS */}
-
-        <div className="relative w-screen overflow-hidden p-4 md:p-0">
+        <div
+          className="relative w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
+          
           <section className="relative z-30 flex min-h-screen md:min-h-[85vh] w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
@@ -131,12 +152,19 @@ const HomePage = (props: any) => {
             </div>
           </section>
 
-          <div className="mb-20 flex w-full justify-center">
-            <div className=" max-w-7xl">
+          <div
+          className="mb-20 flex w-full justify-center overflow-x-auto">
+            <div className="">
               <D_D_People
-                showCount={25}
+                showCount={80}
                 className="justify-center gap-6 p-6"
-                community={communityData}
+                community={evenItems}
+              />
+              <D_D_People
+                showCount={80}
+                stylesData={{paddingLeft: 60}}
+                className="justify-center gap-6 pb-6 pr-6 pl-28 ml-6"
+                community={oddItems}
               />
             </div>
           </div>
@@ -198,11 +226,12 @@ export async function getStaticProps() {
     ...resolvedEnsData[index],
   }));
 
+
   return {
     props: {
       partners,
       communityTestimonials,
-      communityData,
+      community,
     },
     revalidate: 86400,
   };

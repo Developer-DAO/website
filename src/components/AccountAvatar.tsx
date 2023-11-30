@@ -13,7 +13,7 @@ export const AccountAvatar: AvatarComponent = ({ address, ensImage, size }) => {
   };
 
   return ensImage && !avatarLoadError ? (
-    <div className="flex items-center justify-center" style={{width: size + "px", height: size + "px", position: 'relative'}}>
+    <div className="flex items-center justify-center grayscale" style={{width: size + "px", height: size + "px", position: 'relative'}}>
       <Image
         onError={handleAvatarError}
         src={ensImage}
