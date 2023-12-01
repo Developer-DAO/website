@@ -231,7 +231,7 @@ export async function getStaticProps() {
     props: {
       partners,
       communityTestimonials,
-      community,
+      communityData,
     },
     revalidate: 86400,
   };
