@@ -2,8 +2,8 @@ import PartnerTestimonials from '@/components/PartnerTestimonials';
 import PartnersCardsSection from '@/components/Partners_CardsSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
-import {fetchFromAirtable} from '@/lib/airtable/airtableFetch';
-import {resolveEnsNamesToAvatars} from '@/lib/ensAvatars';
+import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
+import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
 import {
   Body2,
   Button,
@@ -11,10 +11,10 @@ import {
   Headline2,
   ThunderIcon,
 } from '@gordo-d/d-d-ui-components';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import {ReactElement} from 'react';
+import { ReactElement } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import NavigationData from '../constants/navigation.json';
 import PartnersConstants from '../constants/partners.json';
@@ -53,7 +53,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
 
         <div className="w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
-          <section className="relative z-30 flex min-h-screen md:min-h-[80vh] w-full flex-col items-center justify-center gap-6">
+          <section className="relative z-30 flex min-h-screen md:min-h-[100vh] w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
                 initial={{opacity: 0}}
@@ -80,16 +80,16 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 />
               </motion.div>
             </div>
-            <div className="z-50 m-10 flex w-full flex-col items-center justify-center gap-2 text-center">
+            <div className="z-50 m-10 max-w-6xl flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
-                <motion.div
+              <motion.div
                   initial={{opacity: 0}}
                   animate={{opacity: 1}}
-                  transition={{delay: 2, duration: 1.5, ease: 'easeInOut'}}>
+                  transition={{delay: 2, duration: 0.3, ease: 'easeInOut'}}>
                   <Image
                     width={70}
                     height={70}
-                    className="absolute -right-16 -top-12"
+                    className="absolute md:-right-16 md:-top-12 -top-28 right-1/3"
                     src={'/shine.svg'}
                     alt={''}
                   />
@@ -100,7 +100,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
               </div>
               <Body2
                 color="neutral-600"
-                className="font-paragraph mb-6 px-10 md:px-0">
+                className="font-paragraph mb-6 px-10 md:px-0 max-w-xl">
                 {PartnersConstants.subheadline}
               </Body2>
               <div className="flex gap-4">
@@ -119,12 +119,12 @@ const PartnersPage = (props: IPartnersPageProps) => {
             </div>
           </section>
 
-          <section className="relative z-40 my-20 flex w-screen overflow-x-auto overflow-y-hidden ">
-            <div className="inline-flex p-10">
+          <section className="relative no-scrollbar z-40 my-20 flex w-screen overflow-x-auto overflow-y-hidden ">
+            <div className="inline-flex">
               {partners.map((p: any, i: any) => (
                 <Link
                   key={i}
-                  className="relative mx-4 flex h-[70px] w-[150px] items-center justify-center grayscale transition-all hover:grayscale-0  md:mx-6 md:h-[85px] md:w-[300px]"
+                  className="relative mx-4 flex h-[70px] w-[150px] items-center justify-center grayscale transition-all hover:grayscale-0  md:mx-16 md:h-[70px] md:w-[220px]"
                   href={p.URL ? p.URL : ''}
                   target="_blank">
                   {p.image[1].url && (
@@ -177,6 +177,7 @@ export async function getStaticProps() {
   const partnerTestimonials = await fetchFromAirtable({
     tableName: 'PartnerTestimonials',
   });
+  console.log("🚀 ~ file: partners.tsx:180 ~ getStaticProps ~ partnerTestimonials:", partnerTestimonials)
   const community = await fetchFromAirtable({
     tableName: 'Community',
   });

@@ -140,9 +140,9 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 </Body2>
               </Link>
             </div>
-            <div className="md:w-1/3 ">
+            <div className="md:w-1/3">
               <D_D_People
-                className="justify-end gap-3 p-6"
+                className="justify-end flex-wrap gap-3 p-6"
                 community={communityData}
                 avatarSize={windowWidth > 768 ? 50 : 35}
                 showCount={windowWidth > 768 ? 30 : 16}

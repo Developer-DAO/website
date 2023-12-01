@@ -16,7 +16,7 @@ export interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
   type = 'website',
   title="Developer DAO",
-  description="BUIDL WEB3 WITH __ FRENS. Developer DAO has brought together some of the most talented people on the web to build web3.",
+  description="BUIDL WEB3 WITH __ FRIENDS. Developer DAO has brought together some of the most talented people on the web to build web3.",
   image="/RRSS_D_D_Image.png",
   icon="/favicon.ico",
   url="https://developerdao.com",
