@@ -145,18 +145,19 @@ const HomePage = (props: any) => {
             variants={variants}
             className="mb-20 flex w-full justify-center overflow-x">
             <div className="">
-              <D_D_People
-              key={1}
-                showCount={80}
-                className="justify-center gap-6 p-6"
-                community={evenItems}
-              />
-              <D_D_People
-                showCount={80}
-                elementClassName="last:hidden"
-                className="justify-center gap-6 pb-6 pr-6 ml-6"
-                community={oddItems}
-              />
+            <D_D_People
+  key="evenItems"
+  showCount={80}
+  className="justify-center gap-6 p-6"
+  community={evenItems}
+/>
+<D_D_People
+  key="oddItems"
+  showCount={80}
+  elementClassName="last:hidden"
+  className="justify-center gap-6 pb-6 pr-6 ml-6"
+  community={oddItems}
+/>
             </div>
           </motion.div>
 
