@@ -1,7 +1,10 @@
+import { ReactElement } from 'react';
+
 import PartnerTestimonials from '@/components/PartnerTestimonials';
 import PartnersCardsSection from '@/components/Partners_CardsSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
+import useSectionAnimation from '@/hooks/useSectionAnimation';
 import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
 import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
 import {
@@ -14,7 +17,6 @@ import {
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import NavigationData from '../constants/navigation.json';
 import PartnersConstants from '../constants/partners.json';
@@ -39,6 +41,18 @@ const PartnersPage = (props: IPartnersPageProps) => {
     partners
   );
 
+
+  const variants = {
+    visible: {opacity: 1, translateY: 0, transition: {duration: 0.3}},
+    hidden: {opacity: 0, translateY: 20},
+  };
+
+  const headerAnimation = useSectionAnimation();
+  const partnerLineAnimation = useSectionAnimation();
+  const cardsAnimation = useSectionAnimation();
+  const testimonialsAnimation = useSectionAnimation();
+  const futureSectionAnimation = useSectionAnimation();
+
   return (
     <>
       <SEO
@@ -53,7 +67,12 @@ const PartnersPage = (props: IPartnersPageProps) => {
 
         <div className="w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
-          <section className="relative z-30 flex min-h-screen md:min-h-[100vh] w-full flex-col items-center justify-center gap-6">
+          <motion.section
+            ref={headerAnimation.ref}
+            initial="hidden"
+            animate={headerAnimation.controls}
+            variants={variants}
+            className="relative z-30 flex min-h-screen md:min-h-[90vh] w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
                 initial={{opacity: 0}}
@@ -67,11 +86,12 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 />
               </motion.div>
             </div>
-            <div className="top-30 absolute right-0 z-20 h-[1300px] w-[1700px]">
+            <div className="absolute inset-x-0 top-[20%] -left-[5%] z-20 flex justify-center">
               <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
-                transition={{delay: 0.5, duration: 0.3, ease: 'easeInOut'}}>
+                transition={{delay: 0.5, duration: 0.3, ease: 'easeInOut'}}
+                className="h-[1300px] w-[1700px]">
                 <Image
                   layout="fill"
                   objectFit="contain"
@@ -80,9 +100,10 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 />
               </motion.div>
             </div>
+
             <div className="z-50 m-10 max-w-6xl flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
-              <motion.div
+                <motion.div
                   initial={{opacity: 0}}
                   animate={{opacity: 1}}
                   transition={{delay: 2, duration: 0.3, ease: 'easeInOut'}}>
@@ -117,9 +138,14 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 </Link>
               </div>
             </div>
-          </section>
+          </motion.section>
 
-          <section className="relative no-scrollbar z-40 my-20 flex w-screen overflow-x-auto overflow-y-hidden ">
+          <motion.section
+            ref={partnerLineAnimation.ref}
+            initial="hidden"
+            animate={partnerLineAnimation.controls}
+            variants={variants}
+            className="relative no-scrollbar z-40 my-20 flex justify-center w-screen overflow-x-auto overflow-y-hidden ">
             <div className="inline-flex">
               {partners.map((p: any, i: any) => (
                 <Link
@@ -138,14 +164,31 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 </Link>
               ))}
             </div>
-          </section>
+          </motion.section>
 
-          <PartnersCardsSection communityData={communityData} />
+          <motion.div
+            ref={cardsAnimation.ref}
+            initial="hidden"
+            animate={cardsAnimation.controls}
+            variants={variants}>
+            <PartnersCardsSection communityData={communityData} />
+          </motion.div>
 
-          <PartnerTestimonials testimonialsData={partnerTestimonials} />
+          <motion.div
+            ref={testimonialsAnimation.ref}
+            initial="hidden"
+            animate={testimonialsAnimation.controls}
+            variants={variants}>
+            <PartnerTestimonials testimonialsData={partnerTestimonials} />
+          </motion.div>
 
           {/* WE ARE... */}
-          <section className="mb-20 flex justify-center">
+          <motion.section
+            ref={futureSectionAnimation.ref}
+            initial="hidden"
+            animate={futureSectionAnimation.controls}
+            variants={variants}
+            className="mb-20 flex justify-center">
             <div className="flex max-w-2xl flex-col items-center justify-center text-center">
               <Headline2 className="font-heading uppercase">
                 {PartnersConstants.future.headline}
@@ -163,7 +206,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
                 </Button>
               </Link>
             </div>
-          </section>
+          </motion.section>
         </div>
       </article>
     </>
@@ -177,7 +220,10 @@ export async function getStaticProps() {
   const partnerTestimonials = await fetchFromAirtable({
     tableName: 'PartnerTestimonials',
   });
-  console.log("🚀 ~ file: partners.tsx:180 ~ getStaticProps ~ partnerTestimonials:", partnerTestimonials)
+  console.log(
+    '🚀 ~ file: partners.tsx:180 ~ getStaticProps ~ partnerTestimonials:',
+    partnerTestimonials
+  );
   const community = await fetchFromAirtable({
     tableName: 'Community',
   });

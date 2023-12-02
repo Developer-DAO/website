@@ -15,6 +15,7 @@ import testimonials from '../constants/testimonials.json';
 import SectionTitle from './sectionTitle';
 
 import '@brainhubeu/react-carousel/lib/style.css';
+import { motion } from 'framer-motion';
 
 type ITestimonialsProps = {
   //TODO: type
@@ -31,12 +32,11 @@ const ITestimonialsDefaultProps = {};
 const Testimonials: React.FC<ITestimonialsProps> = (props) => {
   const {testimonialsData} = props;
   const [isRendered, setIsRendered] = useState<boolean>(false);
-  
 
   useEffect(() => {
-    // Avoid SSR crashing in Carousel Plugin
     setIsRendered(true);
   }, []);
+
   const arrowStyles: CSSProperties = {
     position: 'absolute',
     zIndex: 2,
@@ -60,16 +60,40 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
               resolve: arrowsPlugin,
               options: {
                 arrowLeft: (
-                  <ArrowLeftIcon className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer" />
+                  <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
+              >
+                <ArrowLeftIcon className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer" />
+              </motion.div>
                 ),
                 arrowLeftDisabled: (
+                  <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
+              >
                   <ArrowLeftIcon className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-none opacity-50" />
+                  </motion.div>
                 ),
                 arrowRight: (
+                  <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
+              >
                   <ArrowRightIcon className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer" />
+                  </motion.div>
                 ),
                 arrowRightDisabled: (
+                  <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
+              >
                   <ArrowRightIcon className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-none opacity-50" />
+                  </motion.div>
                 ),
                 addArrowClickHandler: true,
               },
@@ -107,61 +131,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
             );
           })}
         </Carousel>}
-        {/* <Carousel
-          className="mt-10 p-5 md:mt-28"
-          showArrows={false}
-          swipeable
-          showStatus={false}
-          showIndicators={false}
-          showThumbs={false}
-          renderArrowPrev={(onClickHandler, hasPrev, label) => hasPrev && (
-            <ArrowLeftIcon
-              className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer"
-              onClick={
-                onClickHandler
-              }
-            />
-          )}
-          renderArrowNext={(onClickHandler, hasNext, label) => hasNext && (
-            <ArrowRightIcon
-              className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer"
-              onClick={onClickHandler}
-            />
-          )}
-          >
-
-          {testimonialsData.map((t: any, i: number) => {
-            return (
-              <div key={i} className="flex w-full justify-center">
-                <Card
-                  noPadding
-                  className={cx(
-                    "bg-white/05 mb-32 flex min-h-[320px] w-full flex-col rounded-lg border-2 p-0 backdrop-blur md:w-[600px] md:flex-row",
-                    "gap-2"
-                  )}>
-                  <div className="flex w-full flex-col justify-end p-6 text-left md:w-1/3">
-                    <div className="relative mb-3 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-neutral-800">
-                      <Image fill src={t.Image[0].url} alt={t.Title} />
-                    </div>
-                    <BodyHeadline className="">{t.Who}</BodyHeadline>
-                    <Body3
-                      color="neutral-700"
-                      className="font-bold uppercase text-neutral-700">
-                      {t.WorkTitle}
-                    </Body3>
-                  </div>
-                  <div className="border-primary-grey/20 rounded-lg p-6 md:border-l-2">
-                    <Body3
-                      color="neutral-700 max-w-[300px] text-left"
-                      className="">
-                      {t.Testimonial}
-                    </Body3>
-                  </div>
-                </Card>
-              </div>
-            );
-          })}
-        </Carousel> */}
+   
       </section>
     </>
   );

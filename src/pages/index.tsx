@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router';
-import { ReactElement, useEffect } from 'react';
+import { ReactElement } from 'react';
 
 import D_D_People from '@/components/People';
 import Testimonials from '@/components/Testimonials';
@@ -9,13 +8,13 @@ import { Body1, Button, Headline1, Headline2 } from '@gordo-d/d-d-ui-components'
 import PartnersSection from '@/components/PartnersSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
+import useSectionAnimation from '@/hooks/useSectionAnimation';
 import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
 import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
 import { Body2, StarIcon } from '@gordo-d/d-d-ui-components';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
 import HomeConstants from '../constants/home.json';
 import navigation from '../constants/navigation.json';
 interface Record {
@@ -28,37 +27,24 @@ interface Props {
 
 const HomePage = (props: any) => {
   const {communityTestimonials, partners, communityData, community} = props;
-  console.log('🚀 ~ file: index.tsx:37 ~ HomePage ~ partners:', partners);
-  console.log(
-    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityData:',
-    communityData
+
+  const evenItems = communityData?.filter(
+    (_: any, index: number) => index % 2 === 0
   );
-  console.log(
-    '🚀 ~ file: index.tsx:37 ~ HomePage ~ communityTestimonials:',
-    communityTestimonials
+  const oddItems = communityData?.filter(
+    (_: any, index: number) => index % 2 !== 0
   );
 
-  const evenItems = communityData?.filter((_: any, index: number) => index % 2 === 0);
-  const oddItems = communityData?.filter((_: any, index: number) => index % 2 !== 0);
+  const variants = {
+    visible: {opacity: 1, translateY: 0, transition: {duration: 0.8}},
+    hidden: {opacity: 0, translateY: 20},
+  };
 
-  const router = useRouter();
-  
-    // Animation setup
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      triggerOnce: true,
-      threshold: 0.25, // Adjust as needed
-    });
-  
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible');
-      }
-    }, [controls, inView]);
-    const variants = {
-      visible: { opacity: 1, translateY: 0, transition: { duration: 0.8 } },
-      hidden: { opacity: 0, translateY: 20 },
-    };
+  const peopleAnimation = useSectionAnimation();
+  const weAreAnimation = useSectionAnimation();
+  const visionAnimation = useSectionAnimation();
+  const partnersAnimation = useSectionAnimation();
+  const testimonialsAnimation = useSectionAnimation();
 
   return (
     <>
@@ -75,10 +61,9 @@ const HomePage = (props: any) => {
         id="home"
         className="text-primary-white relative overflow-hidden">
         {/* STARS */}
-        <div
-          className="relative w-screen overflow-hidden p-4 md:p-0">
+        <div className="relative w-screen overflow-hidden p-4 md:p-0">
           {/* HEADING */}
-          
+
           <section className="relative z-30 flex min-h-screen md:min-h-[85vh] w-full flex-col items-center justify-center gap-6">
             <div className="absolute right-0 top-0 z-20 h-screen w-screen">
               <motion.div
@@ -152,32 +137,37 @@ const HomePage = (props: any) => {
             </div>
           </section>
 
-          <div
-          className="mb-20 flex w-full justify-center overflow-x-auto">
+          {/* PEOPLE */}
+          <motion.div
+            ref={peopleAnimation.ref}
+            initial="hidden"
+            animate={peopleAnimation.controls}
+            variants={variants}
+            className="mb-20 flex w-full justify-center overflow-x">
             <div className="">
               <D_D_People
+              key={1}
                 showCount={80}
                 className="justify-center gap-6 p-6"
                 community={evenItems}
               />
               <D_D_People
                 showCount={80}
-                stylesData={{paddingLeft: 60}}
-                className="justify-center gap-6 pb-6 pr-6 pl-28 ml-6"
+                elementClassName="last:hidden"
+                className="justify-center gap-6 pb-6 pr-6 ml-6"
                 community={oddItems}
               />
             </div>
-          </div>
-          {/* 
-          <div className="my-20">
-            <SectionTitle
-              headline={HomeConstants.OurMision.Headline}
-              subheadline={HomeConstants.OurMision.SubHeadline}
-            />
-          </div> */}
+          </motion.div>
 
           {/* WE ARE... */}
-          <section id="we" className="flex justify-center ">
+          <motion.section
+            ref={weAreAnimation.ref}
+            initial="hidden"
+            animate={weAreAnimation.controls}
+            variants={variants}
+            id="we"
+            className="flex justify-center ">
             <div className="flex max-w-2xl flex-col items-center justify-center text-center">
               <Body1>{HomeConstants.whoIntro}</Body1>
               <Headline2 className="font-heading">
@@ -188,13 +178,34 @@ const HomePage = (props: any) => {
                 {HomeConstants.whoHeadline2}
               </Headline2>
             </div>
-          </section>
+          </motion.section>
 
-          <Vision />
+          {/* Vision */}
+          <motion.div
+            ref={visionAnimation.ref}
+            initial="hidden"
+            animate={visionAnimation.controls}
+            variants={variants}>
+            <Vision />
+          </motion.div>
 
-          <PartnersSection partners={partners} />
+          {/* Partners Section */}
+          <motion.div
+            ref={partnersAnimation.ref}
+            initial="hidden"
+            animate={partnersAnimation.controls}
+            variants={variants}>
+            <PartnersSection partners={partners} />
+          </motion.div>
 
-          <Testimonials testimonialsData={communityTestimonials} />
+          {/* Testimonials */}
+          <motion.div
+            ref={testimonialsAnimation.ref}
+            initial="hidden"
+            animate={testimonialsAnimation.controls}
+            variants={variants}>
+            <Testimonials testimonialsData={communityTestimonials} />
+          </motion.div>
         </div>
       </article>
     </>
@@ -225,7 +236,6 @@ export async function getStaticProps() {
     ...member,
     ...resolvedEnsData[index],
   }));
-
 
   return {
     props: {

@@ -52,7 +52,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
         <Grid>
           <div className="col-start-1 col-end-13 flex flex-col gap-3 md:flex-row">
             {goldPartners.map((gp) => (
-              <Link className="flex-1 grayscale transition-all hover:grayscale-0" key={gp.name} href={gp.URL ? gp.URL : ""}>
+              <Link target="_blank" className="flex-1 grayscale transition-all hover:grayscale-0" key={gp.name} href={gp.URL ? gp.URL : ""}>
                 <Card
                   className={cx(
                     "flex min-h-[320px] border-2 ",
@@ -87,7 +87,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
             )}>
             {silverPartners.map((p, i) => {
               return (
-                <Link key={p.name} href={p.URL ? p.URL : ""}>
+                <Link target="_blank" key={p.name} href={p.URL ? p.URL : ""}>
                   <div className="flex min-w-[150px] flex-col items-center gap-2 grayscale transition-all ease-in-out hover:grayscale-0">
                     <div className="relative flex h-32 w-32 items-center justify-center overflow-hidden ">
                       <Image
