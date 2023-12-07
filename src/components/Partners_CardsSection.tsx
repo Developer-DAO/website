@@ -56,7 +56,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   <ThunderGreyIcon />
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {PartnersConstants.cardsSection.preferred.title}
                 </Headline4>
                 <Body3 color="neutral-700">
@@ -72,7 +72,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 </Body2>
               </Link>
             </div>
-            <div className="-bottom-26 absolute left-0 flex h-2/3 w-full items-center justify-center grayscale md:relative md:bottom-0 md:ml-2 md:h-full md:w-2/3">
+            <div className="-bottom-26 absolute left-0 -bottom-[80px] flex h-2/3 w-full items-center justify-center grayscale md:relative md:bottom-0 md:ml-2 md:h-full md:w-2/3">
               <Image
                 className="md:p-4 md:pl-6"
                 layout="fill"
@@ -91,7 +91,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   <CodeIcon />
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {PartnersConstants.cardsSection.hackathon.title}
                 </Headline4>
                 <Body3 color="neutral-700">
@@ -107,7 +107,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 </Body2>
               </Link>
             </div>
-            <BuildPanelImage className="absolute -bottom-20 -right-8 z-10 h-full w-full md:top-0 md:w-3/4" />
+            <BuildPanelImage className="absolute -bottom-[120px] -right-8 z-10 h-full w-full md:top-0 md:w-3/4" />
           </Card>
 
           {/* 
@@ -122,7 +122,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   <PeopleIcon />
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {PartnersConstants.cardsSection.talent.title}
                 </Headline4>
                 <Body3 color="neutral-700">
@@ -159,7 +159,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   <DolarIcon />
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {PartnersConstants.cardsSection.ventures.title}
                 </Headline4>
                 <Body2 color="neutral-700">
@@ -187,7 +187,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   <TicketIcon />
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {PartnersConstants.cardsSection.events.title}
                 </Headline4>
                 <Body2 color="neutral-700">
@@ -221,7 +221,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   <UniHatIcon />
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {PartnersConstants.cardsSection.hackers.title}
                 </Headline4>
                 <Body2 color="neutral-700">

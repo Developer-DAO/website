@@ -39,32 +39,32 @@ const Vision: React.FC<IVisionProps> = (props) => {
 
         <Grid>
           <Card className="border-primary-grey col-start-1 col-end-4 flex min-h-[320px] flex-col justify-center border-2 backdrop-blur-lg md:flex-col md:justify-start">
-            <Headline4 className="mb-3 text-center md:text-left">
+            <Headline4 className="mb-3 font-bold tracking-wider text-center md:text-left">
               /VISION
             </Headline4>
             <div className="flex flex-col gap-2 ">
-              <div className="font-paragraph flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 text-neutral-600 md:pl-0">
+              <div className="font-paragraph flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 text-neutral-600 pl-6 md:pl-0">
                 <div className="flex w-full gap-3 md:w-[70px]">
-                  <Body1>😎</Body1>
-                  <Body1>VIBE</Body1>
+                  <Body1 className="p-0">😎</Body1>
+                  <Body1 className="p-0">VIBE</Body1>
                 </div>
               </div>
-              <div className="flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 md:pl-0">
+              <div className="flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 pl-6 md:pl-0">
                 <div className="flex w-full gap-3 md:w-[70px]">
-                  <Body1>🧠</Body1>
-                  <Body1>LEARN</Body1>
+                  <Body1 className="p-0">🧠</Body1>
+                  <Body1 className="p-0">LEARN</Body1>
                 </div>
               </div>
-              <div className="flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 md:pl-0">
+              <div className="flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 pl-6 md:pl-0">
                 <div className="flex w-full gap-3 md:w-[70px]">
-                  <Body1>😎</Body1>
-                  <Body1>BUILD</Body1>
+                  <Body1 className="p-0">🏗️</Body1>
+                  <Body1 className="p-0">BUILD</Body1>
                 </div>
               </div>
-              <div className="flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 md:pl-0">
+              <div className="flex justify-center gap-3 rounded-full border-2 border-neutral-700 p-2 pl-6 md:pl-0">
                 <div className="flex w-full gap-3 md:w-[70px]">
-                  <Body1>😎</Body1>
-                  <Body1>GOVERN</Body1>
+                  <Body1 className="p-0">👩‍⚖️</Body1>
+                  <Body1 className="p-0">GOVERN</Body1>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   😎
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.Vibe.title}
                 </Headline4>
                 <Body2 color="neutral-700">
@@ -108,7 +108,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   🧠
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.Learn.title}
                 </Headline4>
                 <Body2 color="neutral-700">
@@ -123,7 +123,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
               </Link>
             </div>
 
-            <LearnIconsImage className="right-0 top-0 z-10 h-full w-4/5 md:mr-10 md:w-1/3" />
+            <LearnIconsImage className="right-12 top-0 z-10 h-full w-4/5 md:mr-10 md:w-1/3" />
           </Card>
 
           <Card className="border-primary-grey relative col-start-7 col-end-13 flex min-h-[320px] flex-col justify-between border-2 backdrop-blur-lg md:flex-row md:justify-start">
@@ -132,7 +132,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   🏗️
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.build.title}
                 </Headline4>
                 <Body2 color="neutral-700">
@@ -156,7 +156,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-neutral-800 p-3">
                   👩‍⚖️
                 </div>
-                <Headline4 className="my-2">
+                <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.govern.title}
                 </Headline4>
                 <Body2 color="neutral-700">
@@ -171,9 +171,9 @@ const Vision: React.FC<IVisionProps> = (props) => {
               </Link>
             </div>
             <div className="relative h-full w-full md:w-3/5">
-              <GovernPLeftImage className="absolute -left-14 -top-24 z-10 h-[200px] w-[280px] md:h-[500px] md:w-[480px]" />
-              <GovernPCenterImage className="shadowh-[200px] absolute -top-28 left-5 z-30  h-[200px] w-[280px] md:h-[500px] md:w-[480px]" />
-              <GovernPRightImage className="absolute -top-16 left-24 z-20 h-[200px] w-[280px] md:h-[500px] md:w-[480px]" />
+              <GovernPLeftImage className="absolute md:-left-14 -left-10 md:-top-24 -top-18 z-10 h-[200px] w-[280px] md:h-[500px] md:w-[480px]" />
+              <GovernPCenterImage className="shadowh-[200px] absolute md:-top-28 -top-4 md:left-5 left-5 z-30  h-[200px] w-[280px] md:h-[500px] md:w-[480px]" />
+              <GovernPRightImage className="absolute md:-top-16 -top-2 md:left-24 left-20 z-20 h-[200px] w-[280px] md:h-[500px] md:w-[480px]" />
             </div>
           </Card>
         </Grid>

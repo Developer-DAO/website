@@ -49,7 +49,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
   return (
     <>
       {/* OUR TESTIMONIALS */}
-      <section className="my-10 flex flex-col items-center justify-center gap-6 md:my-40">
+      <section className="my-10 flex flex-col items-center justify-center gap-6 mb-40 md:my-40">
         <SectionTitle
           headline={testimonials.Headline}
           subheadline={testimonials.SubHeadline}
@@ -65,7 +65,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
               >
-                <ArrowLeftIcon className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer" />
+                <ArrowLeftIcon className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-pointer mb-20 md:mb-0" />
               </motion.div>
                 ),
                 arrowLeftDisabled: (
@@ -74,7 +74,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
               >
-                  <ArrowLeftIcon className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-none opacity-50" />
+                  <ArrowLeftIcon className="absolute -bottom-0 left-1/2 h-24 w-24 -translate-x-28 cursor-none opacity-50 mb-20 md:mb-0" />
                   </motion.div>
                 ),
                 arrowRight: (
@@ -83,7 +83,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
               >
-                  <ArrowRightIcon className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer" />
+                  <ArrowRightIcon className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-pointer mb-20 md:mb-0" />
                   </motion.div>
                 ),
                 arrowRightDisabled: (
@@ -92,7 +92,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }} // Adjust the delay and duration as needed
               >
-                  <ArrowRightIcon className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-none opacity-50" />
+                  <ArrowRightIcon className="absolute bottom-0 left-1/2 h-24 w-24 translate-x-2 cursor-none opacity-50 mb-20 md:mb-0" />
                   </motion.div>
                 ),
                 addArrowClickHandler: true,
