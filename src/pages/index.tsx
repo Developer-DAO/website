@@ -117,7 +117,7 @@ const HomePage = (props: any) => {
               <div className="flex flex-col gap-4 md:flex-row">
                 <Link href={navigation.ctas.handbook} target="_blank">
                   <Button
-                    className="font-paragraph 
+                    className="font-paragraph  font-medium
                     drop-shadow-[3px_0_30px_rgba(254,254,254,0.472)]
                     transition-all hover:drop-shadow-[10px_0_40px_rgba(254,254,254,0.472)]"
                     icon={<StarIcon className="h-5 w-5" />}
