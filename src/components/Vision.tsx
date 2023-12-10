@@ -79,7 +79,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.Vibe.title}
                 </Headline4>
-                <Body2 color="neutral-700">
+                <Body2 color="neutral-700 font-light">
                   {HomeConstants.OurVision.Vibe.subtitle}
                 </Body2>
               </div>
@@ -87,7 +87,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={HomeConstants.OurVision.Vibe.link}>
                 <LinkIcon className="h-7 w-7 transition-all hover:rotate-45" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600" className="p-0 font-light">Get involved</Body2>
               </Link>
             </div>
             <div className="relative h-full w-full md:w-3/4">
@@ -111,7 +111,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.Learn.title}
                 </Headline4>
-                <Body2 color="neutral-700">
+                <Body2 color="neutral-700 font-light">
                   {HomeConstants.OurVision.Learn.subtitle}
                 </Body2>
               </div>
@@ -119,7 +119,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-6"
                 href={HomeConstants.OurVision.Learn.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600" className="p-0 font-light">Get involved</Body2>
               </Link>
             </div>
 
@@ -135,7 +135,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.build.title}
                 </Headline4>
-                <Body2 color="neutral-700">
+                <Body2 color="neutral-700 font-light">
                   {HomeConstants.OurVision.build.subtitle}
                 </Body2>
               </div>
@@ -143,7 +143,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={HomeConstants.OurVision.build.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600" className="p-0 font-light">Get involved</Body2>
               </Link>
             </div>
 
@@ -159,7 +159,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 <Headline4 className="my-2 font-bold">
                   {HomeConstants.OurVision.govern.title}
                 </Headline4>
-                <Body2 color="neutral-700">
+                <Body2 color="neutral-700 font-light">
                   {HomeConstants.OurVision.govern.subtitle}
                 </Body2>
               </div>
@@ -167,7 +167,7 @@ const Vision: React.FC<IVisionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={HomeConstants.OurVision.govern.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">Get involved</Body2>
+                <Body2 color="neutral-600" className="p-0 font-light">Get involved</Body2>
               </Link>
             </div>
             <div className="relative h-full w-full md:w-3/5">

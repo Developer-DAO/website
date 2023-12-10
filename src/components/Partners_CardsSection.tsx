@@ -67,7 +67,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={PartnersConstants.cardsSection.preferred.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600" className="hidden md:block">
+                <Body2 color="neutral-600" className="hidden md:block p-0 font-light">
                   {PartnersConstants.cardsSection.preferred.linkName}
                 </Body2>
               </Link>
@@ -102,7 +102,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={PartnersConstants.cardsSection.hackathon.link}>
                 <LinkIcon className="h-7 w-7 transition-all hover:rotate-45" />
-                <Body2 color="neutral-600" className="hidden md:block">
+                <Body2 color="neutral-600" className="hidden md:block p-0 font-light">
                   {PartnersConstants.cardsSection.hackathon.linkName}
                 </Body2>
               </Link>
@@ -135,7 +135,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 <LinkIcon className="h-7 w-7" />
                 <Body2
                   color="neutral-600 max-w-2/3"
-                  className="hidden md:block">
+                  className="hidden md:block p-0 font-light">
                   {PartnersConstants.cardsSection.talent.linkName}
                 </Body2>
               </Link>
@@ -170,7 +170,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={PartnersConstants.cardsSection.ventures.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 className="hidden md:block" color="neutral-600">
+                <Body2 className="hidden md:block p-0 font-light" color="neutral-600">
                   {PartnersConstants.cardsSection.ventures.linkName}
                 </Body2>
               </Link>
@@ -198,7 +198,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={PartnersConstants.cardsSection.events.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600" className="hidden md:block">
+                <Body2 color="neutral-600 p-0 font-light" className="hidden md:block">
                   {PartnersConstants.cardsSection.events.linkName}
                 </Body2>
               </Link>
@@ -232,7 +232,7 @@ const PartnersCardsSection: React.FC<IPartnersCardsSectionProps> = (props) => {
                 className="absolute right-0 top-0 flex items-center gap-2 px-4 py-5 md:relative md:p-0"
                 href={PartnersConstants.cardsSection.hackers.link}>
                 <LinkIcon className="h-7 w-7" />
-                <Body2 color="neutral-600">
+                <Body2 color="neutral-600 p-0 font-light">
                   {PartnersConstants.cardsSection.hackers.linkName}
                 </Body2>
               </Link>

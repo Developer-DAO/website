@@ -121,7 +121,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
               </div>
               <Body2
                 color="neutral-600"
-                className="font-paragraph mb-6 px-10 md:px-0 max-w-xl">
+                className="font-paragraph font-normal mb-6 px-10 md:px-0 max-w-xl">
                 {PartnersConstants.subheadline}
               </Body2>
               <div className="flex gap-4">

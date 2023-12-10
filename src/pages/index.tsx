@@ -111,14 +111,13 @@ const HomePage = (props: any) => {
               </div>
               <Body2
                 color="neutral-600"
-                className="font-paragraph mb-6 px-10 md:px-0">
+                className="font-paragraph font-normal mb-6 px-10 md:px-0">
                 {HomeConstants.subheadline}
               </Body2>
               <div className="flex flex-col gap-4 md:flex-row">
                 <Link href={navigation.ctas.handbook} target="_blank">
                   <Button
                     className="font-paragraph 
-                    font-semibold 
                     drop-shadow-[3px_0_30px_rgba(254,254,254,0.472)]
                     transition-all hover:drop-shadow-[10px_0_40px_rgba(254,254,254,0.472)]"
                     icon={<StarIcon className="h-5 w-5" />}
@@ -128,7 +127,7 @@ const HomePage = (props: any) => {
                 </Link>
                 <Link href={'/partners'}>
                   <Button
-                    className="font-paragraph w-full font-semibold tracking-wider"
+                    className="font-paragraph w-full font-medium tracking-wider"
                     variant="secondary">
                     Partner with us
                   </Button>
