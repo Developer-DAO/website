@@ -38,7 +38,10 @@ const Footer = (props: any) => {
             ))}
           </ul>
           <Body3 color={'neutral-600'} className="hidden md:block">
-            Built with 🤍️ at Agency
+            Built with 🤍️ at  
+          <Link href={'https://agency.developerda.com'}>
+            <span className='underline pl-1 hover:text-red-400 transition-colors'>Agency</span>
+          </Link>
           </Body3>
         </div>
 
