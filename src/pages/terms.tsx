@@ -1,6 +1,7 @@
-import {MDXProvider} from '@mdx-js/react';
-import {useRouter} from 'next/router';
+import { MDXProvider } from '@mdx-js/react';
+import { useRouter } from 'next/router';
 import React from 'react';
+import styles from '../styles/markdown.module.scss';
 
 import Terms from '../constants/terms.mdx'; // Adjust this path
 
@@ -13,9 +14,11 @@ const MDXPage: React.FC = () => {
 
   return (
     <div className="flex justify-center pt-36 z-40 min-h-screen text-primary-grey">
-      <div className="max-w-xl backdrop-blur-sm  p-4 w-full">
+      <div className="max-w-xl backdrop-blur-sm p-4 pb-20 w-full">
         <MDXProvider components={components}>
-          <Terms />
+          <div className={styles.markdownContainer}>
+            <Terms />
+          </div>
         </MDXProvider>
       </div>
     </div>
