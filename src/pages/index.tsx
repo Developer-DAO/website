@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 import D_D_People from '@/components/People';
 import Testimonials from '@/components/Testimonials';
@@ -17,6 +17,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HomeConstants from '../constants/home.json';
 import navigation from '../constants/navigation.json';
+
 interface Record {
   [key: string]: any;
 }
@@ -26,14 +27,8 @@ interface Props {
 }
 
 const HomePage = (props: any) => {
-  const {communityTestimonials, partners, communityData, community} = props;
 
-  const evenItems = communityData?.filter(
-    (_: any, index: number) => index % 2 === 0
-  );
-  const oddItems = communityData?.filter(
-    (_: any, index: number) => index % 2 !== 0
-  );
+
 
   const variants = {
     visible: {opacity: 1, translateY: 0, transition: {duration: 0.8}},
@@ -45,6 +40,58 @@ const HomePage = (props: any) => {
   const visionAnimation = useSectionAnimation();
   const partnersAnimation = useSectionAnimation();
   const testimonialsAnimation = useSectionAnimation();
+
+  const [partners, setpartners] = useState<any>([]);
+  const [oddItems, setoddItems] = useState<any>([]);
+  const [evenItems, setevenItems] = useState<any>([]);
+  const [communityTestimonials, setcommunityTestimonials] = useState<any>([]);
+  
+  const loadData = async () => {
+    const partners = await fetchFromAirtable({
+      tableName: 'Partners',
+    });
+    setpartners(partners);
+  
+    const communityTestimonials = await fetchFromAirtable({
+      tableName: 'CommunityTestimonials',
+    });
+    setcommunityTestimonials(communityTestimonials);
+
+    const community = await fetchFromAirtable({
+      tableName: 'Community',
+    });
+    const validCommunity = community.filter((p) => Boolean(p.ENS));
+  
+    const providerUrl = process.env.POKTRPC_MAINNET ?? '';
+    // Extract ENS names from the community data
+    const ensNames = validCommunity.map((p) => p.ENS);
+  
+    // Resolve ENS names to get additional data
+    const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
+  
+    const communityData = validCommunity.map((member, index) => ({
+      ...member,
+      ...resolvedEnsData[index],
+    }));
+
+    const evenItems = communityData?.filter(
+      (_: any, index: number) => index % 2 === 0
+    );
+    const oddItems = communityData?.filter(
+      (_: any, index: number) => index % 2 !== 0
+    );
+
+    setoddItems( oddItems)
+    setevenItems( evenItems)
+  }
+
+  useEffect(() => {
+    loadData();
+  
+    return () => {
+    }
+  }, [])
+  
 
   return (
     <>
@@ -212,40 +259,40 @@ const HomePage = (props: any) => {
   );
 };
 
-export async function getStaticProps() {
-  const partners = await fetchFromAirtable({
-    tableName: 'Partners',
-  });
+// export async function getStaticProps() {
+//   const partners = await fetchFromAirtable({
+//     tableName: 'Partners',
+//   });
 
-  const communityTestimonials = await fetchFromAirtable({
-    tableName: 'CommunityTestimonials',
-  });
-  const community = await fetchFromAirtable({
-    tableName: 'Community',
-  });
-  const validCommunity = community.filter((p) => Boolean(p.ENS));
+//   const communityTestimonials = await fetchFromAirtable({
+//     tableName: 'CommunityTestimonials',
+//   });
+//   const community = await fetchFromAirtable({
+//     tableName: 'Community',
+//   });
+//   const validCommunity = community.filter((p) => Boolean(p.ENS));
 
-  const providerUrl = process.env.POKTRPC_MAINNET ?? '';
-  // Extract ENS names from the community data
-  const ensNames = validCommunity.map((p) => p.ENS);
+//   const providerUrl = process.env.POKTRPC_MAINNET ?? '';
+//   // Extract ENS names from the community data
+//   const ensNames = validCommunity.map((p) => p.ENS);
 
-  // Resolve ENS names to get additional data
-  const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
+//   // Resolve ENS names to get additional data
+//   const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
 
-  const communityData = validCommunity.map((member, index) => ({
-    ...member,
-    ...resolvedEnsData[index],
-  }));
+//   const communityData = validCommunity.map((member, index) => ({
+//     ...member,
+//     ...resolvedEnsData[index],
+//   }));
 
-  return {
-    props: {
-      partners,
-      communityTestimonials,
-      communityData,
-    },
-    revalidate: 86400,
-  };
-}
+//   return {
+//     props: {
+//       partners,
+//       communityTestimonials,
+//       communityData,
+//     },
+//     revalidate: 86400,
+//   };
+// }
 
 HomePage.getLayout = function getLayout(page: ReactElement) {
   return <AppLayout>{page}</AppLayout>;
