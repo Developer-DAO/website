@@ -213,7 +213,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const partners = await fetchFromAirtable({
     tableName: 'Partners',
   });
@@ -246,8 +246,7 @@ export async function getStaticProps() {
       partners,
       partnerTestimonials,
       communityData,
-    },
-    // revalidate: 10,
+    }
   };
 }
 
