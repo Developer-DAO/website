@@ -1,7 +1,7 @@
 import { MDXProvider } from '@mdx-js/react';
 import { useRouter } from 'next/router';
 import React from 'react';
-import styles from '../styles/markdown.module.scss';
+import styles from '../styles/markdown.module.css';
 
 import Terms from '../constants/terms.mdx'; // Adjust this path
 

@@ -245,7 +245,7 @@ export async function getServerSideProps() {
     props: {
       partners,
       partnerTestimonials,
-      communityData,
+      communityData
     }
   };
 }

@@ -1,7 +1,7 @@
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 import Privacy from '../constants/privacy.mdx'; // Adjust this path
-import styles from '../styles/markdown.module.scss';
+import styles from '../styles/markdown.module.css';
 
 const components = {
   // Any custom components you want to use within your MDX files.
