@@ -26,7 +26,7 @@ interface Props {
 }
 
 const HomePage = (props: any) => {
-  const {communityTestimonials, partners, communityData, community} = props;
+  const {communityTestimonials, partners, communityData} = props;
 
   const evenItems = communityData?.filter(
     (_: any, index: number) => index % 2 === 0
@@ -40,7 +40,6 @@ const HomePage = (props: any) => {
     hidden: {opacity: 0, translateY: 20},
   };
 
-  const peopleAnimation = useSectionAnimation();
   const weAreAnimation = useSectionAnimation();
   const visionAnimation = useSectionAnimation();
   const partnersAnimation = useSectionAnimation();
@@ -241,7 +240,7 @@ export async function getServerSideProps() {
     props: {
       partners,
       communityTestimonials,
-      communityData,
+      communityData
     }
   };
 }
