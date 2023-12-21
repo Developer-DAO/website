@@ -42,6 +42,7 @@
     "wagmi": "^1.4.3"
   },
   "devDependencies": {
+    "path": "^0.12.7",
     "prettier": "^3.0.3",
     "ts-loader": "^9.5.0"
   }

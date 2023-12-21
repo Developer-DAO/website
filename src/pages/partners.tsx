@@ -5,8 +5,6 @@ import PartnersCardsSection from '@/components/Partners_CardsSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
 import useSectionAnimation from '@/hooks/useSectionAnimation';
-import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
-import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
 import {
   Body2,
   Button,
@@ -213,40 +211,24 @@ const PartnersPage = (props: IPartnersPageProps) => {
   );
 };
 
-export async function getServerSideProps() {
-  const partners = await fetchFromAirtable({
-    tableName: 'Partners',
-  });
-  const partnerTestimonials = await fetchFromAirtable({
-    tableName: 'PartnerTestimonials',
-  });
-  console.log(
-    '🚀 ~ file: partners.tsx:180 ~ getStaticProps ~ partnerTestimonials:',
-    partnerTestimonials
-  );
-  const community = await fetchFromAirtable({
-    tableName: 'Community',
-  });
-  const validCommunity = community.filter((p) => Boolean(p.ENS));
+export async function getStaticProps() {
+  // Define your table name and directories
+  const tableName = 'YourTableName';
+  const attachmentsDir = path.join(process.cwd(), 'public', 'images', tableName);
+  const jsonFilePath = path.join(process.cwd(), 'public', 'data', `${tableName}.json`);
 
-  const providerUrl = process.env.POKTRPC_MAINNET ?? '';
-  // Extract ENS names from the community data
-  const ensNames = validCommunity.map((p) => p.ENS);
+  // Fetch records with attachments
+  const records = await fetchRecordsWithAttachments(tableName, attachmentsDir);
 
-  // Resolve ENS names to get additional data
-  const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
+  // Save the records to a JSON file
+  saveRecordsToJson(records, jsonFilePath);
 
-  const communityData = community.map((member, index) => ({
-    ...member,
-    ...resolvedEnsData[index],
-  }));
-
+  // Return the path to the JSON as a prop
   return {
     props: {
-      partners,
-      partnerTestimonials,
-      communityData
-    }
+      dataPath: `/data/${tableName}.json` // Path to be used in the front end
+    },
+    // revalidate: 3600 // ISR timeout in seconds
   };
 }
 

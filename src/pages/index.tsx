@@ -10,7 +10,6 @@ import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
 import useSectionAnimation from '@/hooks/useSectionAnimation';
 import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
-import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
 import { Body2, StarIcon } from '@gordo-d/d-d-ui-components';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -229,18 +228,18 @@ export async function getServerSideProps() {
   const ensNames = validCommunity.map((p) => p.ENS);
 
   // Resolve ENS names to get additional data
-  const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
+  // const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
 
-  const communityData = validCommunity.map((member, index) => ({
-    ...member,
-    ...resolvedEnsData[index],
-  }));
+  // const communityData = validCommunity.map((member, index) => ({
+  //   ...member,
+  //   ...resolvedEnsData[index],
+  // }));
 
   return {
     props: {
       partners,
       communityTestimonials,
-      communityData
+      community
     }
   };
 }
