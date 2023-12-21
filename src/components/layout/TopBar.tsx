@@ -43,7 +43,7 @@ const TopBarGrid = ({children}: any) => {
                       : 'bg-transparent'
                   }`}>
       <div className="flex w-full justify-center">
-        <div className="lg:grid-cols-lg lg:gap-lg xl:grid-cols-xl mx-5 mt-1 flex w-full grid-flow-row auto-rows-auto grid-cols-1 gap-y-16 p-5 md:grid md:w-auto">
+        <div className="lg:grid-cols-lg lg:gap-lg xl:grid-cols-xl mx-5 mt-1 flex w-full grid-flow-row auto-rows-auto grid-cols-1 gap-y-16 p-5 lg:grid lg:w-auto">
           {children}
         </div>
       </div>
@@ -87,9 +87,9 @@ export const TopBar = () => {
         <div className="relative flex w-full items-center justify-between gap-8">
           <div className="flex items-center gap-10">
             <Link href={'/'}>
-              <DDLogoIcon className="h-[40px] w-[40px] md:h-[70px] md:w-[70px]" />
+              <DDLogoIcon className="h-[40px] w-[40px] lg:h-[70px] lg:w-[70px]" />
             </Link>
-            <ul className="font-paragraph hidden gap-8 md:flex">
+            <ul className="font-paragraph hidden gap-8 lg:flex">
               {navData.navigation.map((navEl, i) => (
                 <a
                   className="flex gap-2"
@@ -98,7 +98,7 @@ export const TopBar = () => {
                   target={navEl.external ? '_blank' : '_self'}
                   rel="noreferrer">
                   <Body3
-                    color="neutral-500"
+                    color="neutral-500 p-0"
                     className="hover:text-primary-white transition-colors">
                     {navEl.name}
                   </Body3>
@@ -124,7 +124,7 @@ export const TopBar = () => {
                 transition={{delay: 0.0, duration: 0.1}}>
                 <Card
                   blur={10}
-                  className="w-full border border-neutral-700 bg-neutral-700 bg-opacity-50 md:hidden">
+                  className="w-full border border-neutral-700 bg-neutral-700 bg-opacity-50 lg:hidden">
                   <ul className="font-paragraph flex flex-col gap-8 p-5">
                     {navData.navigation.map((navEl, i) => (
                       <Link
@@ -150,12 +150,13 @@ export const TopBar = () => {
           )}
 
           <div
-            className="flex h-10 w-10 items-center justify-center rounded-full border-neutral-700 bg-neutral-800 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border-neutral-700 bg-neutral-800 lg:hidden"
             onClick={toggleOverlay}>
             <HamburguerIcon className="h-7 w-7" />
           </div>
         </div>
-        <div className="hidden gap-4 md:flex">
+
+        <div className="hidden gap-4 lg:flex">
           {isPartnersRoute ? (
             <Button
               icon={<ThunderIcon className="h-6 w-6" />}
