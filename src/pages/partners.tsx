@@ -5,6 +5,7 @@ import PartnersCardsSection from '@/components/Partners_CardsSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
 import useSectionAnimation from '@/hooks/useSectionAnimation';
+import { saveTable } from '@/lib/airtable/airtableStaticFetch';
 import {
   Body2,
   Button,
@@ -13,8 +14,10 @@ import {
   ThunderIcon,
 } from '@gordo-d/d-d-ui-components';
 import { motion } from 'framer-motion';
+import fs from 'fs';
 import Image from 'next/image';
 import Link from 'next/link';
+import path from 'path';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import NavigationData from '../constants/navigation.json';
 import PartnersConstants from '../constants/partners.json';
@@ -38,7 +41,6 @@ const PartnersPage = (props: IPartnersPageProps) => {
     '🚀 ~ file: partners.tsx:35 ~ PartnersPage ~ partners:',
     partners
   );
-
 
   const variants = {
     visible: {opacity: 1, translateY: 0, transition: {duration: 0.3}},
@@ -155,7 +157,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
                     <Image
                       layout={'fill'}
                       objectFit={'contain'}
-                      src={p.image[1].url}
+                      src={p.image[1].localPath ? p.image[1].localPath : p.image[1].url}
                       alt={''}
                     />
                   )}
@@ -212,23 +214,29 @@ const PartnersPage = (props: IPartnersPageProps) => {
 };
 
 export async function getStaticProps() {
-  // Define your table name and directories
-  const tableName = 'YourTableName';
-  const attachmentsDir = path.join(process.cwd(), 'public', 'images', tableName);
-  const jsonFilePath = path.join(process.cwd(), 'public', 'data', `${tableName}.json`);
+  const baseDir = path.join(process.cwd(), 'public');
+  const dataDir = path.join(baseDir, 'data');
+  const imageDirBase = path.join(baseDir, 'images');
 
-  // Fetch records with attachments
-  const records = await fetchRecordsWithAttachments(tableName, attachmentsDir);
+  await Promise.all([
+    saveTable('PartnerTestimonials', dataDir, imageDirBase),
+  ]);
+  
+  const basePath = path.join(process.cwd(), 'public', 'data');
+  const partnersPath = path.join(basePath, 'Partners.json');
+  const partnerTestimonialsPath = path.join(basePath, 'PartnerTestimonials.json');
+  const communityDataPath = path.join(basePath, 'Community.json');
 
-  // Save the records to a JSON file
-  saveRecordsToJson(records, jsonFilePath);
+  const partners = JSON.parse(fs.readFileSync(partnersPath, 'utf-8'));
+  const partnerTestimonials = JSON.parse(fs.readFileSync(partnerTestimonialsPath, 'utf-8'));
+  const communityData = JSON.parse(fs.readFileSync(communityDataPath, 'utf-8'));
 
-  // Return the path to the JSON as a prop
   return {
     props: {
-      dataPath: `/data/${tableName}.json` // Path to be used in the front end
-    },
-    // revalidate: 3600 // ISR timeout in seconds
+      partners,
+      partnerTestimonials,
+      communityData
+    }
   };
 }
 

@@ -152,7 +152,7 @@ export const TopBar = () => {
           <div
             className="flex h-10 w-10 items-center justify-center rounded-full border-neutral-700 bg-neutral-800 md:hidden"
             onClick={toggleOverlay}>
-            <HamburguerIcon classname="h-7 w-7" />
+            <HamburguerIcon className="h-7 w-7" />
           </div>
         </div>
         <div className="hidden gap-4 md:flex">
