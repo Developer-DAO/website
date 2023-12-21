@@ -43,7 +43,7 @@ const TopBarGrid = ({children}: any) => {
                       : 'bg-transparent'
                   }`}>
       <div className="flex w-full justify-center">
-        <div className="lg:grid-cols-lg lg:gap-lg xl:grid-cols-xl mx-5 mt-1 flex w-full grid-flow-row auto-rows-auto grid-cols-1 gap-y-16 p-5 lg:grid lg:w-auto">
+        <div className="lg:grid-cols-lg lg:gap-lg xl:grid-cols-xl mx-5 mt-1 flex w-full grid-flow-row auto-rows-auto grid-cols-1 gap-y-16 p-5 md:grid md:w-auto">
           {children}
         </div>
       </div>

@@ -33,7 +33,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
           {headline}
         </BodyHeadline>
 
-        <Body1 color="neutral-600" className="font-paragraph relative ">
+        <Body1 color="neutral-600" className="font-paragraph font-normal relative ">
           {subheadline}
         </Body1>
       </div>
