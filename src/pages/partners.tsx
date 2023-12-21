@@ -5,8 +5,7 @@ import PartnersCardsSection from '@/components/Partners_CardsSection';
 import SEO from '@/components/SEO';
 import AppLayout from '@/components/layout/layout';
 import useSectionAnimation from '@/hooks/useSectionAnimation';
-import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
-import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
+import { saveTable } from '@/lib/airtable/airtableStaticFetch';
 import {
   Body2,
   Button,
@@ -15,8 +14,10 @@ import {
   ThunderIcon,
 } from '@gordo-d/d-d-ui-components';
 import { motion } from 'framer-motion';
+import fs from 'fs';
 import Image from 'next/image';
 import Link from 'next/link';
+import path from 'path';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import NavigationData from '../constants/navigation.json';
 import PartnersConstants from '../constants/partners.json';
@@ -40,7 +41,6 @@ const PartnersPage = (props: IPartnersPageProps) => {
     '🚀 ~ file: partners.tsx:35 ~ PartnersPage ~ partners:',
     partners
   );
-
 
   const variants = {
     visible: {opacity: 1, translateY: 0, transition: {duration: 0.3}},
@@ -157,7 +157,7 @@ const PartnersPage = (props: IPartnersPageProps) => {
                     <Image
                       layout={'fill'}
                       objectFit={'contain'}
-                      src={p.image[1].url}
+                      src={p.image[1].localPath ? p.image[1].localPath : p.image[1].url}
                       alt={''}
                     />
                   )}
@@ -213,33 +213,23 @@ const PartnersPage = (props: IPartnersPageProps) => {
   );
 };
 
-export async function getServerSideProps() {
-  const partners = await fetchFromAirtable({
-    tableName: 'Partners',
-  });
-  const partnerTestimonials = await fetchFromAirtable({
-    tableName: 'PartnerTestimonials',
-  });
-  console.log(
-    '🚀 ~ file: partners.tsx:180 ~ getStaticProps ~ partnerTestimonials:',
-    partnerTestimonials
-  );
-  const community = await fetchFromAirtable({
-    tableName: 'Community',
-  });
-  const validCommunity = community.filter((p) => Boolean(p.ENS));
+export async function getStaticProps() {
+  const baseDir = path.join(process.cwd(), 'public');
+  const dataDir = path.join(baseDir, 'data');
+  const imageDirBase = path.join(baseDir, 'images');
 
-  const providerUrl = process.env.POKTRPC_MAINNET ?? '';
-  // Extract ENS names from the community data
-  const ensNames = validCommunity.map((p) => p.ENS);
+  await Promise.all([
+    saveTable('PartnerTestimonials', dataDir, imageDirBase),
+  ]);
+  
+  const basePath = path.join(process.cwd(), 'public', 'data');
+  const partnersPath = path.join(basePath, 'Partners.json');
+  const partnerTestimonialsPath = path.join(basePath, 'PartnerTestimonials.json');
+  const communityDataPath = path.join(basePath, 'Community.json');
 
-  // Resolve ENS names to get additional data
-  const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
-
-  const communityData = community.map((member, index) => ({
-    ...member,
-    ...resolvedEnsData[index],
-  }));
+  const partners = JSON.parse(fs.readFileSync(partnersPath, 'utf-8'));
+  const partnerTestimonials = JSON.parse(fs.readFileSync(partnerTestimonialsPath, 'utf-8'));
+  const communityData = JSON.parse(fs.readFileSync(communityDataPath, 'utf-8'));
 
   return {
     props: {

@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 
 import D_D_People from '@/components/People';
 import Testimonials from '@/components/Testimonials';
@@ -7,16 +6,18 @@ import { Body1, Button, Headline1, Headline2 } from '@gordo-d/d-d-ui-components'
 
 import PartnersSection from '@/components/PartnersSection';
 import SEO from '@/components/SEO';
-import AppLayout from '@/components/layout/layout';
 import useSectionAnimation from '@/hooks/useSectionAnimation';
-import { fetchFromAirtable } from '@/lib/airtable/airtableFetch';
-import { resolveEnsNamesToAvatars } from '@/lib/ensAvatars';
+import { saveTable } from '@/lib/airtable/airtableStaticFetch';
 import { Body2, StarIcon } from '@gordo-d/d-d-ui-components';
 import { motion } from 'framer-motion';
+import fs from 'fs';
 import Image from 'next/image';
 import Link from 'next/link';
+import path from 'path';
 import HomeConstants from '../constants/home.json';
 import navigation from '../constants/navigation.json';
+
+
 interface Record {
   [key: string]: any;
 }
@@ -27,6 +28,9 @@ interface Props {
 
 const HomePage = (props: any) => {
   const {communityTestimonials, partners, communityData} = props;
+  console.log("🚀 ~ file: index.tsx:30 ~ HomePage ~ communityData:", communityData)
+  console.log("🚀 ~ file: index.tsx:30 ~ HomePage ~ partners:", partners)
+  console.log("🚀 ~ file: index.tsx:30 ~ HomePage ~ communityTestimonials:", communityTestimonials)
 
   const evenItems = communityData?.filter(
     (_: any, index: number) => index % 2 === 0
@@ -137,10 +141,6 @@ const HomePage = (props: any) => {
 
           {/* PEOPLE */}
           <div
-            // ref={peopleAnimation.ref}
-            // initial="hidden"
-            // animate={peopleAnimation.controls}
-            // variants={variants}
             className="mb-20 flex w-full justify-center overflow-x">
             <div className="">
               <D_D_People
@@ -211,42 +211,30 @@ const HomePage = (props: any) => {
   );
 };
 
-export async function getServerSideProps() {
-  const partners = await fetchFromAirtable({
-    tableName: 'Partners',
-  });
+export default HomePage;
 
-  const communityTestimonials = await fetchFromAirtable({
-    tableName: 'CommunityTestimonials',
-  });
-  const community = await fetchFromAirtable({
-    tableName: 'Community',
-  });
-  const validCommunity = community.filter((p) => Boolean(p.ENS));
+export async function getStaticProps() {
+  const baseDir = path.join(process.cwd(), 'public');
+  const dataDir = path.join(baseDir, 'data');
+  const imageDirBase = path.join(baseDir, 'images');
 
-  const providerUrl = process.env.POKTRPC_MAINNET ?? '';
-  // Extract ENS names from the community data
-  const ensNames = validCommunity.map((p) => p.ENS);
+  await Promise.all([
+    saveTable('Community', dataDir, imageDirBase),
+    saveTable('CommunityTestimonials', dataDir, imageDirBase),
+    saveTable('Partners', dataDir, imageDirBase),
+  ]);
 
-  // Resolve ENS names to get additional data
-  const resolvedEnsData = await resolveEnsNamesToAvatars(ensNames, providerUrl);
-
-  const communityData = validCommunity.map((member, index) => ({
-    ...member,
-    ...resolvedEnsData[index],
-  }));
+  const communityData = JSON.parse(fs.readFileSync(path.join(dataDir, 'Community.json'), 'utf-8'));
+  const communityTestimonials = JSON.parse(fs.readFileSync(path.join(dataDir, 'CommunityTestimonials.json'), 'utf-8'));
+  const partners = JSON.parse(fs.readFileSync(path.join(dataDir, 'Partners.json'), 'utf-8'));
 
   return {
     props: {
-      partners,
-      communityTestimonials,
-      communityData
+      communityData, 
+      communityTestimonials, 
+      partners
     }
+    // revalidate: 3600,
   };
 }
 
-HomePage.getLayout = function getLayout(page: ReactElement) {
-  return <AppLayout>{page}</AppLayout>;
-};
-
-export default HomePage;

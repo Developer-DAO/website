@@ -66,7 +66,7 @@ const D_D_People: React.FC<D_D_IPeopleProps> = (props) => {
     delay: index * 0.05,
   }}>
   <AccountAvatar
-    ensImage={person.Image[0].url}
+    ensImage={person.Image[0].localPath ? person.Image[0].localPath : person.Image[0].url}
     address={person.name}
     size={avatarSize}
     onLoad={handleImageLoad}
