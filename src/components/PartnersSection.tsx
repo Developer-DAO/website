@@ -8,7 +8,6 @@ import {
   Grid,
   HeartIcon,
 } from "@gordo-d/d-d-ui-components";
-import { Attachment } from "airtable";
 import cx from "classnames";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +19,7 @@ interface Partner {
   name: string;
   variant: string;
   status: string;
-  image: Attachment[];
+  image: any[];
   description?: string;
   URL?: string;
 }
@@ -63,7 +62,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
                       className=""
                       layout={"fill"}
                       objectFit={"contain"}
-                      src={gp.image[0].url}
+                      src={gp.image[0].localPath ? gp.image[0].localPath : gp.image[0].url}
                       alt={gp.name}
                     />
                   </div>
@@ -93,7 +92,7 @@ const PartnersSection: React.FC<IPartnersSectionProps> = (props) => {
                       <Image
                         layout={"fill"}
                         objectFit={"contain"}
-                        src={p.image[0].url}
+                        src={p.image[0].localPath ? p.image[0].localPath : p.image[0].url}
                         alt={p.name}
                       />
                     </div>
