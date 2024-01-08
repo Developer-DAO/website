@@ -110,7 +110,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
                   )}>
                   <div className="flex w-full flex-col justify-end p-6 text-left md:w-1/3">
                     <div className="relative mb-3 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-neutral-800">
-                      <Image fill src={t.Image[0].url} alt={t.Title} />
+                      <Image fill src={t.Image[0].localPath ? t.Image[0].localPath : t.Image[0].url} alt={t.Title} />
                     </div>
                     <BodyHeadline className="">{t.Who}</BodyHeadline>
                     <Body3
@@ -131,6 +131,7 @@ const Testimonials: React.FC<ITestimonialsProps> = (props) => {
             );
           })}
         </Carousel>}
+   
    
       </section>
     </>
