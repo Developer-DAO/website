@@ -14,6 +14,7 @@ import fs from 'fs';
 import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
+import { useEffect, useState } from 'react';
 import HomeConstants from '../constants/home.json';
 import navigation from '../constants/navigation.json';
 
@@ -43,6 +44,19 @@ const HomePage = (props: any) => {
     visible: {opacity: 1, translateY: 0, transition: {duration: 0.8}},
     hidden: {opacity: 0, translateY: 20},
   };
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  // Wait for initial Font loading.
+  useEffect(() => {
+    Promise.all([
+      document.fonts.load('1em ClashDisplay'),
+      document.fonts.load('1em Poppins')
+    ]).then(() => {
+      setFontsLoaded(true);
+    }).catch(error => {
+      console.error('One or more fonts failed to load', error);
+    });
+  }, []);
 
   const weAreAnimation = useSectionAnimation();
   const visionAnimation = useSectionAnimation();
@@ -94,7 +108,7 @@ const HomePage = (props: any) => {
                 />
               </motion.div>
             </div>
-            <div className="z-50 m-10 max-w-5xl flex w-full flex-col items-center justify-center gap-2 text-center">
+            {fontsLoaded && <div className="z-50 m-10 max-w-5xl flex w-full flex-col items-center justify-center gap-2 text-center">
               <div className="relative">
                 <motion.div
                   initial={{opacity: 0}}
@@ -136,12 +150,12 @@ const HomePage = (props: any) => {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </div>}
           </section>
 
           {/* PEOPLE */}
           <div
-            className="mb-20 flex w-full justify-center overflow-x">
+            className="mb-20 flex w-full justify-center overflow-x z-50">
             <div className="">
               <D_D_People
                 key="evenItems"

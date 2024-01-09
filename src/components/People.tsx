@@ -15,8 +15,8 @@ type D_D_IPeopleProps = {
   avatarSize?: number,
   elementClassName?: string,
   showCount?: number,
-  className?: string, // Added prop for additional class names
-  stylesData?: object, // Added prop for additional class names
+  className?: string, 
+  stylesData?: object, 
 };
 
 const D_D_People: React.FC<D_D_IPeopleProps> = (props) => {
@@ -32,10 +32,9 @@ const D_D_People: React.FC<D_D_IPeopleProps> = (props) => {
     ? community?.slice(0, showCount)
     : community;
 
-  const [loadedImagesCount, setLoadedImagesCount] = useState(0); // Number of images that have loaded
+  const [loadedImagesCount, setLoadedImagesCount] = useState(0); 
   const [allImagesLoaded, setAllImagesLoaded] = useState(false); // Flag indicating if all images have loaded
 
-  // Reset state when the community prop changes
   useEffect(() => {
     setLoadedImagesCount(0);
     setAllImagesLoaded(false);

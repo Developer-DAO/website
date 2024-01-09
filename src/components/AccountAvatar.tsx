@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export const AccountAvatar = ({ address, ensImage, size, onLoad }:any) => {
+export const AccountAvatar = ({ address, ensImage, size, onLoad, onError }:any) => {
   const [avatarLoadError, setAvatarLoadError] = useState(false);
 
   const handleAvatarError = (event: any) => {
     event.currentTarget.onerror = null; // Remove the error handler after the first error
     setAvatarLoadError(true);
+    // onError();
   };
 
   const handleImageLoad = () => {
