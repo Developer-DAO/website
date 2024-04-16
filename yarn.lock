@@ -1618,10 +1618,10 @@
   resolved "https://registry.yarnpkg.com/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz#c05ed35ad82df8e6ac616c68b92c2282bd083ba4"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
-"@gordo-d/d-d-ui-components@0.1.15":
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/@gordo-d/d-d-ui-components/-/d-d-ui-components-0.1.15.tgz#5780b3398f4793e77c19701942adf25aeb874a72"
-  integrity sha512-+CQPymO/uJ1jDg2twL+UsYIfnE6ynCCuDMKfcM7ns8Be20PhY+4XO2jAwbHt26TGKKaQBg3qrE8TqAcQrt2elA==
+"@gordo-d/d-d-ui-components@0.1.16":
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/@gordo-d/d-d-ui-components/-/d-d-ui-components-0.1.16.tgz#b54b1be5053ca8eca035e7b5adce1326a05c03b7"
+  integrity sha512-XoYLqNMsQ+jZqPrBaStDvcmGh76EIWhP8Ls/Y7+olv2bolgMCItiYNjD4N0UdSeY/lyHKcEdUPKIpfKLkt2Odg==
   dependencies:
     "@radix-ui/react-dialog" "^1.0.4"
     autoprefixer "^10.4.15"
