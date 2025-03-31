@@ -8,7 +8,7 @@ export interface LayoutProps {
 
 const AppLayout = ({ children }: LayoutProps) => {
   return (
-    <article className="relative h-auto w-screen overflow-hidden">
+    <article className="relative h-auto w-full max-w-screen overflow-hidden">
       <div
         className="absolute left-0 top-0 z-0 h-[700vh]
       w-screen">
